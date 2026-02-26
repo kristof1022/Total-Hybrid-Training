@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/2090184-cddc39_ico.png">
+    <title>FICHES D'ENTRAINEMENT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <a href="index.html">
+                <img src="images/2090184-cddc39.png" alt="Logo">
+            </a>
+        </div>
+        <ul>
+            <li>
+                <a href="#">Entraînements</a>
+                <ul class="submenu">
+                    <li><a href="index.html">Crosstraining - Renfo - Muscu</a></li>
+                    <li><a href="LL_pompes.html">S'améliorer au LL et pompes</a></li>
+                    <li><a href="course.html">Course à pied</a></li>
+                    <li><a href="velo.html">Vélo</a></li>
+                 </ul>
+            </li>
+            <li>
+                <a href="#">Infos Pratiques</a>
+                <ul class="submenu">
+                    <li><a href="mode_emploi.html">Modes d'emploi</a></li>
+                    <li><a href="conseils.html">Conseils</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="nav-spacer"></div>
+    </div>
+</nav>
+    
+<main>
+    <h1>Crosstraining - Renfo - Muscu</h1>
+
+    <div class="search-container" style="margin-bottom: 20px;">
+        <input type="text" id="search-input" placeholder="🔍 Rechercher un exercice, un titre, un mouvement ou utiliser les filtres ci-dessous" 
+               style="width: 100%; padding: 12px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px; box-sizing: border-box;">
+    </div>
+
+    <div class="filter-bar">
+        
+        <select id="filter-type">
+            <option value="all">🔼 Types de séance : tous 🔼</option>
+            <option value="AMRAP">AMRAP</option>
+            <option value="TABATA">TABATA</option>
+            <option value="EMOM">EMOM</option>
+            <option value="FOR TIME">FOR TIME</option>
+            <option value="HYROX">HYROX</option>
+            <option value="MUSCU">MUSCU - RENFO</option>
+            <option value="CARDIO">CARDIO - FRACTIONNE</option>
+        </select>
+        
+        <select id="levelFilter">
+            <option value="all">🔼 Difficulté : Tous niveaux 🔼</option>
+            <option value="Facile">Facile 🟢</option>
+            <option value="Moyen">Moyen 🟡</option>
+            <option value="Intense">Intense 🔴</option>
+        </select>
+        
+        <select id="filter-material">
+            <option value="all">🔼 Matériels : Tous 🔼</option>
+            <option value="poids-corps">Sans matériel</option>
+            <option value="barre">Barre et poids</option>
+            <option value="haltere">Haltère</option>
+            <option value="traction">Barre de traction</option>
+            <option value="rameur">Rameur</option>
+            <option value="bike-erg">BikeErg</option>
+            <option value="ski-erg">SkiErg</option>
+            <option value="tapis-incurve">Tapis de course</option>
+            <option value="ballon-leste">Ballon lesté</option>
+            <option value="gilet-leste">Gilet lesté</option>
+            <option value="box-jump">Box jump</option>
+            <option value="station-dips">Station à dips</option>
+            <option value="sand-bag">SandBag - Sac lesté</option>
+            
+        </select>
+
+        <select id="filter-body">
+            <option value="all">🔼 Corps : Toutes les zones 🔼</option>
+            <option value="haut">Haut du corps</option>
+            <option value="bas">Bas du corps</option>
+            <option value="complet">Corps complet</option>
+            <option value="abdos">Abdos / Core</option>
+        </select>
+        
+        <select id="filter-time">
+            <option value="all">🔼 Durées : Toutes 🔼</option>
+            <option value="court">Moins de 15 min</option>
+            <option value="moyen">15 à 30 min</option>
+            <option value="long">Plus de 30 min</option>
+            <option value="libre">Temps libre / For Time</option>
+        </select>
+        
+        
+        <!-- <button onclick="tirageAleatoire()" class="btn-fun" style="background: #b6d73c; color: #000; font-weight: bold; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer; margin-left: 10px;">
+            🎲 Tirage au sort 🎲
+        </button> -->
+    </div>
+
+    <div id="workout-grid" class="card-grid"></div>
+</main>
+
+<button id="backToTop" title="Retour en haut">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
