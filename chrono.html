@@ -275,6 +275,30 @@
         }
         .btn-add-seq:hover { background: #243a5a; }
 
+        /* Score counters FOR TIME / AMRAP */
+        .score-counters {
+            background: #0f1b35; border-radius: 12px;
+            padding: 16px; border: 1px solid #1e3050;
+            display: flex; flex-direction: column; gap: 12px;
+        }
+        .score-counter-row {
+            display: flex; align-items: center;
+            justify-content: space-between; gap: 12px;
+        }
+        .score-label {
+            font-size: 1em; font-weight: 700;
+            color: var(--text-light); letter-spacing: 0.08em;
+            min-width: 100px;
+        }
+        .score-counters .stepper { flex-shrink: 0; }
+        .score-counters .config-input {
+            width: 70px; font-size: 1.3em; font-weight: 900;
+            color: var(--accent);
+        }
+        .score-counters .btn-step {
+            width: 48px; height: 48px; font-size: 1.5em;
+        }
+
         /* ── Responsive ── */
         @media (max-width: 480px) {
             .chrono-time       { font-size: 4em; }
@@ -323,6 +347,8 @@
     <button class="chrono-tab active" onclick="showTab('simple', this)">⏱ Chrono</button>
     <button class="chrono-tab" onclick="showTab('countdown', this)">⏳ Rebours</button>
     <button class="chrono-tab" onclick="showTab('tabata', this)">⚡ Tabata</button>
+    <button class="chrono-tab" onclick="showTab('fortime', this)">🏁 For Time</button>
+    <button class="chrono-tab" onclick="showTab('amrap', this)">🔄 AMRAP</button>
     <button class="chrono-tab" onclick="showTab('emom', this)">🔁 EMOM</button>
     <button class="chrono-tab" onclick="showTab('pyramide', this)">🔺 Pyramide</button>
     <button class="chrono-tab" onclick="showTab('surmesure', this)">⚙️ Sur-Mesure</button>
@@ -433,7 +459,103 @@
 </div>
 
 <!-- ══════════════════════════════
-     PANEL 4 — EMOM
+     PANEL 4 — FOR TIME
+══════════════════════════════ -->
+<div class="chrono-panel" id="panel-fortime">
+    <div class="phase-display" id="fortime-display">
+        <div class="phase-label" id="fortime-label">PRÊT</div>
+        <div class="chrono-time" id="fortime-time">00:00:00</div>
+        <div class="chrono-sub">min : sec : centièmes</div>
+    </div>
+    <p style="text-align:center; color:var(--text-dim); font-size:0.85em; font-style:italic; margin: 0 0 16px;">
+        💡 Lance le chrono et note ton score au fur et à mesure
+    </p>
+    <div class="score-counters">
+        <div class="score-counter-row">
+            <span class="score-label">🔁 ROUNDS</span>
+            <div class="stepper">
+                <button class="btn-step" onclick="scoreStep('ft-rounds', -1)">−</button>
+                <input type="number" class="config-input" id="ft-rounds" value="0" min="0" max="999" readonly>
+                <button class="btn-step" onclick="scoreStep('ft-rounds', 1)">+</button>
+            </div>
+        </div>
+        <div class="score-counter-row">
+            <span class="score-label">💪 REPS</span>
+            <div class="stepper">
+                <button class="btn-step" onclick="scoreStep('ft-reps', -1)">−</button>
+                <input type="number" class="config-input" id="ft-reps" value="0" min="0" max="9999" readonly>
+                <button class="btn-step" onclick="scoreStep('ft-reps', 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="chrono-controls" style="margin-top:16px;">
+        <button class="btn-chrono btn-start" id="btn-ft-start" onclick="fortimeStart()">▶ Start</button>
+        <button class="btn-chrono btn-pause" id="btn-ft-pause" onclick="fortimePause()" disabled>⏸ Pause</button>
+        <button class="btn-chrono btn-reset" onclick="fortimeReset()">↺ Reset</button>
+    </div>
+</div>
+
+<!-- ══════════════════════════════
+     PANEL 5 — AMRAP
+══════════════════════════════ -->
+<div class="chrono-panel" id="panel-amrap">
+    <div class="chrono-config">
+        <p class="config-title">⚙️ Configuration</p>
+        <div class="config-row">
+            <label>Minutes</label>
+            <div class="stepper">
+                <button class="btn-step" onclick="step('amrap-min', -1)">−</button>
+                <input type="number" class="config-input" id="amrap-min" value="20" min="0" max="99">
+                <button class="btn-step" onclick="step('amrap-min', 1)">+</button>
+            </div>
+        </div>
+        <div class="config-row">
+            <label>Secondes</label>
+            <div class="stepper">
+                <button class="btn-step" onclick="step('amrap-sec', -5)">−</button>
+                <input type="number" class="config-input" id="amrap-sec" value="0" min="0" max="55" step="5">
+                <button class="btn-step" onclick="step('amrap-sec', 5)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="phase-display" id="amrap-display">
+        <div class="phase-label" id="amrap-label">PRÊT</div>
+        <div class="chrono-time" id="amrap-time">20:00</div>
+        <div class="chrono-sub" id="amrap-sub"></div>
+        <div class="progress-bar-wrap">
+            <div class="progress-bar-fill" id="amrap-bar" style="width:100%"></div>
+        </div>
+    </div>
+    <p style="text-align:center; color:var(--text-dim); font-size:0.85em; font-style:italic; margin: 0 0 16px;">
+        💡 Lance le décompte et note ton score au fur et à mesure
+    </p>
+    <div class="score-counters">
+        <div class="score-counter-row">
+            <span class="score-label">🔁 ROUNDS</span>
+            <div class="stepper">
+                <button class="btn-step" onclick="scoreStep('amrap-rounds', -1)">−</button>
+                <input type="number" class="config-input" id="amrap-rounds" value="0" min="0" max="999" readonly>
+                <button class="btn-step" onclick="scoreStep('amrap-rounds', 1)">+</button>
+            </div>
+        </div>
+        <div class="score-counter-row">
+            <span class="score-label">💪 REPS</span>
+            <div class="stepper">
+                <button class="btn-step" onclick="scoreStep('amrap-reps', -1)">−</button>
+                <input type="number" class="config-input" id="amrap-reps" value="0" min="0" max="9999" readonly>
+                <button class="btn-step" onclick="scoreStep('amrap-reps', 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="chrono-controls" style="margin-top:16px;">
+        <button class="btn-chrono btn-start" id="btn-amrap-start" onclick="amrapStart()">▶ Start</button>
+        <button class="btn-chrono btn-pause" id="btn-amrap-pause" onclick="amrapPause()" disabled>⏸ Pause</button>
+        <button class="btn-chrono btn-reset" onclick="amrapReset()">↺ Reset</button>
+    </div>
+</div>
+
+<!-- ══════════════════════════════
+     PANEL 6 — EMOM
 ══════════════════════════════ -->
 <div class="chrono-panel" id="panel-emom">
     <div class="chrono-config">
@@ -862,7 +984,142 @@ function tabataReset() {
 }
 
 /* ══════════════════════════════════════════
-   4. EMOM
+   SCORE STEP — commun FOR TIME et AMRAP
+══════════════════════════════════════════ */
+function scoreStep(id, delta) {
+    var input = document.getElementById(id);
+    var val = parseInt(input.value) || 0;
+    var min = parseInt(input.min) || 0;
+    var max = parseInt(input.max) || 9999;
+    input.value = Math.max(min, Math.min(max, val + delta));
+}
+
+/* ══════════════════════════════════════════
+   4. FOR TIME
+══════════════════════════════════════════ */
+var ftInterval = null;
+var ftMs = 0;
+var ftRunning = false;
+
+function fortimeStart() {
+    if (ftRunning) return;
+    ftRunning = true;
+    var last = Date.now() - ftMs;
+    ftInterval = setInterval(function() {
+        ftMs = Date.now() - last;
+        document.getElementById('fortime-time').textContent = formatMSec(ftMs);
+    }, 30);
+    document.getElementById('fortime-label').textContent  = '🏁 EN COURS';
+    setPhaseStyle(document.getElementById('fortime-display'), 'travail');
+    document.getElementById('btn-ft-start').disabled = true;
+    document.getElementById('btn-ft-pause').disabled = false;
+    setBtnActive('btn-ft-pause', false);
+}
+
+function fortimePause() {
+    if (!ftRunning) return;
+    clearInterval(ftInterval); ftRunning = false;
+    setBtnActive('btn-ft-pause', true);
+    document.getElementById('btn-ft-start').disabled = false;
+    document.getElementById('btn-ft-pause').disabled = false;
+    document.getElementById('fortime-label').textContent = '⏸ EN PAUSE';
+    setPhaseStyle(document.getElementById('fortime-display'), '');
+}
+
+function fortimeReset() {
+    clearInterval(ftInterval); ftMs = 0; ftRunning = false;
+    document.getElementById('fortime-time').textContent  = '00:00:00';
+    document.getElementById('fortime-label').textContent = 'PRÊT';
+    document.getElementById('btn-ft-start').disabled = false;
+    document.getElementById('btn-ft-pause').disabled = true;
+    document.getElementById('ft-rounds').value = 0;
+    document.getElementById('ft-reps').value   = 0;
+    setBtnActive('btn-ft-pause', false);
+    setPhaseStyle(document.getElementById('fortime-display'), '');
+}
+
+/* ══════════════════════════════════════════
+   5. AMRAP
+══════════════════════════════════════════ */
+var amrapInterval = null;
+var amrapMs = 0;
+var amrapTotal = 0;
+var amrapRunning = false;
+
+function amrapStart() {
+    if (amrapRunning) return;
+    if (amrapMs === 0) {
+        var m = parseInt(document.getElementById('amrap-min').value) || 0;
+        var s = parseInt(document.getElementById('amrap-sec').value) || 0;
+        amrapTotal = (m * 60 + s) * 1000;
+        amrapMs = amrapTotal;
+        if (amrapMs <= 0) return;
+    }
+    amrapRunning = true;
+    setBtnActive('btn-amrap-pause', false);
+    document.getElementById('amrap-label').textContent = '🔄 EN COURS';
+    setPhaseStyle(document.getElementById('amrap-display'), 'travail');
+    document.getElementById('btn-amrap-start').disabled = true;
+    document.getElementById('btn-amrap-pause').disabled = false;
+    var last = Date.now();
+    amrapInterval = setInterval(function() {
+        var now = Date.now(); amrapMs -= (now - last); last = now;
+        if (amrapMs <= 0) {
+            amrapMs = 0; clearInterval(amrapInterval); amrapRunning = false;
+            document.getElementById('amrap-time').textContent  = '00:00';
+            document.getElementById('amrap-label').textContent = '✅ TERMINÉ !';
+            var r = document.getElementById('amrap-rounds').value;
+            var rp = document.getElementById('amrap-reps').value;
+            document.getElementById('amrap-sub').textContent   = 'Score : ' + r + ' rounds + ' + rp + ' reps';
+            document.getElementById('amrap-bar').style.width   = '0%';
+            setPhaseStyle(document.getElementById('amrap-display'), 'repos');
+            bipFin();
+            document.getElementById('btn-amrap-start').disabled = false;
+            document.getElementById('btn-amrap-pause').disabled = true;
+            return;
+        }
+        var secLeft = Math.ceil(amrapMs / 1000);
+        if (secLeft <= 3) {
+            bipCountdown();
+            setPhaseStyle(document.getElementById('amrap-display'), 'countdown');
+            document.getElementById('amrap-label').textContent = secLeft + '...';
+        }
+        var mm = Math.floor(amrapMs / 60000);
+        var ss = Math.floor((amrapMs % 60000) / 1000);
+        document.getElementById('amrap-time').textContent = pad(mm) + ':' + pad(ss);
+        document.getElementById('amrap-sub').textContent  = 'Rounds : ' + document.getElementById('amrap-rounds').value + '  |  Reps : ' + document.getElementById('amrap-reps').value;
+        document.getElementById('amrap-bar').style.width  = ((amrapMs / amrapTotal) * 100) + '%';
+    }, 100);
+}
+
+function amrapPause() {
+    if (!amrapRunning) return;
+    clearInterval(amrapInterval); amrapRunning = false;
+    setBtnActive('btn-amrap-pause', true);
+    document.getElementById('btn-amrap-start').disabled = false;
+    document.getElementById('btn-amrap-pause').disabled = false;
+    document.getElementById('amrap-label').textContent  = '⏸ EN PAUSE';
+    setPhaseStyle(document.getElementById('amrap-display'), '');
+}
+
+function amrapReset() {
+    clearInterval(amrapInterval); amrapMs = 0; amrapTotal = 0; amrapRunning = false;
+    var m = parseInt(document.getElementById('amrap-min').value) || 0;
+    var s = parseInt(document.getElementById('amrap-sec').value) || 0;
+    document.getElementById('amrap-time').textContent  = pad(m) + ':' + pad(s);
+    document.getElementById('amrap-label').textContent = 'PRÊT';
+    document.getElementById('amrap-sub').textContent   = '';
+    document.getElementById('amrap-bar').style.width   = '100%';
+    document.getElementById('amrap-rounds').value = 0;
+    document.getElementById('amrap-reps').value   = 0;
+    document.getElementById('btn-amrap-start').disabled = false;
+    document.getElementById('btn-amrap-pause').disabled = true;
+    setBtnActive('btn-amrap-pause', false);
+    setPhaseStyle(document.getElementById('amrap-display'), '');
+}
+
+/* ══════════════════════════════════════════
+   6. EMOM
 ══════════════════════════════════════════ */
 var emomInterval = null;
 var emomRunning  = false;
@@ -1076,8 +1333,8 @@ function addSeqItem() {
         '<select onchange="updateSeqStyle(this)">'+
         '<option value="travail">🔥 Travail</option>'+
         '<option value="repos">😮‍💨 Pause</option>'+
-        '<option value="echauffement">🏃 Échauffement</option>'+
-        '<option value="retour">🧘 Retour calme</option>'+
+        '<option value="echauffement">🏃 Warm-up</option>'+
+        '<option value="retour">🧘 Récup</option>'+
         '</select>'+
         '<div class="seq-stepper">'+
         '<button class="btn-step" onclick="stepSeq(\''+id+'\',-5)">−</button>'+
@@ -1152,14 +1409,14 @@ function seqRender() {
     var item=seqItems[seqCur];
     var isTravail=item.type==='travail'||item.type==='echauffement';
     setPhaseStyle(document.getElementById('surmesure-display'),isTravail?'travail':'repos');
-    var labels={travail:'🔥 TRAVAIL',repos:'😮‍💨 PAUSE',echauffement:'🏃 ÉCHAUFFEMENT',retour:'🧘 RETOUR CALME'};
+    var labels={travail:'🔥 TRAVAIL',repos:'😮‍💨 PAUSE',echauffement:'🏃 WARM-UP',retour:'🧘 RÉCUP'};
     document.getElementById('surmesure-label').textContent=labels[item.type]||item.type.toUpperCase();
     document.getElementById('surmesure-time').textContent=fmtSec(seqSec);
     document.getElementById('surmesure-sub').textContent='Phase '+(seqCur+1)+' / '+seqItems.length;
     document.getElementById('seq-cur').textContent=seqCur+1;
     document.getElementById('seq-rep').textContent=seqRepCur;
     var next=seqItems[seqCur+1];
-    var nxtLbl={travail:'Travail',repos:'Pause',echauffement:'Échauffement',retour:'Retour calme'};
+    var nxtLbl={travail:'Travail',repos:'Pause',echauffement:'Warm-up',retour:'Récup'};
     if(next){document.getElementById('surmesure-next').textContent='Prochain : '+(nxtLbl[next.type]||next.type)+' ('+fmtSec(next.sec)+')';}
     else if(seqRepCur<seqRepeat){document.getElementById('surmesure-next').textContent='Prochain : Répétition '+(seqRepCur+1)+' / '+seqRepeat;}
     else{document.getElementById('surmesure-next').textContent='🏁 Dernière phase !';}
