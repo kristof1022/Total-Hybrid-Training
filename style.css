@@ -118,11 +118,16 @@ main {
     margin: auto;
 }
 
+main h1, main h2 {
+    text-align: center;
+}
+
 .filter-bar {
     display: flex;
     gap: 10px;
     margin-bottom: 30px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .filter-bar select {
