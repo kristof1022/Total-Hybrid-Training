@@ -137,7 +137,7 @@ const workouts = [
         }
     }},
 
-    { title: "WOD AMRAP 3 EXOS", material: ["traction", "poids-corps"], body: "complet", duration: 20, type: "AMRAP", level: "Facile", desc: "<strong>Pendant 20 min :</strong> 5 Tractions(pull-ups), 10 Pompes(push-ups), 15 Squats.",
+    { title: "WOD AMRAP 3 EXOS", material: ["traction"], body: "complet", duration: 20, type: "AMRAP", level: "Facile", desc: "<strong>Pendant 20 min :</strong> 5 Tractions(pull-ups), 10 Pompes(push-ups), 15 Squats.",
       details: { format_label: "AMRAP 20 MINUTES", intro: "Enchaîner les exercices suivants pendant 20 minutes :", exercises: [
           { text: "5 Tractions (pull-ups)" }, { text: "10 Pompes" }, { text: "15 Squats" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -404,7 +404,29 @@ const workouts = [
           exercices: [
             { text: "100 Air squats" },
             { text: "50 Pompes (push-ups)" },
+            
             { text: "100 Sit-ups (abdos)" },
+            
+            { text: "50 Pompes (push-ups)" },
+            { text: "100 Air squats" }
+          ]
+        }
+      }},
+    
+    { title: "Le WOD du Voyageur#2", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "100 Air Squats, 50 Push-ups(pompes), 100 Sit-ups(abdos), 50 Push-ups, 100 Air Squats.",
+      details: { format_label: "FOR TIME", exercises: [
+          { text: "100 Air squats" }, { text: "50 Pompes (push-ups)" },{ text: "50 Rowing élastique (tirage dos à l'élastique)" }, { text: "100 Sit-ups (abdos)" },{ text: "50 Rowing élastique (tirage dos à l'élastique)" }, { text: "50 Pompes (push-ups)" }, { text: "100 Air squats" }
+        ], conseil: "Durée estimée 20 minutes. Entraînement parfait en déplacement.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD du Voyageur#2",
+          exercices: [
+            { text: "100 Air squats" },
+            { text: "50 Pompes (push-ups)" },
+            { text: "50 Rowing élastique (tirage dos à l'élastique)" },
+            { text: "100 Sit-ups (abdos)" },
+            { text: "50 Rowing élastique (tirage dos à l'élastique)" },
             { text: "50 Pompes (push-ups)" },
             { text: "100 Air squats" }
           ]
@@ -446,66 +468,187 @@ const workouts = [
           { text: "100 Tractions (pull-ups)" }, { text: "100 Pompes (push-ups)" }, { text: "100 Sit-ups (abdos)" }, { text: "100 Squats au poids de corps (air squats)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
           { text: "30 Tractions australiennes ou tractions TRX" }, { text: "30 Pompes inclinées ou sur les genoux" }, { text: "30 Crunches" }, { text: "30 Squats au poids de corps" }
-        ]}, conseil: "Durée estimée 35 minutes. 400 répétitions à effectuer." }},
+        ]}, conseil: "Durée estimée 35 minutes. 400 répétitions à effectuer.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Angie",
+          exercices: [
+            { text: "100 Tractions (pull-ups)" }, { text: "100 Pompes (push-ups)" }, { text: "100 Sit-ups (abdos)" }, { text: "100 Squats au poids de corps (air squats)" },
+          ]
+        }
+        }},
 
     { title: "Le WOD Barbara", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "5 rounds (3' repos) : 20 Pull-ups, 30 Push-ups, 40 Sit-ups, 50 Squats.",
       details: { format_label: "5 ROUNDS FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "20 Tractions (pull-ups)" }, { text: "30 Pompes (push-ups)" }, { text: "40 Sit-ups (abdos)" }, { text: "50 Squats au poids de corps (air squats)" }, { text: "3 minutes de pause entre les rounds" }
         ], scaled: { intro: "VERSION SCALED — 5 rounds :", exercises: [
           { text: "10 Tractions australiennes ou tractions TRX" }, { text: "15 Pompes inclinées ou sur les genoux" }, { text: "20 Crunches" }, { text: "25 Squats au poids de corps" }, { text: "3 minutes de pause entre les rounds" }
-        ]}, conseil: "Durée estimée 45 minutes." }},
+        ]}, conseil: "Durée estimée 45 minutes.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Barbara",
+          exercices: [
+            { text: "20 Tractions (pull-ups)" }, { text: "30 Pompes (push-ups)" }, { text: "40 Sit-ups (abdos)" }, { text: "50 Squats au poids de corps (air squats)" }, { text: "<em>jusqu'à 3 minutes de pause entre les rounds<em>" },
+          ]
+        }
+    }},
 
     { title: "Le WOD Murph", material: ["traction", "gilet-leste"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "1.6km course, 100 Pull-ups(tractions), 200 Push-ups(pompes), 300 Squats, 1.6km course.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "1,6 km de course à pied" }, { text: "100 Tractions (pull-ups)" }, { text: "200 Pompes (push-ups)" }, { text: "300 Squats au poids de corps (air squats)" }, { text: "1,6 km de course à pied" }
-        ], conseil: "Durée estimée 50 minutes. WOD très dur — ne pas hésiter à partitionner les séries de tractions / pompes / squats. Les plus forts portent un gilet lesté (9 kg homme / 6 kg femme)." }},
+        ], conseil: "Durée estimée 50 minutes. WOD très dur — ne pas hésiter à partitionner les séries de tractions / pompes / squats. Les plus forts portent un gilet lesté (9 kg homme / 6 kg femme).",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Murph",
+          exercices: [
+            { text: "1,6 km de course à pied" }, { text: "100 Tractions (pull-ups)" }, { text: "200 Pompes (push-ups)" }, { text: "300 Squats au poids de corps (air squats)" }, { text: "1,6 km de course à pied" },
+          ]
+        }
+        }},
 
     { title: "Le WOD Sit-ups & Burpees", material: ["poids-corps"], body: "abdos", duration: 0, type: "FOR TIME", level: "Intense", desc: "10-20-30-40-30-20-10 : Sit-ups(abdos) et Burpees.",
       details: { format_label: "FOR TIME", intro: "Réaliser 10-20-30-40-30-20-10 répétitions de :", exercises: [
           { text: "Sit-ups (abdos)" }, { text: "Burpees" }
-        ], conseil: "Durée estimée 15 minutes en format pyramidale. Mieux vaut un rythme régulier et lent pour les burpees." }},
+        ], conseil: "Durée estimée 15 minutes en format pyramidale. Mieux vaut un rythme régulier et lent pour les burpees.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Sit-ups & Burpees",
+          exercices: [
+            { text: "10 Sit-ups / 10 Burpees" },
+            { text: "20 Sit-ups / 20 Burpees" },
+            { text: "30 Sit-ups / 30 Burpees" },
+            { text: "40 Sit-ups / 40 Burpees" },
+            { text: "30 Sit-ups / 30 Burpees" },
+            { text: "20 Sit-ups / 20 Burpees" },
+            { text: "10 Sit-ups / 10 Burpees" }
+          ]
+        }
+        }},
 
     { title: "Le WOD Candy", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "5 rounds : 20 Pull-ups(tractions), 40 Push-ups(pompes), 60 Squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "20 Tractions (pull-ups)" }, { text: "40 Pompes (push-ups)" }, { text: "60 Squats au poids de corps (air squats)" }
-        ], conseil: "Durée estimée 40 minutes. Version allégée du Murph (sans la course)." }},
+        ], conseil: "Durée estimée 40 minutes. Version allégée du Murph (sans la course).",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Candy",
+          exercices: [
+            { text: "<u>5 ROUNDS :</u>" },
+            { text: "20 Tractions (pull-ups)" },
+              { text: "40 Pompes (push-ups)" },
+              { text: "60 Squats au poids de corps (air squats)" },
+             ]
+        }
+        }},
 
     { title: "Le WOD Karabel", material: ["ballon-leste"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "10 rounds : 15 Wall Balls(ballon lesté) et 15 Burpees.",
       details: { format_label: "FOR TIME", intro: "Réaliser 10 rounds :", exercises: [
           { text: "15 Wall balls (ballon lesté)" }, { text: "15 Burpees" }
-        ], conseil: "Durée estimée 15 minutes." }},
+        ], conseil: "Durée estimée 15 minutes.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Karabel",
+          exercices: [
+            { text: "<u>10 ROUNDS :</u>" },
+            { text: "15 Wall balls (ballon lesté)" }, { text: "15 Burpees" }
+             ]
+        }
+               }},
 
     { title: "Le WOD Handstand", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "5 rounds : 10 HSPU(pompes inversées), 20 Squats, 10 HSPU, 20 Lunges(fentes).",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "10 Handstand Push-ups (pompes en poirier contre un mur)" }, { text: "20 Squats au poids de corps (air squats)" }, { text: "10 Handstand Push-ups (pompes en poirier contre un mur)" }, { text: "20 Fentes (lunges)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
           { text: "Remplacer les HSPU par des pompes avec pieds surélevés" }
-        ]}, conseil: "-" }},
+        ]}, conseil: "-",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Handstand",
+          exercices: [
+            { text: "<u>5 ROUNDS :</u>" },
+            { text: "10 Handstand Push-ups (pompes en poirier contre un mur)" }, { text: "20 Squats au poids de corps (air squats)" }, { text: "10 Handstand Push-ups (pompes en poirier contre un mur)" }, { text: "20 Fentes (lunges)" }
+             ]
+        }       
+        }},
 
     { title: "Le WOD Super Legs", material: ["poids-corps"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", desc: "<strong>5 rounds :</strong> 20 Air Squats, 20 Alternating Lunges(fentes), 20 Split Squat Jumps, 10 Squat Jumps.",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "20 Squats au poids de corps (air squats)" }, { text: "20 Fentes alternées (lunges)" }, { text: "20 Fentes sautées" }, { text: "10 Squats sautés (squats jumps)" }
-        ], conseil: "Ça brûle ! Penser à ne pas s'avachir avec la fatigue, on garde le buste droit." }},
+        ], conseil: "Ça brûle ! Penser à ne pas s'avachir avec la fatigue, on garde le buste droit.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Super Legs",
+          exercices: [
+            { text: "<u>5 ROUNDS :</u>" },
+            { text: "20 Squats au poids de corps (air squats)" }, { text: "20 Fentes alternées (lunges)" }, { text: "20 Fentes sautées" }, { text: "10 Squats sautés (squats jumps)" }
+             ]
+        }       
+        }},
 
     { title: "Le WOD Air Squat Galore", material: ["poids-corps"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", desc: "500 Air Squats pour le temps.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "500 Squats au poids de corps le plus rapidement possible (air-squats)" }
-        ], conseil: "Durée estimée 20 minutes." }},
+        ], conseil: "Durée estimée 20 minutes.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Air Squat Galore",
+          exercices: [
+            { text: "500 Squats au poids de corps le plus rapidement possible (air-squats)" }
+             ]
+        }       
+        }},
 
-    { title: "Le WOD Lunges & Run", material: ["poids-corps"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", desc: "5 rounds : Run 400m, 30 Walking Lunges(fentes marchées).",
+    { title: "Le WOD Lunges & Run", material: ["poids-corps", "tapis-incurve"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", desc: "5 rounds : Run 400m, 30 Walking Lunges(fentes marchées).",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "400m de course à pied" }, { text: "30 Fentes marchées (walking lunges)" }
-        ], conseil: "Durée estimée 25 minutes. Utiliser la course pour récupérer le souffle après les fentes." }},
+        ], conseil: "Durée estimée 25 minutes. Utiliser la course pour récupérer le souffle après les fentes.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Lunges & Run",
+          exercices: [
+            { text: "<u>5 ROUNDS :</u>" },
+            { text: "400m de course à pied" }, { text: "30 Fentes marchées (walking lunges)" }
+             ]
+        }              
+        }},
 
     { title: "Le WOD Burpee Marathon", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "150 Burpees le plus vite possible.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "150 Burpees le plus rapidement possible" }
-        ], conseil: "Trouver un rythme pour tenir le plus longtemps possible sans pause. Mieux vaut être lent." }},
+        ], conseil: "Trouver un rythme pour tenir le plus longtemps possible sans pause. Mieux vaut être lent.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Burpee Marathon",
+          exercices: [
+            { text: "150 Burpees le plus rapidement possible" }
+             ]
+        }              
+        }},
 
     { title: "Le WOD Cloverfield", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "Run 2400m(course à pied), 150 Burpees, Run 2400m.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "1,6 km de course à pied (run)" }, { text: "150 Burpees" }, { text: "1,6 km de course à pied (run)" }
-        ], conseil: "Trouver un rythme pour tenir le plus longtemps possible sans pause. Mieux vaut être lent." }},
+        ], conseil: "Trouver un rythme pour tenir le plus longtemps possible sans pause. Mieux vaut être lent.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Cloverfield",
+          exercices: [
+            { text: "1,6 km de course à pied (run)" }, { text: "150 Burpees" }, { text: "1,6 km de course à pied (run)" }
+             ]
+        }                
+        }},
 
     { title: "Le WOD Shawn", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "Run 8km. Toutes les 5 min : 50 Squats et 50 Push-ups(pompes).",
       details: { format_label: "FOR TIME", exercises: [
@@ -517,61 +660,148 @@ const workouts = [
           { text: "10 Burpees + 25 Push-ups" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges + 100 Sit-ups" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges + 100 Sit-ups + 150 Air Squats" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
           { text: "Pompes sur les genoux ou inclinées" }, { text: "Burpees sans le saut et/ou sans la pompe" }
-        ]}, conseil: "Durée estimée 35 minutes." }},
+        ]}, conseil: "Durée estimée 35 minutes.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Zachary Tellier",
+          exercices: [
+            { text: "10 Burpees" }, { text: "10 Burpees + 25 Push-ups" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges + 100 Sit-ups" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges + 100 Sit-ups + 150 Air Squats" }
+              ]
+        } 
+        }},
 
     { title: "Le WOD Loredo", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "<strong>6 tours :</strong> 24 Squats, 24 Push-ups(pompes), 24 Walking Lunges(fentes marchées), 400m Run.",
       details: { format_label: "FOR TIME", intro: "Réaliser 6 rounds :", exercises: [
           { text: "24 Air squats" }, { text: "24 Pompes (push-ups)" }, { text: "24 Fentes marchées (walking lunges)" }, { text: "400m Course à pied (run)" }
         ], scaled: { intro: "VERSION SCALED — 4 rounds :", exercises: [
           { text: "24 Air squats" }, { text: "24 Pompes inclinées ou sur les genoux" }, { text: "24 Fentes marchées (walking lunges)" }, { text: "400m Course à pied (run)" }
-        ]}, conseil: "144 reps par exercice." }},
+        ]}, conseil: "144 reps par exercice.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Loredo",
+          exercices: [
+            { text: "<u>6 ROUNDS :</u>" },
+            { text: "24 Air squats" }, { text: "24 Pompes (push-ups)" }, { text: "24 Fentes marchées (walking lunges)" }, { text: "400m Course à pied (run)" }
+             ]
+        }               
+        }},
 
     { title: "Le WOD Bert", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "50 Burpees, 400m Run(course), 100 Push-ups(pompes), 400m Run, 150 Walking Lunges(fentes marchées), 400m Run, 200 Squats, 400m Run, 150 Walking Lunges, 400m Run, 100 Push-ups, 400m Run, 50 Burpees.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "50 Burpees" }, { text: "400m Run" }, { text: "100 Push-Ups (pompes)" }, { text: "400m Run" }, { text: "150 Walking Lunges (fentes marchées)" }, { text: "400m Run" }, { text: "200 Air Squats" }, { text: "400m Run" }, { text: "150 Walking Lunges" }, { text: "400m Run" }, { text: "100 Push-Ups" }, { text: "400m Run" }, { text: "50 Burpees" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
           { text: "20 Burpees / 200m Run / 30 Knee Push-Ups / 200m Run / 40 Walking Lunges / 200m Run / 50 Air Squats / 200m Run / (miroir en sens inverse)" }
-        ]}, conseil: "Durée estimée 70 minutes." }},
+        ]}, conseil: "Durée estimée 70 minutes.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Bert",
+          exercices: [
+            { text: "50 Burpees + 400m Run" }, { text: "100 Push-Ups (pompes) + 400m Run" }, { text: "150 Walking Lunges (fentes marchées) + 400m Run" }, { text: "200 Air Squats + 400m Run" }, { text: "150 Walking Lunges + 400m Run" }, { text: "100 Push-Ups + 400m Run" }, { text: "50 Burpees + 400m Run" }
+             ]
+        }        
+        }},
 
     { title: "Le WOD Hero Mark Klement", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "<strong>7 tours :</strong> 74-44-11 reps de Burpees, Push-ups(pompes), Sit-ups(abdos), Air squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 74 puis 44 puis 11 reps de :", exercises: [
           { text: "Burpees" }, { text: "Pompes (push-ups)" }, { text: "Sit-ups (abdos)" }, { text: "Air squats" }
         ], scaled: { intro: "VERSION SCALED — mêmes séries avec :", exercises: [
           { text: "Burpees sans sauts et/ou sans pompes" }, { text: "Pompes sur les genoux ou inclinées" }
-        ]}, conseil: "129 reps par exercice au total." }},
+        ]}, conseil: "129 reps par exercice au total.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Mark Klement",
+          exercices: [
+            { text: "74 Burpees / 74 Pompes (push-ups) / 74 Sit-ups (abdos) / 74 Air squats" }, { text: "44 Burpees / 44 Pompes (push-ups) / 44 Sit-ups (abdos) / 44 Air squats" }, { text: "11 Burpees / 11 Pompes (push-ups) / 11 Sit-ups (abdos) / 11 Air squats" }
+            ]
+        }        
+        }},
 
     { title: "Le WOD Hero Maupin", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "800m Run(course), 49 Push-ups(pompes), 49 Sit-ups(abdos), 49 Air Squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds :", exercises: [
           { text: "800m de course à pied (run)" }, { text: "49 Pompes (push-ups)" }, { text: "49 Sit-ups (abdos)" }, { text: "49 Air squats" }
         ], scaled: { intro: "VERSION SCALED — 4 rounds :", exercises: [
           { text: "800m de course à pied" }, { text: "49 Pompes inclinées ou sur les genoux" }, { text: "49 Sit-ups ou crunches" }, { text: "49 Air squats" }
-        ]}, conseil: "196 reps par exercice au total." }},
+        ]}, conseil: "196 reps par exercice au total.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Hero Maupin",
+          exercices: [
+            { text: "<u>4 ROUNDS :</u>" },
+            { text: "800m de course à pied (run)" }, { text: "49 Pompes (push-ups)" }, { text: "49 Sit-ups (abdos)" }, { text: "49 Air squats" }
+             ]
+        }                    
+        }},
 
     { title: "Le WOD Chad", material: ["box-jump","gilet-leste"], body: "bas", duration: 0, type: "FOR TIME", level: "Intense", desc: "1000 Box Step-ups. Option : gilet lesté.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "1000 montées de box à 50cm (Box Step-Ups)" }, { text: "Avec gilet lesté : 20 kg/homme, 15 kg/femme" }
         ], scaled: { intro: "VERSION SCALED (sans gilet) :", exercises: [
           { text: "1000 montées de box à 50cm (Box Step-Ups)" }
-        ]}, conseil: "Box de 50 cm." }},
+        ]}, conseil: "Box de 50 cm.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Chad",
+          exercices: [
+            { text: "1000 montées de box à 50cm (Box Step-Ups)" }, { text: "<em>avec gilet lesté de 20 kg/homme, 15 kg/femme et box-jump de 50cm</em>" }
+            ]
+        }        
+        }},
 
     { title: "Le WOD Cooper", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Facile", desc: "10 rounds : 10 Burpees, 10 Air Squats, 10 Push-ups(pompes), 10 Sit-ups(abdos).",
       details: { format_label: "FOR TIME", intro: "Réaliser 10 rounds :", exercises: [
           { text: "10 Burpees" }, { text: "10 Air squats" }, { text: "10 Pompes (push-ups)" }, { text: "10 Sit-ups (abdos)" }
         ], scaled: { intro: "VERSION SCALED — 5 rounds :", exercises: [
           { text: "10 Burpees" }, { text: "10 Air squats" }, { text: "10 Pompes inclinées ou sur les genoux" }, { text: "10 Sit-ups (abdos)" }
-        ]}, conseil: "Durée estimée 30 minutes." }},
+        ]}, conseil: "Durée estimée 30 minutes.",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD Cooper",
+          exercices: [
+            { text: "<u>10 ROUNDS :</u>" },
+            { text: "10 Burpees" }, { text: "10 Air squats" }, { text: "10 Pompes (push-ups)" }, { text: "10 Sit-ups (abdos)" }
+             ]
+        }        
+        }},
 
     { title: "Le WOD It's a trap", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "commencer par 200m Run(course) puis effectuer 100 Burpees avec toutes les 2 minutes un Run de 200m.",
       details: { format_label: "FOR TIME", exercises: [
-          { text: "200m de course à pied au départ (run)" }, { text: "100 Burpees" }, { text: "200m de course à pied toutes les 2 minutes" }
+          { text: "200m de course à pied au départ (run)" }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "..." }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "jusque 100 burpees effectué" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
           { text: "200m de course à pied au départ" }, { text: "50 Burpees" }, { text: "200m de course à pied toutes les 2 minutes" }
-        ]}, conseil: "Toutes les 2 minutes (donc min 2, 4, 6, 8…), stopper les burpees et repartir pour 200m de course." }},
+        ]}, conseil: "OBJECTIF 100 BURPEES : Commencer par 200m de course, puis c'est parti pour 2 minutes de burpees. Après ces 2 minutes c'est reparti pour 200m de course, etc, jusque 100 burpees effectués.",
+         chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD It's a trap",
+          exercices: [
+            { text: "200m de course à pied au départ (run)" }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "..." }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "<em>jusque <u>100 burpees</u> effectués</em>" }
+             ]
+        }       
+        }},
 
     { title: "Le WOD The Longest Mile", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "4 rounds : 10 Burpees, 100m Run(course), 10 Air Squats, 100m Run, 10 Push-ups(pompes), 100m Run, 10 Sit-ups(abdos), 100m Run.",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds :", exercises: [
           { text: "10 Burpees" }, { text: "100m Run" }, { text: "10 Air Squats" }, { text: "100m Run" }, { text: "10 Push-Ups (pompes)" }, { text: "100m Run" }, { text: "10 Sit-Ups (abdos)" }, { text: "100m Run" }
-        ], scaled: { intro: "VERSION SCALED — 3 rounds (mêmes exercices)" }, conseil: "-" }},
+        ], scaled: { intro: "VERSION SCALED — 3 rounds (mêmes exercices)", exercises: [
+          { text: "10 Burpees" }, { text: "100m Run" }, { text: "10 Air Squats" }, { text: "100m Run" }, { text: "10 Push-Ups (pompes)" }, { text: "100m Run" }, { text: "10 Sit-Ups (abdos)" }, { text: "100m Run" }
+        ] }, conseil: "-",
+             chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD The Longest Mile",
+          exercices: [
+            { text: "<u>4 ROUNDS :</u>" },
+            { text: "10 Burpees" }, { text: "100m Run" }, { text: "10 Air Squats" }, { text: "100m Run" }, { text: "10 Push-Ups (pompes)" }, { text: "100m Run" }, { text: "10 Sit-Ups (abdos)" }, { text: "100m Run" }
+             ]
+        }  
+        }},
 
     { title: "Le WOD Durante Core", material: ["poids-corps"], body: "abdos", duration: 0, type: "FOR TIME", level: "Facile", desc: "<strong>ABDOS - 5 tours :</strong> 10 Hollow Rocks, 10 V-ups, 10 Tuck-ups, 10 sec Hollow Hold, 1 minute de pause.",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
@@ -594,7 +824,7 @@ const workouts = [
           { text: "1000m de course à pied" }, { text: "100 Burpees" }, { text: "1000m de course à pied" }
         ]}, conseil: "-" }},
 
-    { title: "WOD For Time 6 EXOS#1", material: ["traction", "poids-corps", "station-dips"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "<strong>4 tours (1' repos) :</strong> 10 Tractions(pull-ups), 15 Tractions australiennes, 10 Dips, 15 Pompes diamant(push-ups), 10 Fentes/jambe(lunges), 15 Squats.",
+    { title: "WOD For Time 6 EXOS#1", material: ["traction", "station-dips"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "<strong>4 tours (1' repos) :</strong> 10 Tractions(pull-ups), 15 Tractions australiennes, 10 Dips, 15 Pompes diamant(push-ups), 10 Fentes/jambe(lunges), 15 Squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds (1 min repos entre chaque) :", exercises: [
           { text: "10 Tractions (pull-ups)" }, { text: "15 Tractions australiennes" }, { text: "10 Dips" }, { text: "15 Pompes diamant" }, { text: "10 Fentes/jambe (lunges)" }, { text: "15 Squats" }, { text: "1 minute de repos" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -613,7 +843,7 @@ const workouts = [
           { text: "Pompes inclinées ou sur genoux" }, { text: "Tractions avec TRX ou élastique" }, { text: "Remplacer les sit-ups par des crunches" }
         ]}, conseil: "-" }},
 
-    { title: "WOD 1000 REPS", material: ["poids-corps", "traction", "station-dips", "box-jump"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "100 Tractions australiennes(pull-ups), 100 Pompes diamants(push-ups), 100 Squats jumps, 100 Mountain climbers, 100 Burpees, 100 Dips, 100 Gainage dynamique, 100 Box jumps, 100 Relevés de jambe, 100 Fentes marchées(walking lunges)",
+    { title: "WOD 1000 REPS", material: ["traction", "station-dips", "box-jump"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "100 Tractions australiennes(pull-ups), 100 Pompes diamants(push-ups), 100 Squats jumps, 100 Mountain climbers, 100 Burpees, 100 Dips, 100 Gainage dynamique, 100 Box jumps, 100 Relevés de jambe, 100 Fentes marchées(walking lunges)",
       details: { format_label: "FOR TIME — 1000 REPS", exercises: [
           { text: "100 Tractions australiennes" }, { text: "100 Pompes diamants" }, { text: "100 Squats jump" }, { text: "100 Mountain climbers" }, { text: "100 Burpees" }, { text: "100 Dips" }, { text: "100 Gainage dynamique" }, { text: "100 Box jump" }, { text: "100 Relevés de jambes" }, { text: "100 Fentes marchées (walking lunges)" }
         ], conseil: "WOD haut niveau." }},
@@ -623,7 +853,7 @@ const workouts = [
           { text: "Étape 1 : 36 reps × 4 exercices (1 fois)" }, { text: "Étape 2 : 18 reps × 4 exercices (2 fois)" }, { text: "Étape 3 : 12 reps × 4 exercices (3 fois)" }, { text: "Étape 4 : 9 reps × 4 exercices (4 fois)" }, { text: "Étape 5 : 6 reps × 4 exercices (6 fois)" }
         ], conseil: "720 reps au total. À chaque étape on effectue 36 reps de chaque mouvement." }},
 
-    { title: "WOD HYBRID ANDRE", material: ["poids-corps", "rameur"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", desc: "<strong>FOR TIME:</strong> alternance Rameur(row), Burpees.",
+    { title: "WOD HYBRID ANDRE", material: ["rameur"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", desc: "<strong>FOR TIME:</strong> alternance Rameur(row), Burpees.",
       details: { format_label: "HYBRID — FOR TIME", exercises: [
           { text: "1000m Rameur" }, { text: "50 Burpees" }, { text: "800m Rameur" }, { text: "40 Burpees" }, { text: "600m Rameur" }, { text: "30 Burpees" }, { text: "400m Rameur" }, { text: "20 Burpees" }, { text: "200m Rameur" }, { text: "10 Burpees" }
         ], conseil: "Durée estimée 40 minutes." }},
@@ -699,7 +929,7 @@ const workouts = [
           { text: "Pompes inclinées ou sur les genoux" }, { text: "Remplacer les sit-ups par des crunches" }
         ]}, conseil: "-" }},
 
-    { title: "RENFO 5TOURS/3EXOS", material: ["poids-corps", "station-dips"], body: "complet", duration: 0, type: "MUSCU", level: "Facile", desc: "20 Squats, 10 Dips, 1 min de gainage(abdos).",
+    { title: "RENFO 5TOURS/3EXOS", material: ["station-dips"], body: "complet", duration: 0, type: "MUSCU", level: "Facile", desc: "20 Squats, 10 Dips, 1 min de gainage(abdos).",
       details: { format_label: "RENFO — 5 TOURS", intro: "Enchaîner les 5 tours :", exercises: [
           { text: "20 Squats" }, { text: "10 Dips" }, { text: "1 minute de gainage" }, { text: "1 minute de repos" }
         ], conseil: "Alterner le type de gainage (latéral, dynamique, appui main, appui coude). Dips : sur station ou entre 2 bancs." }},

@@ -344,7 +344,20 @@
             .phase-time-big { font-size: 4em; }
             .btn-ctrl { padding: 12px 12px; font-size: 0.85em; min-width: 68px; }
         }
-    </style>
+    
+        .score-right {
+            display: flex; align-items: center; gap: 8px;
+        }
+        .btn-raz {
+            background: #c0392b; border: none; color: #fff;
+            border-radius: 6px; padding: 0 12px;
+            height: 42px; min-width: 44px;
+            font-size: 0.75em; font-weight: 700; cursor: pointer;
+            letter-spacing: 0.05em; flex-shrink: 0;
+            transition: background 0.15s;
+        }
+        .btn-raz:hover { background: #96281b; }
+        </style>
 </head>
 <body>
 
@@ -494,19 +507,21 @@
         <div class="score-counters" style="background:#0f1b35; border-radius:0; padding:14px 20px; border-top:1px solid #1e3050;">
             <div class="score-counter-row" style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px;">
                 <span style="font-size:1em; font-weight:700; color:var(--text-light); min-width:80px;">🔁 ROUNDS</span>
-                <div class="stepper" style="flex-shrink:0;">
+                <div class="score-right"><div class="stepper" style="flex-shrink:0;">
                     <button class="btn-step" onclick="scoreStep('amrap-rounds',-1)">−</button>
                     <input type="number" class="config-val" id="amrap-rounds" value="0" min="0" max="999" readonly style="width:70px; font-size:1.3em; font-weight:900; color:var(--accent);">
                     <button class="btn-step" onclick="scoreStep('amrap-rounds',1)">+</button>
                 </div>
+                <button class="btn-raz" onclick="document.getElementById('amrap-rounds').value=0">RaZ</button></div>
             </div>
             <div class="score-counter-row" style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
                 <span style="font-size:1em; font-weight:700; color:var(--text-light); min-width:80px;">💪 REPS</span>
-                <div class="stepper" style="flex-shrink:0;">
+                <div class="score-right"><div class="stepper" style="flex-shrink:0;">
                     <button class="btn-step" onclick="scoreStep('amrap-reps',-1)">−</button>
                     <input type="number" class="config-val" id="amrap-reps" value="0" min="0" max="9999" readonly style="width:70px; font-size:1.3em; font-weight:900; color:var(--accent);">
                     <button class="btn-step" onclick="scoreStep('amrap-reps',1)">+</button>
                 </div>
+                <button class="btn-raz" onclick="document.getElementById('amrap-reps').value=0">RaZ</button></div>
             </div>
         </div>
 
@@ -622,19 +637,21 @@
         <div style="background:#0f1b35; padding:14px 20px; border-top:1px solid #1e3050;">
             <div style="display:flex; align-items:center; justify-content:space-between; gap:12px; margin-bottom:10px;">
                 <span style="font-size:1em; font-weight:700; color:var(--text-light); min-width:80px;">🔁 ROUNDS</span>
-                <div class="stepper" style="flex-shrink:0;">
+                <div class="score-right"><div class="stepper" style="flex-shrink:0;">
                     <button class="btn-step" onclick="scoreStep('ft-rounds',-1)">−</button>
                     <input type="number" class="config-val" id="ft-rounds" value="0" min="0" max="999" readonly style="width:70px; font-size:1.3em; font-weight:900; color:var(--accent);">
                     <button class="btn-step" onclick="scoreStep('ft-rounds',1)">+</button>
                 </div>
+                <button class="btn-raz" onclick="document.getElementById('ft-rounds').value=0">RaZ</button></div>
             </div>
             <div style="display:flex; align-items:center; justify-content:space-between; gap:12px;">
                 <span style="font-size:1em; font-weight:700; color:var(--text-light); min-width:80px;">💪 REPS</span>
-                <div class="stepper" style="flex-shrink:0;">
+                <div class="score-right"><div class="stepper" style="flex-shrink:0;">
                     <button class="btn-step" onclick="scoreStep('ft-reps',-1)">−</button>
-                    <input type="number" class="config-val" id="ft-reps" value="0" min="0" max="9999" readonly style="width:70px; font-size:1.3em; font-weight:900; color:var(--accent);">
+                    <input type="number" class="config-val" id="ft-reps" value="0" min="0" max="999" readonly style="width:70px; font-size:1.3em; font-weight:900; color:var(--accent);">
                     <button class="btn-step" onclick="scoreStep('ft-reps',1)">+</button>
                 </div>
+                <button class="btn-raz" onclick="document.getElementById('ft-reps').value=0">RaZ</button></div>
             </div>
         </div>
 
