@@ -413,9 +413,9 @@ const workouts = [
         }
       }},
     
-    { title: "Le WOD du Voyageur#2", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "100 Air Squats, 50 Push-ups(pompes), 100 Sit-ups(abdos), 50 Push-ups, 100 Air Squats.",
+    { title: "Le WOD du Voyageur#2", material: ["elastique"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "100 Air Squats, 50 Push-ups(pompes), 50 Rowings élastique (tirages dos à l'élastique),  100 Sit-ups(abdos), 50 Rowings élastique (tirages dos à l'élastique), 50 Push-ups, 100 Air Squats.",
       details: { format_label: "FOR TIME", exercises: [
-          { text: "100 Air squats" }, { text: "50 Pompes (push-ups)" },{ text: "50 Rowing élastique (tirage dos à l'élastique)" }, { text: "100 Sit-ups (abdos)" },{ text: "50 Rowing élastique (tirage dos à l'élastique)" }, { text: "50 Pompes (push-ups)" }, { text: "100 Air squats" }
+          { text: "100 Air squats" }, { text: "50 Pompes (push-ups)" },{ text: "50 Rowings élastique (tirages dos à l'élastique)" }, { text: "100 Sit-ups (abdos)" },{ text: "50 Rowings élastique (tirages dos à l'élastique)" }, { text: "50 Pompes (push-ups)" }, { text: "100 Air squats" }
         ], conseil: "Durée estimée 20 minutes. Entraînement parfait en déplacement.",
         chargeable: true,
         chargement: {
@@ -424,9 +424,9 @@ const workouts = [
           exercices: [
             { text: "100 Air squats" },
             { text: "50 Pompes (push-ups)" },
-            { text: "50 Rowing élastique (tirage dos à l'élastique)" },
+            { text: "50 Rowings élastique (tirages dos à l'élastique)" },
             { text: "100 Sit-ups (abdos)" },
-            { text: "50 Rowing élastique (tirage dos à l'élastique)" },
+            { text: "50 Rowings élastique (tirages dos à l'élastique)" },
             { text: "50 Pompes (push-ups)" },
             { text: "100 Air squats" }
           ]
@@ -959,7 +959,41 @@ const workouts = [
           { text: "Échauffement : 10 minutes (damper 2-3)" }, { text: "Fractionné : 10 minutes — 10 fois :" }, { text: "→ 1 minute intensité max. (pédalage le plus rapide possible)" }, { text: "→ 1 minute de récupération" }, { text: "Récupération : 10 minutes (damper 2-3)" }
         ], conseil: "Adapter le damper (minimum 3) et le RPM selon votre niveau." }},
 
-    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pyramidale pendant 40 minutes. 12 niveaux disponibles.",
+
+    // ══════════════════════════════════════════════════════════
+    // SÉANCE 4 ERGOMÈTRES — 60 MIN
+    // ══════════════════════════════════════════════════════════
+    {
+        title: "Séance Quatuor Hybride",
+        material: ["ski-erg", "rameur", "bike-erg", "tapis-incurve"],
+        body: "complet",
+        duration: 60,
+        type: "CARDIO",
+        level: "Moyen",
+        desc: "4 ateliers à enchaîner : SkiErg, Rameur, BikeErg et Tapis Incurvé. <br>▪️2 séquences de travail. <br>▪️5 minutes par atelier. <br>▪️12 niveaux de progression. <br>▪️1 heure.",
+        details: {
+            format_label: "CARDIO — 60 MINUTES",
+            type_special: "quatre_ergo",
+            conseil: "Respectez votre niveau de split/allure sur chaque atelier. Profitez des transitions pour vous hydrater. Vous ne connaissez pas votre niveau de départ, prenez les allures de course sur tapis pour vous situer (9km/h🟢 ➔ 17km/h🔴)",
+            chargeable: true,
+            niveaux: [
+                { n:  1, rameur: "2:35", skierg: "2:42", bikeerg: "2:10", tapis: "9.0"  },
+                { n:  2, rameur: "2:30", skierg: "2:37", bikeerg: "2:05", tapis: "9.5"  },
+                { n:  3, rameur: "2:25", skierg: "2:32", bikeerg: "2:00", tapis: "10.5" },
+                { n:  4, rameur: "2:20", skierg: "2:27", bikeerg: "1:55", tapis: "11.5" },
+                { n:  5, rameur: "2:15", skierg: "2:22", bikeerg: "1:50", tapis: "12.5" },
+                { n:  6, rameur: "2:10", skierg: "2:17", bikeerg: "1:45", tapis: "13.0" },
+                { n:  7, rameur: "2:05", skierg: "2:12", bikeerg: "1:40", tapis: "13.5" },
+                { n:  8, rameur: "2:00", skierg: "2:07", bikeerg: "1:35", tapis: "14.0" },
+                { n:  9, rameur: "1:55", skierg: "2:02", bikeerg: "1:30", tapis: "14.5" },
+                { n: 10, rameur: "1:50", skierg: "1:57", bikeerg: "1:25", tapis: "15.0" },
+                { n: 11, rameur: "1:45", skierg: "1:52", bikeerg: "1:20", tapis: "16.0" },
+                { n: 12, rameur: "1:40", skierg: "1:47", bikeerg: "1:15", tapis: "17.0" }
+            ]
+        }
+    },
+
+    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pyramidale. <br>▪️12 niveaux disponibles.  <br>▪️40 minutes",
       details: {
         format_label: "CARDIO PYRAMIDAL — 40 MINUTES",
         type_special: "run_tempo",
@@ -1299,6 +1333,7 @@ function displayWorkouts() {
 // =============================================
 
 function openModal(index) {
+    var i, activeClass; // variables partagées entre les boucles
     const w = workouts[index];
     const d = w.details;
     if (!d) return;
@@ -1321,13 +1356,51 @@ function openModal(index) {
     let html = '';
 
     // Cas spécial RUN TEMPO : sélecteur de niveau (traitement avant tout le reste)
+    // Cas spécial 4 ergomètres
+    if (d.type_special === 'quatre_ergo') {
+        html += '<p class="modal-format-label">' + d.format_label + '</p>';
+        html += '<div class="run-tempo-selector">';
+        html += '<p class="modal-section-title">Choisir votre niveau</p>';
+        html += '<div class="niveau-buttons">';
+        for (i = 1; i <= 12; i++) {
+            activeClass = i === 1 ? ' active' : '';
+            html += '<button class="btn-niveau' + activeClass + '" onclick="selectNiveauErgo(' + i + ')" id="btn-ergo-' + i + '">' + i + '</button>';
+        }
+        html += '</div></div>';
+        html += '<div id="ergo-phases"></div>';
+        if (d.conseil) {
+            html += '<div class="modal-conseil"><strong>&#x1F4A1; Conseil</strong>' + d.conseil + '</div>';
+        }
+        document.getElementById('modal-body').innerHTML = html;
+        window._niveauxActifs = d.niveaux;
+        window._niveauActif   = 1;
+        selectNiveauErgo(1);
+
+        var rtOverlay2 = document.getElementById('modal-overlay');
+        rtOverlay2.classList.add('open');
+        document.body.style.overflow = 'hidden';
+
+        var footer3 = document.getElementById('modal-footer');
+        var existingBtn3 = document.getElementById('btn-charger');
+        if (existingBtn3) existingBtn3.remove();
+        if (d.chargeable && footer3) {
+            var btnCharger3 = document.createElement('button');
+            btnCharger3.id = 'btn-charger';
+            btnCharger3.className = 'btn-modal-charger';
+            btnCharger3.textContent = '🚀 Charger dans Créer sa séance';
+            btnCharger3.onclick = function() { chargerSeanceErgo(); };
+            footer3.insertBefore(btnCharger3, footer3.firstChild);
+        }
+        return;
+    }
+
     if (d.type_special === 'run_tempo' || d.type_special === 'avec_niveaux') {
         html += '<p class="modal-format-label">' + d.format_label + '</p>';
         html += '<div class="run-tempo-selector">';
         html += '<p class="modal-section-title">Choisir votre niveau</p>';
         html += '<div class="niveau-buttons">';
-        for (var i = 1; i <= 12; i++) {
-            var activeClass = i === 1 ? ' active' : '';
+        for (i = 1; i <= 12; i++) {
+            activeClass = i === 1 ? ' active' : '';
             html += '<button class="btn-niveau' + activeClass + '" onclick="selectNiveau(' + i + ')" id="btn-niveau-' + i + '">' + i + '</button>';
         }
         html += '</div></div>';
@@ -1514,6 +1587,113 @@ function selectNiveau(n) {
 
     var container = document.getElementById('run-tempo-phases');
     if (container) container.innerHTML = phaseHtml;
+}
+
+function selectNiveauErgo(n) {
+    window._niveauActif = n;
+    var niveaux = window._niveauxActifs;
+    if (!niveaux) return;
+    var niveau = niveaux.find(function(nv) { return nv.n === n; });
+    if (!niveau) return;
+
+    for (var i = 1; i <= 12; i++) {
+        var btn = document.getElementById('btn-ergo-' + i);
+        if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
+    }
+
+    var html = '<div class="run-tempo-phases-wrap">';
+    html += '<p class="modal-section-title" style="margin:12px 0 8px;">📋 Déroulé de la séance — Niveau ' + n + '</p>';
+
+    // Tableau des rythmes
+    html += '<table style="width:100%; border-collapse:collapse; font-size:0.88em; margin-bottom:14px;">';
+    html += '<thead><tr style="background:#f0f0f0;">';
+    html += '<th style="padding:6px 8px; text-align:left;">Atelier</th>';
+    html += '<th style="padding:6px 8px; text-align:center;">Objectif</th>';
+    html += '</tr></thead><tbody>';
+    html += '<tr style="border-bottom:1px solid #eee;"><td style="padding:6px 8px;">⛷️ SkiErg</td><td style="padding:6px 8px; text-align:center; font-weight:700; color:#1a237e;">' + niveau.skierg + ' /500m</td></tr>';
+    html += '<tr style="border-bottom:1px solid #eee;"><td style="padding:6px 8px;">🚣 Rameur</td><td style="padding:6px 8px; text-align:center; font-weight:700; color:#1a237e;">' + niveau.rameur + ' /500m</td></tr>';
+    html += '<tr style="border-bottom:1px solid #eee;"><td style="padding:6px 8px;">🚴 BikeErg</td><td style="padding:6px 8px; text-align:center; font-weight:700; color:#1a237e;">' + niveau.bikeerg + ' /1000m</td></tr>';
+    html += '<tr><td style="padding:6px 8px;">🏃 Tapis</td><td style="padding:6px 8px; text-align:center; font-weight:700; color:#1a237e;">' + niveau.tapis + ' km/h</td></tr>';
+    html += '</tbody></table>';
+
+    // Déroulé
+    html += '<ul class="modal-exercises run-tempo-list">';
+    var deroulé = [
+        { min: "0:00-0:02",   label: "Echauffement 1/3 : Mobilisation articulaire",                  cls: "run-recup" },
+        { min: "0:02-0:06",   label: "Echauffement 2/3 : BikeErg ou run léger",                       cls: "run-recup" },
+        { min: "0:06-0:07:30",label: "Echauffement 1/3 : BikeErg ou run — on augmente le rythme",           cls: "run-recup" },
+        { min: "0:07:30-0:08",label: "⏸ Transition vers SkiErg",                  cls: "run-recup" },
+        { min: "0:08-0:13",   label: "⛷️ SkiErg — " + niveau.skierg + " /500m",   cls: "run-effort" },
+        { min: "0:13-0:14",   label: "⏸ Repos / transition Rameur",                cls: "run-recup" },
+        { min: "0:14-0:19",   label: "🚣 Rameur — " + niveau.rameur + " /500m",    cls: "run-effort" },
+        { min: "0:19-0:20",   label: "⏸ Repos / transition BikeErg",              cls: "run-recup" },
+        { min: "0:20-0:25",   label: "🚴 BikeErg — " + niveau.bikeerg + " /1000m", cls: "run-effort" },
+        { min: "0:25-0:26",   label: "⏸ Repos / transition Tapis",                cls: "run-recup" },
+        { min: "0:26-0:31",   label: "🏃 Tapis — " + niveau.tapis + " km/h",      cls: "run-effort" },
+        { min: "0:31-0:34",   label: "⏸ Pause mi-parcours — hydratez-vous !",     cls: "run-recup" },
+        { min: "0:34-0:39",   label: "⛷️ SkiErg — " + niveau.skierg + " /500m",   cls: "run-effort" },
+        { min: "0:39-0:40",   label: "⏸ Repos / transition Rameur",                cls: "run-recup" },
+        { min: "0:40-0:45",   label: "🚣 Rameur — " + niveau.rameur + " /500m",    cls: "run-effort" },
+        { min: "0:45-0:46",   label: "⏸ Repos / transition BikeErg",              cls: "run-recup" },
+        { min: "0:46-0:51",   label: "🚴 BikeErg — " + niveau.bikeerg + " /1000m", cls: "run-effort" },
+        { min: "0:51-0:52",   label: "⏸ Repos / transition Tapis",                cls: "run-recup" },
+        { min: "0:52-0:57",   label: "🏃 Tapis — " + niveau.tapis + " km/h",      cls: "run-effort" },
+        { min: "0:57-1:00",   label: "🧘 Récupération — course lente ou BikeErg.", cls: "run-recup" }
+    ];
+    deroulé.forEach(function(d) {
+        html += '<li class="' + d.cls + '">';
+        html += '<span class="run-min">' + d.min + '</span>';
+        html += '<span class="run-speed">' + d.label + '</span>';
+        html += '</li>';
+    });
+    html += '</ul></div>';
+
+    var container = document.getElementById('ergo-phases');
+    if (container) container.innerHTML = html;
+}
+
+function chargerSeanceErgo() {
+    var niveauActif = window._niveauActif || 1;
+    var niveaux = window._niveauxActifs;
+    var niveau = niveaux ? niveaux.find(function(nv) { return nv.n === niveauActif; }) : null;
+    if (!niveau) return;
+
+    var phases = [
+        // Échauffement
+        { type: 'warmup', sec: 120,  text: 'Echauffement 1/3 : Mobilisation articulaire' },
+        { type: 'warmup', sec: 240,  text: 'Echauffement 2/3 : BikeErg ou run léger' },
+        { type: 'warmup', sec: 90,   text: 'Echauffement 1/3 : BikeErg ou run — 2 accélérations de 30sec' },
+        { type: 'repos',  sec: 30,   text: 'Transition vers SkiErg, début de la première séquence' },
+        // Tour 1
+        { type: 'travail', sec: 300, text: '⛷️ SkiErg — ' + niveau.skierg + ' /500m' },
+        { type: 'repos',   sec: 60,  text: 'Repos / transition Rameur' },
+        { type: 'travail', sec: 300, text: '🚣 Rameur — ' + niveau.rameur + ' /500m' },
+        { type: 'repos',   sec: 60,  text: 'Repos / transition BikeErg' },
+        { type: 'travail', sec: 300, text: '🚴 BikeErg — ' + niveau.bikeerg + ' /1000m' },
+        { type: 'repos',   sec: 60,  text: 'Repos / transition Tapis' },
+        { type: 'travail', sec: 300, text: '🏃 Tapis — ' + niveau.tapis + ' km/h' },
+        // Pause mi-parcours
+        { type: 'repos',   sec: 180, text: '⏸ Pause mi-parcours — hydratez-vous ! prêt pour la seconde séquence? (SkiErg)' },
+        // Tour 2
+        { type: 'travail', sec: 300, text: '⛷️ SkiErg — ' + niveau.skierg + ' /500m' },
+        { type: 'repos',   sec: 60,  text: 'Repos / transition Rameur' },
+        { type: 'travail', sec: 300, text: '🚣 Rameur — ' + niveau.rameur + ' /500m' },
+        { type: 'repos',   sec: 60,  text: 'Repos / transition BikeErg' },
+        { type: 'travail', sec: 300, text: '🚴 BikeErg — ' + niveau.bikeerg + ' /1000m' },
+        { type: 'repos',   sec: 60,  text: 'Repos / transition Tapis' },
+        { type: 'travail', sec: 300, text: '🏃 Tapis — ' + niveau.tapis + ' km/h' },
+        // Récup
+        { type: 'recup',   sec: 180, text: '🧘 Récupération — course lente ou BikeErg. 🔥BELLE SEANCE!🔥' }
+    ];
+
+    var chargement = {
+        type: 'surmesure',
+        nom: 'Séance 4 Ergomètres — Niveau ' + niveauActif,
+        phases: phases
+    };
+
+    var encoded = encodeURIComponent(JSON.stringify(chargement));
+    window.location.href = 'seances_perso.html?seance=' + encoded;
 }
 
 function closeModal() {

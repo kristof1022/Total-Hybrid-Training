@@ -187,10 +187,11 @@ main h1, main h2 {
 .card-hybrid h3 { color: #004d40; }
 .card-hybrid .btn-full { background-color: #00695c; color: #fff; }
 
-/* MUSCU - Gris anthracite */
-.card-muscu { border-top-color: #424242; background: #f9f9f9; }
+/* MUSCU - parme */
+.card-muscu { border-top-color: #7fa5fa; background: #f9f9f9; }
 .card-muscu h3 { color: #212121; }
-.card-muscu .btn-full { background-color: #424242; color: #fff; }
+.card-muscu .btn-full { background-color: #7fa5fa; color: #000; }
+.card-muscu .btn-full:hover { background-color: #5789fa; }
 
 /* CARDIO FRACTIONNE - Gris anthracite */
 .card-cardio { border-top-color: #000; background: #f9f9f9; }
@@ -222,6 +223,7 @@ main h1, main h2 {
 .btn-full {
     display: block;
     width: 100%;
+    border: none;
     padding: 12px 0;
     background-color: #000;
     color: #fff;
@@ -263,9 +265,33 @@ main h1, main h2 {
 
 /* --- Responsive et Impression --- */
 @media (max-width: 768px) {
-    .nav-container { flex-direction: column; }
+    .nav-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 0 10px;
+        justify-content: center;
+    }
+    .logo { padding: 6px 0; }
     .nav-spacer { display: none; }
-    nav ul { flex-direction: column; }
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+        padding: 4px 0;
+    }
+    nav ul li {
+        flex: 0 0 50%;
+        text-align: center;
+        border-top: 1px solid #222;
+    }
+    nav ul li a {
+        padding: 12px 8px;
+        font-size: 0.82em;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
     .submenu { position: static; width: 100%; }
 }
 
@@ -467,7 +493,7 @@ main h1, main h2 {
 #modal-box.type-tabata   { border-top: 5px solid #fb8c00; }
 #modal-box.type-for-time { border-top: 5px solid #1a237e; }
 #modal-box.type-hybrid    { border-top: 5px solid #00695c; }
-#modal-box.type-muscu    { border-top: 5px solid #424242; }
+#modal-box.type-muscu    { border-top: 5px solid #7fa5fa; }
 #modal-box.type-cardio   { border-top: 5px solid #000; }
 
 #modal-box.type-emom   .modal-badge-type { background: #d4af37; color: #000; }
@@ -475,7 +501,7 @@ main h1, main h2 {
 #modal-box.type-tabata .modal-badge-type { background: #fb8c00; }
 #modal-box.type-for-time .modal-badge-type { background: #1a237e; }
 #modal-box.type-hybrid  .modal-badge-type { background: #00695c; }
-#modal-box.type-muscu  .modal-badge-type { background: #424242; }
+#modal-box.type-muscu  .modal-badge-type { background: #7fa5fa; }
 #modal-box.type-cardio .modal-badge-type { background: #000; }
 
 /* Bouton fermer */
