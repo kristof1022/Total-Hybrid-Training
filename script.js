@@ -1966,482 +1966,307 @@ const workouts = [
         }
     },
   
-    
-    {
-        title: "Séances Fractionné course",
-        material: ["poids-corps", "tapis-incurve"],
+   // ══════════════════════════════════════════════════════════
+    // PLANIFICATION 3 JOURS — SIMILI FULL BODY HOME
+    // ══════════════════════════════════════════════════════════
+       {
+        title: "💪Pectoraux | Jambes | Dos | Epaules/Biceps",
+        material: ["barre","haltere","elastique","machineguidee","jammer"],
         body: "complet",
         duration: 0,
-        type: "CARDIO",
+        type: "MUSCU",
         level: "Moyen",
-        desc: "Séances de fractionné en course à pied pour s'améliorer au Luc Léger. Deux niveaux : débutant et confirmé.",
+        desc: "Séance ① ➡️ Mouvement principal : Développé couché | Soulevé de terre jambes tendues | Rowing horizontal poulie basse | Épaules/Biceps (Superset) ",
         details: {
-            format_label: "FRACTIONNÉ COURSE À PIED",
-            type_special: "fractionne",
-            conseil: "S'échauffer en courant 10 minutes avant chaque séance. Alterner courses rapides et récupérations, sur piste (distances) ou en nature (temps d'effort)."
-        }
-    },
-
-    { title: "Séance BikeERG orientée FORCE", material: ["bike-erg"], body: "bas", duration: 40, type: "CARDIO", level: "Intense",
-      desc: "Séance de fractionné 40 min sur BikeERG. ▪️ 10 min échauffement. ▪️ 20 min fractionné (10×1min effort / 1min récup). ▪️ 10 min retour au calme. Choisir son damper et son plage RPM cible.",
-      details: {
-        format_label: "BIKEERG FORCE — 40 MINUTES",
-        type_special: "bikeerg_force",
-        conseil: "Le damper contrôle la résistance de l'air : plus il est élevé, plus chaque coup de pédale est lourd. Maintenez le RPM sélectionné pendant toute la minute d'effort — c'est la clé de la séance, si c'est trop ➔ dur descendre de niveaux. Échauffement et retour au calme : damper 2ou3.<br>LES NIVEAUX :<br>🐣Rookie - DAMPER 3<br>🥊Challenger - DAMPER 4<br>⚔️ Warrior - DAMPER 5<br>👑 Légende - DAMPER 6",
-        chargeable: true,
-        dampers: [3, 4, 5, 6],
-        rpms: ["70↔75", "75↔80", "80↔85", "85↔90", "90↔95"]
-      }
-    },
-
-    { title: "Séance intervalle BikeERG", material: ["bike-erg"], body: "bas", duration: 30, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pendant 30 minutes.",
-      details: { format_label: "SÉANCE CARDIO — 30 MINUTES", exercises: [
-          { text: "Échauffement : 10 minutes (damper 2-3)" }, { text: "Fractionné : 14 minutes — 7 fois :" }, { text: "→ 1 minute intensité max. (pédalage le plus rapide possible)" }, { text: "→ 1 minute de récupération" }, { text: "Récupération : 10 minutes (damper 2-3)" }
-        ], conseil: "Adapter le damper (minimum 3) et le RPM selon votre niveau.",
-        chargeable: true,
-                  chargement: {
-                  type: "surmesure",
-                  nom: "Séance intervalle BikeERG 30 minutes",
-                  repeat: 0,
-                  phases: [
-                    { type: "warmup", sec: 600, text: "échauffement : mettre le damper(levier de résistance) sur 2-3" },
-                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
-                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
-                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
-                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
-                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
-                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
-                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
-                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
-                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
-                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
-                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
-                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
-                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
-                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
-                    { type: "recup", sec: 360, text: "retour au calme : damper 2-3" },
-                  ]
-                  }       
-        }},
-
-
-    // ══════════════════════════════════════════════════════════
-    // SÉANCE 4 ERGOMÈTRES — 60 MIN
-    // ══════════════════════════════════════════════════════════
-    {
-        title: "Séance Quatuor Hybride",
-        material: ["ski-erg", "rameur", "bike-erg", "tapis-incurve"],
-        body: "complet",
-        duration: 60,
-        type: "CARDIO",
-        level: "Moyen",
-        desc: "4 ateliers à enchaîner : SkiErg, Rameur, BikeErg et Tapis Incurvé. <br>▪️2 séquences de travail. <br>▪️5 minutes par atelier. <br>▪️12 niveaux de progression. <br>▪️1 heure.",
-        details: {
-            format_label: "CARDIO — 60 MINUTES",
-            type_special: "quatre_ergo",
-            conseil: "Respectez votre niveau de split/allure sur chaque atelier. Profitez des transitions pour vous hydrater. Vous ne connaissez pas votre niveau de départ, prenez les allures de course sur tapis pour vous situer (9km/h🟢 ➔ 17km/h🔴)",
-            chargeable: true,
-            niveaux: [
-                { n:  1, rameur: "2:35", skierg: "2:42", bikeerg: "2:10", tapis: "9.0"  },
-                { n:  2, rameur: "2:30", skierg: "2:37", bikeerg: "2:05", tapis: "9.5"  },
-                { n:  3, rameur: "2:25", skierg: "2:32", bikeerg: "2:00", tapis: "10.5" },
-                { n:  4, rameur: "2:20", skierg: "2:27", bikeerg: "1:55", tapis: "11.5" },
-                { n:  5, rameur: "2:15", skierg: "2:22", bikeerg: "1:50", tapis: "12.5" },
-                { n:  6, rameur: "2:10", skierg: "2:17", bikeerg: "1:45", tapis: "13.0" },
-                { n:  7, rameur: "2:05", skierg: "2:12", bikeerg: "1:40", tapis: "13.5" },
-                { n:  8, rameur: "2:00", skierg: "2:07", bikeerg: "1:35", tapis: "14.0" },
-                { n:  9, rameur: "1:55", skierg: "2:02", bikeerg: "1:30", tapis: "14.5" },
-                { n: 10, rameur: "1:50", skierg: "1:57", bikeerg: "1:25", tapis: "15.0" },
-                { n: 11, rameur: "1:45", skierg: "1:52", bikeerg: "1:20", tapis: "16.0" },
-                { n: 12, rameur: "1:40", skierg: "1:47", bikeerg: "1:15", tapis: "17.0" }
-            ]
-        }
-    },
-
-    // ══════════════════════════════════════════════════════════
-    // SÉANCE RAMEUR TEMPO
-    // ══════════════════════════════════════════════════════════
-    {
-        title: "Séance RAMEUR TEMPO",
-        material: ["rameur"],
-        body: "complet",
-        duration: 40,
-        type: "CARDIO",
-        level: "Moyen",
-        desc: "Séance structurée sur rameur Concept2 — 40 minutes avec 6 phases de travail progressif. 12 niveaux disponibles. Damper 3-5.",
-        details: {
-            format_label: "RAMEUR TEMPO — 40 MINUTES",
-            type_special: "avec_niveaux",
-            conseil: "Séance parfaite sur rameur Concept2 (erg). Le niveau correspond approximativement aux paliers du test Cooper/VO2max. Min 1-10 : échauffement avec 3 accélérations de 30 sec. Min 32-40 : retour au calme. Damper conseillé : 1-3 pour l'échauffement/retour au calme, 3-5 pour les phases de travail.",
-            chargeable: true,
-            niveaux: [
-                { n:  1, attaque: "2:35", transition: "2:50", base: "3:00", remontee: "2:50", soutenu: "2:40", pointe: "2:30" },
-                { n:  2, attaque: "2:30", transition: "2:40", base: "2:50", remontee: "2:40", soutenu: "2:35", pointe: "2:25" },
-                { n:  3, attaque: "2:25", transition: "2:35", base: "2:45", remontee: "2:35", soutenu: "2:30", pointe: "2:20" },
-                { n:  4, attaque: "2:20", transition: "2:30", base: "2:40", remontee: "2:30", soutenu: "2:25", pointe: "2:15" },
-                { n:  5, attaque: "2:15", transition: "2:25", base: "2:35", remontee: "2:25", soutenu: "2:20", pointe: "2:10" },
-                { n:  6, attaque: "2:10", transition: "2:20", base: "2:30", remontee: "2:20", soutenu: "2:15", pointe: "2:05" },
-                { n:  7, attaque: "2:05", transition: "2:15", base: "2:25", remontee: "2:15", soutenu: "2:10", pointe: "2:00" },
-                { n:  8, attaque: "2:00", transition: "2:10", base: "2:20", remontee: "2:10", soutenu: "2:05", pointe: "1:55" },
-                { n:  9, attaque: "1:55", transition: "2:05", base: "2:15", remontee: "2:05", soutenu: "2:00", pointe: "1:50" },
-                { n: 10, attaque: "1:50", transition: "2:00", base: "2:10", remontee: "2:00", soutenu: "1:55", pointe: "1:45" },
-                { n: 11, attaque: "1:45", transition: "1:55", base: "2:05", remontee: "1:55", soutenu: "1:50", pointe: "1:40" },
-                { n: 12, attaque: "1:40", transition: "1:50", base: "2:00", remontee: "1:50", soutenu: "1:45", pointe: "1:35" }
-            ]
-        }
-    },
-
-    // SÉANCE SKIERG TEMPO
-    // ══════════════════════════════════════════════════════════
-    {
-        title: "Séance SKIERG TEMPO",
-        material: ["ski-erg"],
-        body: "complet",
-        duration: 40,
-        type: "CARDIO",
-        level: "Moyen",
-        desc: "Séance structurée sur SkiErg Concept2 — 40 minutes avec 6 phases de travail progressif. 12 niveaux disponibles. Haut du corps dominant.",
-        details: {
-            format_label: "SKIERG TEMPO — 40 MINUTES",
-            type_special: "avec_niveaux",
-            conseil: "Séance sur SkiErg Concept2. Le split /500m est l'indicateur clé — il sera naturellement plus lent qu'au rameur (haut du corps uniquement). Les 12 niveaux couvrent du débutant au confirmé. Concentrez-vous sur la technique : traction des bras, gainage, flexion de hanches. Min 0-10 : échauffement avec 3 accélérations. Min 32-40 : retour au calme.",
-            chargeable: true,
-            niveaux: [
-                { n:  1, attaque: "3:00", transition: "3:15", base: "3:25", remontee: "3:15", soutenu: "3:05", pointe: "2:55" },
-                { n:  2, attaque: "2:55", transition: "3:05", base: "3:15", remontee: "3:05", soutenu: "3:00", pointe: "2:50" },
-                { n:  3, attaque: "2:50", transition: "3:00", base: "3:10", remontee: "3:00", soutenu: "2:55", pointe: "2:45" },
-                { n:  4, attaque: "2:45", transition: "2:55", base: "3:05", remontee: "2:55", soutenu: "2:50", pointe: "2:40" },
-                { n:  5, attaque: "2:40", transition: "2:50", base: "3:00", remontee: "2:50", soutenu: "2:45", pointe: "2:35" },
-                { n:  6, attaque: "2:35", transition: "2:45", base: "2:55", remontee: "2:45", soutenu: "2:40", pointe: "2:30" },
-                { n:  7, attaque: "2:30", transition: "2:40", base: "2:50", remontee: "2:40", soutenu: "2:35", pointe: "2:25" },
-                { n:  8, attaque: "2:25", transition: "2:35", base: "2:45", remontee: "2:35", soutenu: "2:30", pointe: "2:20" },
-                { n:  9, attaque: "2:20", transition: "2:30", base: "2:40", remontee: "2:30", soutenu: "2:25", pointe: "2:15" },
-                { n: 10, attaque: "2:15", transition: "2:25", base: "2:35", remontee: "2:25", soutenu: "2:20", pointe: "2:10" },
-                { n: 11, attaque: "2:10", transition: "2:20", base: "2:30", remontee: "2:20", soutenu: "2:15", pointe: "2:05" },
-                { n: 12, attaque: "2:05", transition: "2:15", base: "2:25", remontee: "2:15", soutenu: "2:10", pointe: "2:00" }
-            ]
-        }
-    },
-
-    // SÉANCE ASSAULT BIKE TEMPO
-    // ══════════════════════════════════════════════════════════
-    {
-        title: "Séance ASSAULT BIKE TEMPO",
-        material: ["assault-bike"],
-        body: "complet",
-        duration: 20,
-        type: "CARDIO",
-        level: "Intense",
-        desc: "Séance structurée sur Assault Bike — 20 minutes intenses corps entier. 12 niveaux en RPM. 5 min échauffement + séquence TEMPO + 3 min retour au calme.",
-        details: {
-            format_label: "ASSAULT BIKE TEMPO — 20 MINUTES",
-            type_special: "avec_niveaux",
-            conseil: "L'Assault Bike est l'un des appareils les plus exigeants : la résistance augmente exponentiellement avec la vitesse. Les RPM sont votre boussole — maintenez-les constants pendant les phases d'effort. Récupération active (pédalage très léger) entre chaque phase, ne vous arrêtez pas. Ne sous-estimez jamais cet appareil : commencez au niveau 1 si vous le découvrez.",
-            chargeable: true,
-            niveaux: [
-                { n:  1, attaque: "45-50",  transition: "40-45", base: "35-40", remontee: "42-47", soutenu: "45-50", pointe: "55-60"  },
-                { n:  2, attaque: "50-55",  transition: "45-50", base: "38-43", remontee: "47-52", soutenu: "50-55", pointe: "60-65"  },
-                { n:  3, attaque: "55-60",  transition: "50-55", base: "42-47", remontee: "52-57", soutenu: "55-60", pointe: "65-70"  },
-                { n:  4, attaque: "58-63",  transition: "53-58", base: "45-50", remontee: "55-60", soutenu: "58-63", pointe: "68-73"  },
-                { n:  5, attaque: "62-67",  transition: "57-62", base: "48-53", remontee: "58-63", soutenu: "62-67", pointe: "72-77"  },
-                { n:  6, attaque: "65-70",  transition: "60-65", base: "52-57", remontee: "62-67", soutenu: "65-70", pointe: "75-80"  },
-                { n:  7, attaque: "68-73",  transition: "63-68", base: "55-60", remontee: "65-70", soutenu: "68-73", pointe: "78-83"  },
-                { n:  8, attaque: "72-77",  transition: "67-72", base: "58-63", remontee: "68-73", soutenu: "72-77", pointe: "82-87"  },
-                { n:  9, attaque: "75-80",  transition: "70-75", base: "62-67", remontee: "72-77", soutenu: "75-80", pointe: "85-90"  },
-                { n: 10, attaque: "78-83",  transition: "73-78", base: "65-70", remontee: "75-80", soutenu: "78-83", pointe: "88-93"  },
-                { n: 11, attaque: "82-87",  transition: "77-82", base: "68-73", remontee: "78-83", soutenu: "82-87", pointe: "92-97"  },
-                { n: 12, attaque: "85-90",  transition: "80-85", base: "72-77", remontee: "82-87", soutenu: "85-90", pointe: "95-100" }
-            ]
-        }
-    },
-
-    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pyramidale. <br>▪️12 niveaux disponibles.  <br>▪️40 minutes",
-      details: {
-        format_label: "CARDIO PYRAMIDAL — 40 MINUTES",
-        type_special: "run_tempo",
-        conseil: "Séance parfaite sur tapis incurvé. Le niveau correspond approximativement aux paliers du Luc Léger. Min 1-10 : échauffement avec 3 accélérations de 30 sec. Min 33-40 : récupération course lente.",
-        chargeable: true,
-        niveaux: [
-          { n: 1, phases: [
-            { min: "10-11", vitesse: "9 à 10 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "8 à 9 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "7,5 à 8,5 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "7,5 à 8,5 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "8 à 9 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "8,5 à 9,5 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "9,5 à 10,5 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 2, phases: [
-            { min: "10-11", vitesse: "9,5 à 10,5 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "8,5 à 9,5 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "8 à 9 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "8 à 9 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "8,5 à 9,5 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "9 à 10 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "10 à 11 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 3, phases: [
-            { min: "10-11", vitesse: "10 à 11 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "9 à 10 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "8,5 à 9,5 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "8,5 à 9,5 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "9 à 10 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "9,5 à 10,5 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "10,5 à 11,5 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 4, phases: [
-            { min: "10-11", vitesse: "10,5 à 11,5 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "9,5 à 10,5 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "9 à 10 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "9 à 10 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "9,5 à 10,5 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "10 à 11 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "11 à 12 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 5, phases: [
-            { min: "10-11", vitesse: "11 à 12 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "10 à 11 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "9,5 à 10,5 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "9,5 à 10,5 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "10 à 11 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "10,5 à 11,5 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "11,5 à 12,5 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 6, phases: [
-            { min: "10-11", vitesse: "11,5 à 12,5 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "10,5 à 11,5 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "10 à 11 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "10 à 11 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "10,5 à 11,5 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "11 à 12 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "12 à 13 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 7, phases: [
-            { min: "10-11", vitesse: "12 à 13 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "11 à 12 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "10,5 à 11,5 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "10,5 à 11,5 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "11 à 12 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "11,5 à 12,5 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "12,5 à 13,5 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 8, phases: [
-            { min: "10-11", vitesse: "13 à 14 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "11,5 à 12,5 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "11 à 12 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "11 à 12 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "11,5 à 12,5 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "12,5 à 13,5 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "13,5 à 14,5 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 9, phases: [
-            { min: "10-11", vitesse: "13,5 à 14,5 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "12 à 13 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "11,5 à 12,5 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "11,5 à 12,5 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "12 à 13 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "13 à 14 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "14 à 15 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 10, phases: [
-            { min: "10-11", vitesse: "14 à 15 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "12,5 à 13,5 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "12 à 13 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "12 à 13 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "12,5 à 13,5 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "13,5 à 14,5 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "14,5 à 15,5 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 11, phases: [
-            { min: "10-11", vitesse: "14,5 à 15,5 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "13 à 14 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "12,5 à 13,5 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "12,5 à 13,5 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "13 à 14 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "14 à 15 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "15,5 à 16,5 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]},
-          { n: 12, phases: [
-            { min: "10-11", vitesse: "15 à 16 km/h", type: "effort" },
-            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "12-14", vitesse: "13,5 à 14,5 km/h", type: "effort" },
-            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "15-18", vitesse: "13 à 14 km/h", type: "effort" },
-            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "19-23", vitesse: "13 à 14 km/h", type: "effort" },
-            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "24-27", vitesse: "13,5 à 14,5 km/h", type: "effort" },
-            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "28-30", vitesse: "14,5 à 15,5 km/h", type: "effort" },
-            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
-            { min: "31-32", vitesse: "16 à 17 km/h", type: "effort" },
-            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
-          ]}
-        ]
-      }},
-
-    
-
-    // ══════════════════════════════════════════════════════════
-    // SÉANCE TEST — INTERVALLES (décommenter pour activer)
-    // ══════════════════════════════════════════════════════════
-    //{
-    //    title: "TEST — Séance Intervalles",
-    //    material: ["poids-corps"],
-    //    body: "complet",
-    //    duration: 35,
-    //    type: "CARDIO",
-    //    level: "Moyen",
-    //    desc: "Séance test : warmup avec timer, 12x travail avec objectifs reps/rounds, repos chronométré, retour au calme sans timer.",
-    //    details: {
-    //        format_label: "INTERVALLES — 35 MINUTES",
-    //        exercises: [
-    //            { text: "Warmup 10 min (avec timer)" },
-    //            { text: "12 × Burpees — objectif 10 reps / 3 rounds" },
-    //            { text: "Repos 90 sec (timer)" },
-    //            { text: "Retour au calme (sans timer)" }
-    //        ],
-    //        conseil: "Séance de test pour valider le chargement de l'onglet Intervalles.",
-    //        chargeable: true,
-    //        chargement: {
-    //            type: "intervalles",
-    //            nom: "TEST — Séance Intervalles",
-    //            blocs: [
-    //                { type: "warmup",  reps: 1,  hasTimer: true,  dur: 600, instr: "Échauffement général — mobilisation + course légère" },
-    //                { type: "travail", reps: 5,  hasTimer: true,  dur: 60, repsObj: 0, rndsObj: 0, instr: "Gainage planche — tenir 1 minute" },
-    //                { type: "travail", reps: 12, repsObj: 10, rndsObj: 3,   instr: "Burpees — effort maximal (sans timer)" },
-    //                { type: "repos",   reps: 1,  dur: 90,                   instr: "Récupération active — marche ou course lente" },
-    //                { type: "recup",   reps: 1,  hasTimer: false,           instr: "Retour au calme — étirements légers" }
-    //            ]
-    //        }
-    //    }
-    //},
-    {
-        title: "Séance de Fractionné course à pied (run) Confirmé",
-        material: ["poids-corps", "tapis-incurve"],
-        body: "complet",
-        duration: 0,
-        type: "CARDIO",
-        level: "Intense",
-        desc: "Séance fractionné : 10X400 mètres / récup:1 minute",
-        details: {
-            format_label: "FRACTIONNE - FOR TIME",
+            format_label: "MUSCU",
             exercises: [
-                { text: "Echauffement de 10 min, 3 accélérations " },
-                { text: "10 × 400 mètres actif: allure de course élevée. objectif: allure constante sur les 10 séries" },
-                { text: "Repos 1 minute : course lente" },
-                { text: "Retour au calme : 5 minutes, course lente et/ou étirement léger" }
+                { text: "Développé couché — 5 ×10 à 12 reps" },
+                { text: "Soulevé de terre jambes tendues — 3×10/15 reps" },
+                { text: "Rowing horizontal poulie basse — 3×10/15 reps" },
+                { text: "TRISET Oiseau aux haltères/Elévations latèrale aux haltères/Curls inclinés — 3×15/20 reps" }
             ],
-            conseil: "Allure constante sur les 10 séries. les courses de récupération sont très lente pendant la minute",
+            conseil: "10 minutes d'échauffement avec montée en gamme sur le développé couché. La séance avec échauffement dure environ 1 heure. Adapter les poids à son niveau.",
             chargeable: true,
             chargement: {
-                type: "intervalles",
-                nom: "Séance fractionné : 10X400 mètres / récup:1 minute",
+                type: "muscu",
+                nom: "💪Pectoraux - Jambes - Dos - Epaules/Biceps | SÉANCE MUSCU",
+                recupSerie: 90,
+                recupBloc: 120,
                 blocs: [
-                    { type: "warmup",  reps: 1,  hasTimer: true,  dur: 600, instr: "Echauffement de 10 min, 3 accélérations" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 1/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 2/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 3/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 4/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 5/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 6/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 7/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 8/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 9/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
-                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 10/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
-                    { type: "recup",   reps: 1,  hasTimer: true,  dur: 300 , instr: "Retour au calme — étirements légers" }
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Développé couché",
+                                series: [
+                                    { reps: 10, poids: 50 },
+                                    { reps: 6, poids: 70 },
+                                    { reps: 7, poids: 70 },
+                                    { reps: 12, poids: 60 },
+                                    { reps: 11, poids: 60 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Soulevé de terre à la barre jambes tendues",
+                                series: [
+                                    { reps: 15, poids: 48 },
+                                    { reps: 15, poids: 48 },
+                                    { reps: 15, poids: 48 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Rowing horizontal poulie basse",
+                                series: [
+                                    { reps: 15, poids: 48 },
+                                    { reps: 15, poids: 48 },
+                                    { reps: 15, poids: 48 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "triset",
+                        exos: [
+                            {
+                                nom: "Oiseau avec haltères",
+                                series: [
+                                    { reps: 12, poids: 8 },
+                                    { reps: 12, poids: 8 },
+                                    { reps: 15, poids: 8 },
+                                    { reps: 12, poids: 8 }
+                                ]
+                            },
+                            {
+                                nom: "Élévation latérale avec haltères",
+                                series: [
+                                    { reps: 12, poids: 8 },
+                                    { reps: 12, poids: 8 },
+                                    { reps: 15, poids: 8 },
+                                    { reps: 12, poids: 8 }
+                                ]
+                            },
+                            {
+                                nom: "Curl incliné",
+                                series: [
+                                    { reps: 15, poids: 10 },
+                                    { reps: 15, poids: 10 },
+                                    { reps: 15, poids: 10 },
+                                    { reps: 15, poids: 10 }
+                                ]
+                            }
+                        ]
+                    },
                 ]
             }
         }
     },
-
-
+  
+    {
+        title: "💪Dos | Pectoraux | Jambes | Triceps/Abdos",
+        material: ["barre","haltere","elastique","machineguidee","jammer"],
+        body: "complet",
+        duration: 0,
+        type: "MUSCU",
+        level: "Moyen",
+        desc: "Séance ② ➡️ Mouvement principal : Tractions | Chest Press Jammer Arm | Goblet squat | Extension triceps poulie haute/Sit-ups(Superset) ",
+        details: {
+            format_label: "MUSCU",
+            exercises: [
+                { text: "Tractions(lestées) — 5 ×10 à 12 reps" },
+                { text: "Chest Press Jammer Arm — 3×12/15 reps" },
+                { text: "Goblet squat — 3×12/15 reps" },
+                { text: "SUPERSET Extension triceps poulie haute/Sit-up — 3×15/20 reps" }
+            ],
+            conseil: "10 minutes d'échauffement complet avec montée en gamme sur les tractions. La séance avec échauffement dure environ 1 heure. Adapter les poids à son niveau.",
+            chargeable: true,
+            chargement: {
+                type: "muscu",
+                nom: "💪Dos | Pectoraux | Jambes | Triceps/Abdos",
+                recupSerie: 90,
+                recupBloc: 120,
+                blocs: [
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Traction - Traction lestée",
+                                series: [
+                                    { reps: 10, poids: 0 },
+                                    { reps: 10, poids: 6 },
+                                    { reps: 10, poids: 6 },
+                                    { reps: 10, poids: 6 },
+                                    { reps: 10, poids: 6 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Chest Press Jammer Arm",
+                                series: [
+                                    { reps: 15, poids: 41 },
+                                    { reps: 15, poids: 41 },
+                                    { reps: 15, poids: 41 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Goblet squat haltère talons surélevés",
+                                series: [
+                                    { reps: 15, poids: 38 },
+                                    { reps: 15, poids: 38 },
+                                    { reps: 15, poids: 38 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "superset",
+                        exos: [
+                            {
+                                nom: "Extension triceps poulie haute",
+                                series: [
+                                    { reps: 10, poids: 0 },
+                                    { reps: 10, poids: 0 },
+                                    { reps: 10, poids: 0 },
+                                    { reps: 10, poids: 0 }
+                                ]
+                            },
+                            {
+                                nom: "Situp",
+                                series: [
+                                    { reps: 15, poids: 10 },
+                                    { reps: 15, poids: 10 },
+                                    { reps: 15, poids: 10 },
+                                    { reps: 15, poids: 10 }
+                                ]
+                            }
+                        ]
+                    },
+                ]
+            }
+        }
+    },
+  
+    {
+        title: "💪Jambes | Dos | Epaules | Mollets/Abdos",
+        material: ["barre","haltere","elastique","machineguidee","jammer"],
+        body: "complet",
+        duration: 0,
+        type: "MUSCU",
+        level: "Moyen",
+        desc: "Séance ③ ➡️ Mouvement principal : Fentes Jammer Arms | Rowing buste penché Jammer Arm + Shrugs Jammer Arm | Landmine Press | Extension mollets debout/Abdo obliques(Superset) ",
+        details: {
+            format_label: "MUSCU",
+            exercises: [
+                { text: "Fentes jammer arms (poids sur les 2 jammers arms) — 5 ×10 à 12 reps" },
+                { text: "SUPERSET Rowing buste penché Jammer Arm + Shrugs Jammer Arm — 3×12/15 reps" },
+                { text: "Landmine press à un bras — 4×12/15 reps" },
+                { text: "SUPERSET Extension Mollets debout avec Landmine/Obliques suspendu à la barre — 3×15/20 reps" }
+            ],
+            conseil: "10 minutes d'échauffement complet avec montée en gamme sur les tractions. La séance avec échauffement dure environ 1 heure. Adapter les poids à son niveau.",
+            chargeable: true,
+            chargement: {
+                type: "muscu",
+                nom: "💪Dos | Pectoraux | Jambes | Triceps/Abdos",
+                recupSerie: 90,
+                recupBloc: 120,
+                blocs: [
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Traction - Traction lestée",
+                                series: [
+                                    { reps: 10, poids: 0 },
+                                    { reps: 10, poids: 6 },
+                                    { reps: 10, poids: 6 },
+                                    { reps: 10, poids: 6 },
+                                    { reps: 10, poids: 6 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "superset",
+                        exos: [
+                            {
+                                nom: "Rowing buste penché jammer arms",
+                                series: [
+                                    { reps: 12, poids: 41 },
+                                    { reps: 12, poids: 41 },
+                                    { reps: 12, poids: 41 }
+                                ]
+                            },
+                            {
+                                nom: "Shrug jammer arms",
+                                series: [
+                                    { reps: 12, poids: 41 },
+                                    { reps: 12, poids: 41 },
+                                    { reps: 12, poids: 41 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "solo",
+                        exos: [
+                            {
+                                nom: "Landmine press à un bras",
+                                series: [
+                                    { reps: 15, poids: 20 },
+                                    { reps: 15, poids: 25 },
+                                    { reps: 15, poids: 25 },
+                                    { reps: 15, poids: 25 }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: "superset",
+                        exos: [
+                            {
+                                nom: "Extension Mollets debout avec Landmine",
+                                series: [
+                                    { reps: 12, poids: 25 },
+                                    { reps: 12, poids: 25 },
+                                    { reps: 12, poids: 25 }
+                                ]
+                            },
+                            {
+                                nom: "Obliques suspendu à la barre",
+                                series: [
+                                    { reps: 20, poids: 4 },
+                                    { reps: 20, poids: 4 },
+                                    { reps: 20, poids: 4 }
+                                ]
+                            }
+                        ]
+                    },
+                    
+                ]
+            }
+        }
+    },
+  
+  
+  
     // ══════════════════════════════════════════════════════════
     // PLANIFICATION 5 JOURS — SPLIT MUSCULAIRE
     // ══════════════════════════════════════════════════════════
@@ -3747,7 +3572,486 @@ const workouts = [
                 ]
             }
         }
+    },
+  
+  
+    
+    {
+        title: "Séances Fractionné course",
+        material: ["poids-corps", "tapis-incurve"],
+        body: "complet",
+        duration: 0,
+        type: "CARDIO",
+        level: "Moyen",
+        desc: "Séances de fractionné en course à pied pour s'améliorer au Luc Léger. Deux niveaux : débutant et confirmé.",
+        details: {
+            format_label: "FRACTIONNÉ COURSE À PIED",
+            type_special: "fractionne",
+            conseil: "S'échauffer en courant 10 minutes avant chaque séance. Alterner courses rapides et récupérations, sur piste (distances) ou en nature (temps d'effort)."
+        }
+    },
+
+    { title: "Séance BikeERG orientée FORCE", material: ["bike-erg"], body: "bas", duration: 40, type: "CARDIO", level: "Intense",
+      desc: "Séance de fractionné 40 min sur BikeERG. ▪️ 10 min échauffement. ▪️ 20 min fractionné (10×1min effort / 1min récup). ▪️ 10 min retour au calme. Choisir son damper et son plage RPM cible.",
+      details: {
+        format_label: "BIKEERG FORCE — 40 MINUTES",
+        type_special: "bikeerg_force",
+        conseil: "Le damper contrôle la résistance de l'air : plus il est élevé, plus chaque coup de pédale est lourd. Maintenez le RPM sélectionné pendant toute la minute d'effort — c'est la clé de la séance, si c'est trop ➔ dur descendre de niveaux. Échauffement et retour au calme : damper 2ou3.<br>LES NIVEAUX :<br>🐣Rookie - DAMPER 3<br>🥊Challenger - DAMPER 4<br>⚔️ Warrior - DAMPER 5<br>👑 Légende - DAMPER 6",
+        chargeable: true,
+        dampers: [3, 4, 5, 6],
+        rpms: ["70↔75", "75↔80", "80↔85", "85↔90", "90↔95"]
+      }
+    },
+
+    { title: "Séance intervalle BikeERG", material: ["bike-erg"], body: "bas", duration: 30, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pendant 30 minutes.",
+      details: { format_label: "SÉANCE CARDIO — 30 MINUTES", exercises: [
+          { text: "Échauffement : 10 minutes (damper 2-3)" }, { text: "Fractionné : 14 minutes — 7 fois :" }, { text: "→ 1 minute intensité max. (pédalage le plus rapide possible)" }, { text: "→ 1 minute de récupération" }, { text: "Récupération : 10 minutes (damper 2-3)" }
+        ], conseil: "Adapter le damper (minimum 3) et le RPM selon votre niveau.",
+        chargeable: true,
+                  chargement: {
+                  type: "surmesure",
+                  nom: "Séance intervalle BikeERG 30 minutes",
+                  repeat: 0,
+                  phases: [
+                    { type: "warmup", sec: 600, text: "échauffement : mettre le damper(levier de résistance) sur 2-3" },
+                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
+                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
+                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
+                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
+                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
+                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
+                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
+                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
+                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
+                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
+                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
+                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
+                    { type: "travail", sec: 60, text: "🚴 1 minute intensité max. | damper 3 mini | pédalage le plus rapide possible" },
+                    { type: "repos", sec: 60, text: "💤 1 minute de récupération" },
+                    { type: "recup", sec: 360, text: "retour au calme : damper 2-3" },
+                  ]
+                  }       
+        }},
+
+
+    // ══════════════════════════════════════════════════════════
+    // SÉANCE 4 ERGOMÈTRES — 60 MIN
+    // ══════════════════════════════════════════════════════════
+    {
+        title: "Séance Quatuor Hybride",
+        material: ["ski-erg", "rameur", "bike-erg", "tapis-incurve"],
+        body: "complet",
+        duration: 60,
+        type: "CARDIO",
+        level: "Moyen",
+        desc: "4 ateliers à enchaîner : SkiErg, Rameur, BikeErg et Tapis Incurvé. <br>▪️2 séquences de travail. <br>▪️5 minutes par atelier. <br>▪️12 niveaux de progression. <br>▪️1 heure.",
+        details: {
+            format_label: "CARDIO — 60 MINUTES",
+            type_special: "quatre_ergo",
+            conseil: "Respectez votre niveau de split/allure sur chaque atelier. Profitez des transitions pour vous hydrater. Vous ne connaissez pas votre niveau de départ, prenez les allures de course sur tapis pour vous situer (9km/h🟢 ➔ 17km/h🔴)",
+            chargeable: true,
+            niveaux: [
+                { n:  1, rameur: "2:35", skierg: "2:42", bikeerg: "2:10", tapis: "9.0"  },
+                { n:  2, rameur: "2:30", skierg: "2:37", bikeerg: "2:05", tapis: "9.5"  },
+                { n:  3, rameur: "2:25", skierg: "2:32", bikeerg: "2:00", tapis: "10.5" },
+                { n:  4, rameur: "2:20", skierg: "2:27", bikeerg: "1:55", tapis: "11.5" },
+                { n:  5, rameur: "2:15", skierg: "2:22", bikeerg: "1:50", tapis: "12.5" },
+                { n:  6, rameur: "2:10", skierg: "2:17", bikeerg: "1:45", tapis: "13.0" },
+                { n:  7, rameur: "2:05", skierg: "2:12", bikeerg: "1:40", tapis: "13.5" },
+                { n:  8, rameur: "2:00", skierg: "2:07", bikeerg: "1:35", tapis: "14.0" },
+                { n:  9, rameur: "1:55", skierg: "2:02", bikeerg: "1:30", tapis: "14.5" },
+                { n: 10, rameur: "1:50", skierg: "1:57", bikeerg: "1:25", tapis: "15.0" },
+                { n: 11, rameur: "1:45", skierg: "1:52", bikeerg: "1:20", tapis: "16.0" },
+                { n: 12, rameur: "1:40", skierg: "1:47", bikeerg: "1:15", tapis: "17.0" }
+            ]
+        }
+    },
+
+    // ══════════════════════════════════════════════════════════
+    // SÉANCE RAMEUR TEMPO
+    // ══════════════════════════════════════════════════════════
+    {
+        title: "Séance RAMEUR TEMPO",
+        material: ["rameur"],
+        body: "complet",
+        duration: 40,
+        type: "CARDIO",
+        level: "Moyen",
+        desc: "Séance structurée sur rameur Concept2 — 40 minutes avec 6 phases de travail progressif. 12 niveaux disponibles. Damper 3-5.",
+        details: {
+            format_label: "RAMEUR TEMPO — 40 MINUTES",
+            type_special: "avec_niveaux",
+            conseil: "Séance parfaite sur rameur Concept2 (erg). Le niveau correspond approximativement aux paliers du test Cooper/VO2max. Min 1-10 : échauffement avec 3 accélérations de 30 sec. Min 32-40 : retour au calme. Damper conseillé : 1-3 pour l'échauffement/retour au calme, 3-5 pour les phases de travail.",
+            chargeable: true,
+            niveaux: [
+                { n:  1, attaque: "2:35", transition: "2:50", base: "3:00", remontee: "2:50", soutenu: "2:40", pointe: "2:30" },
+                { n:  2, attaque: "2:30", transition: "2:40", base: "2:50", remontee: "2:40", soutenu: "2:35", pointe: "2:25" },
+                { n:  3, attaque: "2:25", transition: "2:35", base: "2:45", remontee: "2:35", soutenu: "2:30", pointe: "2:20" },
+                { n:  4, attaque: "2:20", transition: "2:30", base: "2:40", remontee: "2:30", soutenu: "2:25", pointe: "2:15" },
+                { n:  5, attaque: "2:15", transition: "2:25", base: "2:35", remontee: "2:25", soutenu: "2:20", pointe: "2:10" },
+                { n:  6, attaque: "2:10", transition: "2:20", base: "2:30", remontee: "2:20", soutenu: "2:15", pointe: "2:05" },
+                { n:  7, attaque: "2:05", transition: "2:15", base: "2:25", remontee: "2:15", soutenu: "2:10", pointe: "2:00" },
+                { n:  8, attaque: "2:00", transition: "2:10", base: "2:20", remontee: "2:10", soutenu: "2:05", pointe: "1:55" },
+                { n:  9, attaque: "1:55", transition: "2:05", base: "2:15", remontee: "2:05", soutenu: "2:00", pointe: "1:50" },
+                { n: 10, attaque: "1:50", transition: "2:00", base: "2:10", remontee: "2:00", soutenu: "1:55", pointe: "1:45" },
+                { n: 11, attaque: "1:45", transition: "1:55", base: "2:05", remontee: "1:55", soutenu: "1:50", pointe: "1:40" },
+                { n: 12, attaque: "1:40", transition: "1:50", base: "2:00", remontee: "1:50", soutenu: "1:45", pointe: "1:35" }
+            ]
+        }
+    },
+
+    // SÉANCE SKIERG TEMPO
+    // ══════════════════════════════════════════════════════════
+    {
+        title: "Séance SKIERG TEMPO",
+        material: ["ski-erg"],
+        body: "complet",
+        duration: 40,
+        type: "CARDIO",
+        level: "Moyen",
+        desc: "Séance structurée sur SkiErg Concept2 — 40 minutes avec 6 phases de travail progressif. 12 niveaux disponibles. Haut du corps dominant.",
+        details: {
+            format_label: "SKIERG TEMPO — 40 MINUTES",
+            type_special: "avec_niveaux",
+            conseil: "Séance sur SkiErg Concept2. Le split /500m est l'indicateur clé — il sera naturellement plus lent qu'au rameur (haut du corps uniquement). Les 12 niveaux couvrent du débutant au confirmé. Concentrez-vous sur la technique : traction des bras, gainage, flexion de hanches. Min 0-10 : échauffement avec 3 accélérations. Min 32-40 : retour au calme.",
+            chargeable: true,
+            niveaux: [
+                { n:  1, attaque: "3:00", transition: "3:15", base: "3:25", remontee: "3:15", soutenu: "3:05", pointe: "2:55" },
+                { n:  2, attaque: "2:55", transition: "3:05", base: "3:15", remontee: "3:05", soutenu: "3:00", pointe: "2:50" },
+                { n:  3, attaque: "2:50", transition: "3:00", base: "3:10", remontee: "3:00", soutenu: "2:55", pointe: "2:45" },
+                { n:  4, attaque: "2:45", transition: "2:55", base: "3:05", remontee: "2:55", soutenu: "2:50", pointe: "2:40" },
+                { n:  5, attaque: "2:40", transition: "2:50", base: "3:00", remontee: "2:50", soutenu: "2:45", pointe: "2:35" },
+                { n:  6, attaque: "2:35", transition: "2:45", base: "2:55", remontee: "2:45", soutenu: "2:40", pointe: "2:30" },
+                { n:  7, attaque: "2:30", transition: "2:40", base: "2:50", remontee: "2:40", soutenu: "2:35", pointe: "2:25" },
+                { n:  8, attaque: "2:25", transition: "2:35", base: "2:45", remontee: "2:35", soutenu: "2:30", pointe: "2:20" },
+                { n:  9, attaque: "2:20", transition: "2:30", base: "2:40", remontee: "2:30", soutenu: "2:25", pointe: "2:15" },
+                { n: 10, attaque: "2:15", transition: "2:25", base: "2:35", remontee: "2:25", soutenu: "2:20", pointe: "2:10" },
+                { n: 11, attaque: "2:10", transition: "2:20", base: "2:30", remontee: "2:20", soutenu: "2:15", pointe: "2:05" },
+                { n: 12, attaque: "2:05", transition: "2:15", base: "2:25", remontee: "2:15", soutenu: "2:10", pointe: "2:00" }
+            ]
+        }
+    },
+
+    // SÉANCE ASSAULT BIKE TEMPO
+    // ══════════════════════════════════════════════════════════
+    {
+        title: "Séance ASSAULT BIKE TEMPO",
+        material: ["assault-bike"],
+        body: "complet",
+        duration: 20,
+        type: "CARDIO",
+        level: "Intense",
+        desc: "Séance structurée sur Assault Bike — 20 minutes intenses corps entier. 12 niveaux en RPM. 5 min échauffement + séquence TEMPO + 3 min retour au calme.",
+        details: {
+            format_label: "ASSAULT BIKE TEMPO — 20 MINUTES",
+            type_special: "avec_niveaux",
+            conseil: "L'Assault Bike est l'un des appareils les plus exigeants : la résistance augmente exponentiellement avec la vitesse. Les RPM sont votre boussole — maintenez-les constants pendant les phases d'effort. Récupération active (pédalage très léger) entre chaque phase, ne vous arrêtez pas. Ne sous-estimez jamais cet appareil : commencez au niveau 1 si vous le découvrez.",
+            chargeable: true,
+            niveaux: [
+                { n:  1, attaque: "45-50",  transition: "40-45", base: "35-40", remontee: "42-47", soutenu: "45-50", pointe: "55-60"  },
+                { n:  2, attaque: "50-55",  transition: "45-50", base: "38-43", remontee: "47-52", soutenu: "50-55", pointe: "60-65"  },
+                { n:  3, attaque: "55-60",  transition: "50-55", base: "42-47", remontee: "52-57", soutenu: "55-60", pointe: "65-70"  },
+                { n:  4, attaque: "58-63",  transition: "53-58", base: "45-50", remontee: "55-60", soutenu: "58-63", pointe: "68-73"  },
+                { n:  5, attaque: "62-67",  transition: "57-62", base: "48-53", remontee: "58-63", soutenu: "62-67", pointe: "72-77"  },
+                { n:  6, attaque: "65-70",  transition: "60-65", base: "52-57", remontee: "62-67", soutenu: "65-70", pointe: "75-80"  },
+                { n:  7, attaque: "68-73",  transition: "63-68", base: "55-60", remontee: "65-70", soutenu: "68-73", pointe: "78-83"  },
+                { n:  8, attaque: "72-77",  transition: "67-72", base: "58-63", remontee: "68-73", soutenu: "72-77", pointe: "82-87"  },
+                { n:  9, attaque: "75-80",  transition: "70-75", base: "62-67", remontee: "72-77", soutenu: "75-80", pointe: "85-90"  },
+                { n: 10, attaque: "78-83",  transition: "73-78", base: "65-70", remontee: "75-80", soutenu: "78-83", pointe: "88-93"  },
+                { n: 11, attaque: "82-87",  transition: "77-82", base: "68-73", remontee: "78-83", soutenu: "82-87", pointe: "92-97"  },
+                { n: 12, attaque: "85-90",  transition: "80-85", base: "72-77", remontee: "82-87", soutenu: "85-90", pointe: "95-100" }
+            ]
+        }
+    },
+
+    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pyramidale. <br>▪️12 niveaux disponibles.  <br>▪️40 minutes",
+      details: {
+        format_label: "CARDIO PYRAMIDAL — 40 MINUTES",
+        type_special: "run_tempo",
+        conseil: "Séance parfaite sur tapis incurvé. Le niveau correspond approximativement aux paliers du Luc Léger. Min 1-10 : échauffement avec 3 accélérations de 30 sec. Min 33-40 : récupération course lente.",
+        chargeable: true,
+        niveaux: [
+          { n: 1, phases: [
+            { min: "10-11", vitesse: "9 à 10 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "8 à 9 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "7,5 à 8,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "7,5 à 8,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "8 à 9 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "8,5 à 9,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "9,5 à 10,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 2, phases: [
+            { min: "10-11", vitesse: "9,5 à 10,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "8,5 à 9,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "8 à 9 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "8 à 9 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "8,5 à 9,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "9 à 10 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "10 à 11 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 3, phases: [
+            { min: "10-11", vitesse: "10 à 11 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "9 à 10 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "8,5 à 9,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "8,5 à 9,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "9 à 10 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "9,5 à 10,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "10,5 à 11,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 4, phases: [
+            { min: "10-11", vitesse: "10,5 à 11,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "9,5 à 10,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "9 à 10 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "9 à 10 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "9,5 à 10,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "10 à 11 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "11 à 12 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 5, phases: [
+            { min: "10-11", vitesse: "11 à 12 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "10 à 11 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "9,5 à 10,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "9,5 à 10,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "10 à 11 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "10,5 à 11,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "11,5 à 12,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 6, phases: [
+            { min: "10-11", vitesse: "11,5 à 12,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "10,5 à 11,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "10 à 11 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "10 à 11 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "10,5 à 11,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "11 à 12 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "12 à 13 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 7, phases: [
+            { min: "10-11", vitesse: "12 à 13 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "11 à 12 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "10,5 à 11,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "10,5 à 11,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "11 à 12 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "11,5 à 12,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "12,5 à 13,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 8, phases: [
+            { min: "10-11", vitesse: "13 à 14 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "11,5 à 12,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "11 à 12 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "11 à 12 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "11,5 à 12,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "12,5 à 13,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "13,5 à 14,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 9, phases: [
+            { min: "10-11", vitesse: "13,5 à 14,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "12 à 13 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "11,5 à 12,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "11,5 à 12,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "12 à 13 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "13 à 14 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "14 à 15 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 10, phases: [
+            { min: "10-11", vitesse: "14 à 15 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "12,5 à 13,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "12 à 13 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "12 à 13 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "12,5 à 13,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "13,5 à 14,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "14,5 à 15,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 11, phases: [
+            { min: "10-11", vitesse: "14,5 à 15,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "13 à 14 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "12,5 à 13,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "12,5 à 13,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "13 à 14 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "14 à 15 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "15,5 à 16,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 12, phases: [
+            { min: "10-11", vitesse: "15 à 16 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "13,5 à 14,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "13 à 14 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "13 à 14 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "13,5 à 14,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "14,5 à 15,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]}
+        ]
+      }},
+
+    
+
+    // ══════════════════════════════════════════════════════════
+    // SÉANCE TEST — INTERVALLES (décommenter pour activer)
+    // ══════════════════════════════════════════════════════════
+    //{
+    //    title: "TEST — Séance Intervalles",
+    //    material: ["poids-corps"],
+    //    body: "complet",
+    //    duration: 35,
+    //    type: "CARDIO",
+    //    level: "Moyen",
+    //    desc: "Séance test : warmup avec timer, 12x travail avec objectifs reps/rounds, repos chronométré, retour au calme sans timer.",
+    //    details: {
+    //        format_label: "INTERVALLES — 35 MINUTES",
+    //        exercises: [
+    //            { text: "Warmup 10 min (avec timer)" },
+    //            { text: "12 × Burpees — objectif 10 reps / 3 rounds" },
+    //            { text: "Repos 90 sec (timer)" },
+    //            { text: "Retour au calme (sans timer)" }
+    //        ],
+    //        conseil: "Séance de test pour valider le chargement de l'onglet Intervalles.",
+    //        chargeable: true,
+    //        chargement: {
+    //            type: "intervalles",
+    //            nom: "TEST — Séance Intervalles",
+    //            blocs: [
+    //                { type: "warmup",  reps: 1,  hasTimer: true,  dur: 600, instr: "Échauffement général — mobilisation + course légère" },
+    //                { type: "travail", reps: 5,  hasTimer: true,  dur: 60, repsObj: 0, rndsObj: 0, instr: "Gainage planche — tenir 1 minute" },
+    //                { type: "travail", reps: 12, repsObj: 10, rndsObj: 3,   instr: "Burpees — effort maximal (sans timer)" },
+    //                { type: "repos",   reps: 1,  dur: 90,                   instr: "Récupération active — marche ou course lente" },
+    //                { type: "recup",   reps: 1,  hasTimer: false,           instr: "Retour au calme — étirements légers" }
+    //            ]
+    //        }
+    //    }
+    //},
+    {
+        title: "Séance de Fractionné course à pied (run) Confirmé",
+        material: ["poids-corps", "tapis-incurve"],
+        body: "complet",
+        duration: 0,
+        type: "CARDIO",
+        level: "Intense",
+        desc: "Séance fractionné : 10X400 mètres / récup:1 minute",
+        details: {
+            format_label: "FRACTIONNE - FOR TIME",
+            exercises: [
+                { text: "Echauffement de 10 min, 3 accélérations " },
+                { text: "10 × 400 mètres actif: allure de course élevée. objectif: allure constante sur les 10 séries" },
+                { text: "Repos 1 minute : course lente" },
+                { text: "Retour au calme : 5 minutes, course lente et/ou étirement léger" }
+            ],
+            conseil: "Allure constante sur les 10 séries. les courses de récupération sont très lente pendant la minute",
+            chargeable: true,
+            chargement: {
+                type: "intervalles",
+                nom: "Séance fractionné : 10X400 mètres / récup:1 minute",
+                blocs: [
+                    { type: "warmup",  reps: 1,  hasTimer: true,  dur: 600, instr: "Echauffement de 10 min, 3 accélérations" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 1/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 2/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 3/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 4/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 5/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 6/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 7/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 8/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 9/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération active — marche ou course lente" },
+                    { type: "travail", reps: 1, instr: "<strong><u>400 MÈTRES ACTIFS</u></strong> 10/10 - <em>(cliquer sur 'étape suivante' quand les 400m sont effectués)</em>" },
+                    { type: "recup",   reps: 1,  hasTimer: true,  dur: 300 , instr: "Retour au calme — étirements légers" }
+                ]
+            }
+        }
     }
+
+
+
 
 ];
 
