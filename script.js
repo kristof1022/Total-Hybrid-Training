@@ -2180,7 +2180,7 @@ const workouts = [
                 { text: "Landmine press à un bras — 4×12/15 reps" },
                 { text: "SUPERSET Extension Mollets debout avec Landmine/Obliques suspendu à la barre — 3×15/20 reps" }
             ],
-            conseil: "10 minutes d'échauffement complet avec montée en gamme sur les tractions. La séance avec échauffement dure environ 1 heure. Adapter les poids à son niveau.",
+            conseil: "10 minutes d'échauffement complet avec montée en gamme sur les fentes. La séance avec échauffement dure environ 1 heure. Adapter les poids à son niveau.",
             chargeable: true,
             chargement: {
                 type: "muscu",
