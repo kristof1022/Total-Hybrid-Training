@@ -1983,7 +1983,7 @@ const workouts = [
                 { text: "Développé couché — 5 ×10 à 12 reps" },
                 { text: "Soulevé de terre jambes tendues — 3×10/15 reps" },
                 { text: "Rowing horizontal poulie basse — 3×10/15 reps" },
-                { text: "TRISET Oiseau aux haltères/Elévations latèrale aux haltères/Curls inclinés — 3×15/20 reps" }
+                { text: "TRISET Oiseau aux haltères/Elévations latèrale aux haltères/Curl biceps à la poulie basse — 3×15/20 reps" }
             ],
             conseil: "10 minutes d'échauffement avec montée en gamme sur le développé couché. La séance avec échauffement dure environ 1 heure. Adapter les poids à son niveau.",
             chargeable: true,
@@ -2056,7 +2056,7 @@ const workouts = [
                                 ]
                             },
                             {
-                                nom: "Curl incliné",
+                                nom: "Curl biceps à la poulie basse",
                                 series: [
                                     { reps: 15, poids: 10 },
                                     { reps: 15, poids: 10 },
