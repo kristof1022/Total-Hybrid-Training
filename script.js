@@ -3764,7 +3764,7 @@ const workouts = [
         }
     },
 
-    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pyramidale. <br>▪️12 niveaux disponibles.  <br>▪️40 minutes",
+    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pyramidale. <br>▪️20 niveaux disponibles.  <br>▪️40 minutes",
       details: {
         format_label: "CARDIO PYRAMIDAL — 40 MINUTES",
         type_special: "run_tempo",
@@ -3961,6 +3961,134 @@ const workouts = [
             { min: "28-30", vitesse: "14,5 à 15,5 km/h", type: "effort" },
             { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
             { min: "31-32", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 13, phases: [
+            { min: "10-11", vitesse: "15,5 à 16,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "14 à 15 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "13,5 à 14,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "13,5 à 14,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "14 à 15 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "15 à 16 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "16,5 à 17,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 14, phases: [
+            { min: "10-11", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "14,5 à 15,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "14 à 15 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "14 à 15 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "14,5 à 15,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "15,5 à 16,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "17 à 18 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 15, phases: [
+            { min: "10-11", vitesse: "16,5 à 17,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "15 à 16 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "14,5 à 15,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "14,5 à 15,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "15 à 16 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "17,5 à 18,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 16, phases: [
+            { min: "10-11", vitesse: "17 à 18 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "15,5 à 16,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "15 à 16 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "15 à 16 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "15,5 à 16,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "16,5 à 17,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "18 à 19 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 17, phases: [
+            { min: "10-11", vitesse: "17,5 à 18,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "15,5 à 16,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "15,5 à 16,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "17 à 18 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "18,5 à 19,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 18, phases: [
+            { min: "10-11", vitesse: "18 à 19 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "16,5 à 17,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "16 à 17 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "16,5 à 17,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "17,5 à 18,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "19 à 20 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 19, phases: [
+            { min: "10-11", vitesse: "18,5 à 19,5 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "17 à 18 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "16,5 à 17,5 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "16,5 à 17,5 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "17 à 18 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "18 à 19 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "19,5 à 20,5 km/h", type: "effort" },
+            { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
+          ]},
+          { n: 20, phases: [
+            { min: "10-11", vitesse: "19 à 20 km/h", type: "effort" },
+            { min: "11-12", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "12-14", vitesse: "17,5 à 18,5 km/h", type: "effort" },
+            { min: "14-15", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "15-18", vitesse: "17 à 18 km/h", type: "effort" },
+            { min: "18-19", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "19-23", vitesse: "17 à 18 km/h", type: "effort" },
+            { min: "23-24", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "24-27", vitesse: "17,5 à 18,5 km/h", type: "effort" },
+            { min: "27-28", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "28-30", vitesse: "18,5 à 19,5 km/h", type: "effort" },
+            { min: "30-31", vitesse: "Récupération (course lente)", type: "recup" },
+            { min: "31-32", vitesse: "20 à 21 km/h", type: "effort" },
             { min: "32-33", vitesse: "Récupération (course lente)", type: "recup" }
           ]}
         ]
@@ -4220,7 +4348,7 @@ function openModal(index) {
         html += '<div class="run-tempo-selector">';
         html += '<p class="modal-section-title">Choisir votre niveau</p>';
         html += '<div class="niveau-buttons">';
-        for (i = 1; i <= 12; i++) {
+        for (i = 1; i <= d.niveaux.length; i++) {
             activeClass = i === 1 ? ' active' : '';
             html += '<button class="btn-niveau' + activeClass + '" onclick="selectNiveauErgo(' + i + ')" id="btn-ergo-' + i + '">' + i + '</button>';
         }
@@ -4313,7 +4441,7 @@ function openModal(index) {
         html += '<div class="run-tempo-selector">';
         html += '<p class="modal-section-title">Choisir votre niveau</p>';
         html += '<div class="niveau-buttons">';
-        for (i = 1; i <= 12; i++) {
+        for (i = 1; i <= d.niveaux.length; i++) {
             activeClass = i === 1 ? ' active' : '';
             var isRameurType2 = d.niveaux && d.niveaux[0] && d.niveaux[0].attaque !== undefined;
             var isSkiErgBtn = isRameurType2 && w.material && (Array.isArray(w.material) ? w.material.includes('ski-erg') : w.material === 'ski-erg');
@@ -4573,7 +4701,7 @@ function selectNiveau(n) {
     if (!niveau) return;
 
     // Mettre à jour les boutons
-    for (var i = 1; i <= 12; i++) {
+    for (var i = 1; i <= niveaux.length; i++) {
         var btn = document.getElementById('btn-niveau-' + i);
         if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
     }
@@ -4605,7 +4733,7 @@ function selectNiveauErgo(n) {
     var niveau = niveaux.find(function(nv) { return nv.n === n; });
     if (!niveau) return;
 
-    for (var i = 1; i <= 12; i++) {
+    for (var i = 1; i <= niveaux.length; i++) {
         var btn = document.getElementById('btn-ergo-' + i);
         if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
     }
@@ -4713,7 +4841,7 @@ function selectNiveauRameur(n) {
     if (!niveau) return;
 
     // Mettre à jour les boutons
-    for (var i = 1; i <= 12; i++) {
+    for (var i = 1; i <= niveaux.length; i++) {
         var btn = document.getElementById('btn-niveau-' + i);
         if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
     }
@@ -5037,7 +5165,7 @@ function selectNiveauSkiErg(n) {
     if (!niveau) return;
 
     // Mettre à jour les boutons
-    for (var i = 1; i <= 12; i++) {
+    for (var i = 1; i <= niveaux.length; i++) {
         var btn = document.getElementById('btn-niveau-' + i);
         if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
     }
@@ -5149,7 +5277,7 @@ function selectNiveauAssaultBike(n) {
     var niveau = niveaux.find(function(nv) { return nv.n === n; });
     if (!niveau) return;
 
-    for (var i = 1; i <= 12; i++) {
+    for (var i = 1; i <= niveaux.length; i++) {
         var btn = document.getElementById('btn-niveau-' + i);
         if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
     }
