@@ -2184,7 +2184,7 @@ const workouts = [
             chargeable: true,
             chargement: {
                 type: "muscu",
-                nom: "💪Dos | Pectoraux | Jambes | Triceps/Abdos",
+                nom: "💪Jambes | Dos | Epaules | Mollets/Abdos",
                 recupSerie: 90,
                 recupBloc: 120,
                 blocs: [
@@ -2192,13 +2192,13 @@ const workouts = [
                         type: "solo",
                         exos: [
                             {
-                                nom: "Traction - Traction lestée",
+                                nom: "Fentes jammer arms (poids sur les 2 jammers arms)",
                                 series: [
-                                    { reps: 10, poids: 0 },
-                                    { reps: 10, poids: 6 },
-                                    { reps: 10, poids: 6 },
-                                    { reps: 10, poids: 6 },
-                                    { reps: 10, poids: 6 }
+                                    { reps: 10, poids: 60 },
+                                    { reps: 10, poids: 60 },
+                                    { reps: 10, poids: 60 },
+                                    { reps: 10, poids: 60 },
+                                    { reps: 10, poids: 60 }
                                 ]
                             }
                         ]
