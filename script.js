@@ -5,6 +5,160 @@ const workouts = [
   
 /* SEANCES TABATA */
   
+    { title: "🌱 Premiers Pas - Corps Complet", material: ["poids-corps"], body: "complet", duration: 12, type: "TABATA", level: "Facile",
+    desc: "<strong>3 tours (30 sec travail / 20 sec repos) :</strong> Squats sur chaise, Pompes inclinées, Course légère sur place, Superman, Gainage genoux au sol.",
+    details: { format_label: "PREMIERS PAS — CORPS COMPLET — 12 min", intro: "3 tours, 30 sec de travail / 20 sec de repos :", exercises: [
+        { text: "30 sec Squats sur banc/chaise (s'asseoir / se relever) / 20 sec repos" },
+        { text: "30 sec Pompes inclinées (mains sur table/banc ou mur) / 20 sec repos" },
+        { text: "30 sec Course légère sur place / 20 sec repos" },
+        { text: "30 sec Superman (extension dos au sol) / 20 sec repos" },
+        { text: "30 sec Gainage genoux au sol (tenir le maximum, sans forcer) / 20 sec repos" },
+        { text: "→ Répéter 3 tours au total" }
+      ], conseil: "Séance idéale pour démarrer en douceur. Aucun saut, aucun impact. Ralentissez ou faites une pause supplémentaire si besoin — l'objectif est de tenir la séance en entier, pas d'aller vite. Le gainage se fait genoux au sol, pas en planche complète.",
+      chargeable: true,
+      chargement: {
+        type: "tabata",
+        nom: "🌱 Premiers Pas - Corps Complet",
+        travail: 30,
+        repos: 20,
+        rounds: 3,
+        exercices: [
+          { text: "Squats sur banc/chaise" },
+          { text: "Pompes inclinées" },
+          { text: "Course légère sur place" },
+          { text: "Superman" },
+          { text: "Gainage genoux au sol" }
+        ]
+      }
+    }},
+  
+    { title: "🌱 Premiers Pas - Bas du Corps en Douceur", material: ["poids-corps"], body: "bas", duration: 12, type: "TABATA", level: "Facile",
+    desc: "<strong>3 tours (30 sec travail / 20 sec repos) :</strong> Squats sur chaise, Fentes statiques, Pont fessier, Extension de jambe assis, Montées sur pointes de pieds.",
+    details: { format_label: "PREMIERS PAS — BAS DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 20 sec de repos :", exercises: [
+        { text: "30 sec Squats sur chaise/banc / 20 sec repos" },
+        { text: "30 sec Fentes statiques (descendre/remonter sans avancer, appui mur si besoin) / 20 sec repos" },
+        { text: "30 sec Pont fessier au sol (relevé de bassin) / 20 sec repos" },
+        { text: "30 sec Extension de jambe assis sur chaise/banc, alterné / 20 sec repos" },
+        { text: "30 sec Montées sur pointes de pieds / 20 sec repos" },
+        { text: "→ Répéter 3 tours au total" }
+      ], conseil: "Pas de saut, pas de fentes dynamiques : on reste sur des mouvements statiques et contrôlés. Pour la fente statique, vous pouvez vous tenir à un mur ou une chaise pour l'équilibre.",
+      chargeable: true,
+      chargement: {
+        type: "tabata",
+        nom: "🌱 Premiers Pas - Bas du Corps",
+        travail: 30,
+        repos: 20,
+        rounds: 3,
+        exercices: [
+          { text: "Squats sur chaise/banc" },
+          { text: "Fentes statiques" },
+          { text: "Pont fessier" },
+          { text: "Extension de jambe assis, alterné" },
+          { text: "Montées sur pointes de pieds" }
+        ]
+      }
+    }},
+  
+    { title: "🌱 Premiers Pas - Gainage Initiation", material: ["poids-corps"], body: "abdos", duration: 8, type: "TABATA", level: "Facile",
+    desc: "<strong>4 tours (15 sec travail / 30 sec repos) :</strong> Gainage genoux au sol, Gainage latéral droit, Gainage latéral gauche, Crunch léger.",
+    details: { format_label: "PREMIERS PAS — GAINAGE INITIATION — 8 min", intro: "4 tours, 15 sec de travail / 30 sec de repos — temps de repos volontairement long pour bien récupérer :", exercises: [
+        { text: "15 sec Gainage genoux au sol / 30 sec repos" },
+        { text: "15 sec Gainage latéral, genoux au sol, côté droit / 30 sec repos" },
+        { text: "15 sec Gainage latéral, genoux au sol, côté gauche / 30 sec repos" },
+        { text: "8 répétitions Crunch léger et contrôlé / 30 sec repos" },
+        { text: "→ Répéter 4 tours au total" }
+      ], conseil: "Le gainage se fait toujours genoux au sol ici, jamais en planche complète sur les pieds. 15 secondes suffisent largement pour commencer à renforcer la sangle abdominale en toute sécurité. N'hésitez pas à arrêter avant la fin si la position devient inconfortable dans le bas du dos.",
+      chargeable: true,
+      chargement: {
+        type: "tabata",
+        nom: "🌱 Premiers Pas - Gainage Initiation",
+        travail: 15,
+        repos: 30,
+        rounds: 4,
+        exercices: [
+          { text: "Gainage genoux au sol" },
+          { text: "Gainage latéral droit, genoux au sol" },
+          { text: "Gainage latéral gauche, genoux au sol" },
+          { text: "Crunch léger" }
+        ]
+      }
+    }},
+  
+    { title: "🔰 Débutant - Haut du Corps Bases", material: ["poids-corps"], body: "haut", duration: 12, type: "TABATA", level: "Facile",
+    desc: "<strong>3 tours (30 sec travail / 15 sec repos) :</strong> Pompes inclinées/genoux, Dips sur chaise, Superman, Y-W au sol.",
+    details: { format_label: "DÉBUTANT — HAUT DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 15 sec de repos :", exercises: [
+        { text: "30 sec Pompes inclinées ou sur genoux / 15 sec repos" },
+        { text: "30 sec Dips sur chaise/banc / 15 sec repos" },
+        { text: "30 sec Superman / 15 sec repos" },
+        { text: "30 sec Y-W au sol / 15 sec repos" },
+        { text: "→ Répéter 3 tours au total" }
+      ], conseil: "Pour les dips sur chaise, gardez les jambes pliées et les pieds proches de la chaise pour limiter la charge au début — plus les pieds s'éloignent, plus l'exercice est difficile. Pour les pompes, l'angle incliné (mains sur table) est plus facile que sur les genoux.",
+      chargeable: true,
+      chargement: {
+        type: "tabata",
+        nom: "🔰 Débutant - Haut du Corps",
+        travail: 30,
+        repos: 15,
+        rounds: 3,
+        exercices: [
+          { text: "Pompes inclinées / genoux" },
+          { text: "Dips sur chaise/banc" },
+          { text: "Superman" },
+          { text: "Y-W au sol" }
+        ]
+      }
+    }},
+  
+    { title: "🔰 Débutant - Bas du Corps Bases", material: ["poids-corps"], body: "bas", duration: 12, type: "TABATA", level: "Facile",
+    desc: "<strong>3 tours (30 sec travail / 15 sec repos) :</strong> Squats, Fentes alternées sans saut, Pont fessier, Chaise au mur.",
+    details: { format_label: "DÉBUTANT — BAS DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 15 sec de repos :", exercises: [
+        { text: "30 sec Squats / 15 sec repos" },
+        { text: "30 sec Fentes alternées, sans saut / 15 sec repos" },
+        { text: "30 sec Pont fessier / 15 sec repos" },
+        { text: "30 sec Chaise au mur (position statique, dos contre le mur) / 15 sec repos" },
+        { text: "→ Répéter 3 tours au total" }
+      ], conseil: "On introduit ici la fente alternée (avec déplacement) et la chaise au mur, un grand classique pour renforcer les cuisses sans impact. Si la chaise au mur est trop difficile à tenir 30 sec, faites le temps que vous pouvez puis reposez-vous le reste du temps.",
+      chargeable: true,
+      chargement: {
+        type: "tabata",
+        nom: "🔰 Débutant - Bas du Corps",
+        travail: 30,
+        repos: 15,
+        rounds: 3,
+        exercices: [
+          { text: "Squats" },
+          { text: "Fentes alternées, sans saut" },
+          { text: "Pont fessier" },
+          { text: "Chaise au mur" }
+        ]
+      }
+    }},
+  
+    { title: "🔰 Débutant - Abdos Initiation", material: ["poids-corps"], body: "abdos", duration: 10, type: "TABATA", level: "Facile",
+    desc: "<strong>4 tours (20 sec travail / 15 sec repos) :</strong> Crunch, Gainage classique, Relevé de bassin jambes pliées, Gainage latéral alterné.",
+    details: { format_label: "DÉBUTANT — ABDOS INITIATION — 10 min", intro: "4 tours, 20 sec de travail / 15 sec de repos :", exercises: [
+        { text: "20 sec Crunch / 15 sec repos" },
+        { text: "20 sec Gainage classique (planche, sur les pieds) / 15 sec repos" },
+        { text: "20 sec Relevé de bassin, jambes pliées / 15 sec repos" },
+        { text: "20 sec Gainage latéral alterné (10 sec chaque côté) / 15 sec repos" },
+        { text: "→ Répéter 4 tours au total" }
+      ], conseil: "On passe ici au gainage classique sur les pieds (planche complète). Si c'est encore trop difficile, vous pouvez rester genoux au sol comme dans les séances Premiers Pas — c'est tout à fait normal de progresser à votre rythme.",
+      chargeable: true,
+      chargement: {
+        type: "tabata",
+        nom: "🔰 Débutant - Abdos Initiation",
+        travail: 20,
+        repos: 15,
+        rounds: 4,
+        exercices: [
+          { text: "Crunch" },
+          { text: "Gainage classique" },
+          { text: "Relevé de bassin, jambes pliées" },
+          { text: "Gainage latéral alterné" }
+        ]
+      }
+    }},
+  
     { title: "WOD TABATA 30/10", material: ["poids-corps"], body: "complet", duration: 6.5, type: "TABATA", level: "Facile", desc: "<strong>30 sec travail / 10 sec repos :</strong> Squats, Burpees, Mountain Climbers, Jumping jacks, Fente avant(lunges).",
       details: { format_label: "TABATA — 6 min 30", intro: "30 sec travail / 10 sec repos — 2 tours complets :", exercises: [
           { text: "30 sec SQUATS / 10 sec repos" }, { text: "30 sec BURPEES / 10 sec repos", image: "images/infosbulles/BURPEES1.png" }, { text: "30 sec MOUNTAIN CLIMBERS / 10 sec repos" }, { text: "30 sec JUMPING JACKS / 10 sec repos" }, { text: "30 sec FENTES AVANT / 10 sec repos" }, { text: "→ Répéter une 2ème fois (même ordre)" }
@@ -295,6 +449,32 @@ const workouts = [
     
   
 /* SEANCES AMRAP */
+  
+  { title: "🔰 Débutant - Full Body Essentiels", material: ["poids-corps"], body: "complet", duration: 15, type: "AMRAP", level: "Facile",
+    desc: "<strong>AMRAP 15 min :</strong> 8 Squats, 6 Pompes sur genoux, 8 Sit-ups assistés, 10 sec gainage.",
+    details: { format_label: "DÉBUTANT — FULL BODY — AMRAP 15 MIN", intro: "Enchaîner le plus de tours possible pendant 15 minutes :", exercises: [
+        { text: "8 Squats" },
+        { text: "6 Pompes sur les genoux" },
+        { text: "8 Sit-ups assistés (mains sous les cuisses pour s'aider)" },
+        { text: "10 sec Gainage (planche classique ou genoux au sol selon niveau)" }
+      ], scaled: { intro: "VERSION ENCORE PLUS DOUCE :", exercises: [
+          { text: "Squats sur chaise au lieu de squats libres" },
+          { text: "Pompes inclinées (mains sur une table) au lieu de pompes sur genoux" },
+          { text: "Gainage genoux au sol" }
+        ]}, conseil: "Premier format un peu plus libre : on découvre l'enchaînement sans contrainte de chrono par exercice. Avancez à votre rythme, faites des pauses quand vous en avez besoin, l'objectif est juste d'enchaîner le plus de tours confortablement.",
+      chargeable: true,
+      chargement: {
+        type: "amrap",
+        nom: "🔰 Débutant - Full Body Essentiels",
+        duree_min: 15,
+        exercices: [
+          { text: "8 Squats" },
+          { text: "6 Pompes sur les genoux" },
+          { text: "8 Sit-ups assistés" },
+          { text: "10 sec Gainage" }
+        ]
+      }
+    }},
   
   { title: "WOD AMRAP 6 EXOS", material: ["poids-corps"], body: "complet", duration: 28, type: "AMRAP", level: "Facile", 
    desc: "<strong>4 tours (1' repos) :</strong> 1 min Burpees, 1 min Pompes(push-ups), 1 min Squat jump, 1 min Marche de l'ours, 1 min Mountain climber, 1 min Sit-up(abdos).",
@@ -1384,6 +1564,34 @@ const workouts = [
         }
       }},
 
+  
+    { title: "🌱 Premiers Pas - Mobilité & Réveil Musculaire", material: ["poids-corps"], body: "complet", duration: 6, type: "MUSCU", level: "Facile",
+    desc: "<strong>2 tours (30 sec par mouvement) :</strong> Rotations d'épaules, Cercles de hanches, Flexions latérales, Montée de genoux, Chat-vache, étirements doux.",
+    details: { format_label: "PREMIERS PAS — MOBILITÉ — 10 min", intro: "2 tours, 30 sec par mouvement, à réaliser en douceur et sans chrono strict si besoin :", exercises: [
+        { text: "30 sec Rotations d'épaules (avant puis arrière)" },
+        { text: "30 sec Cercles de hanches (sens horaire puis antihoraire)" },
+        { text: "30 sec Flexions latérales du buste, alterné" },
+        { text: "30 sec Montée de genoux sur place, bras qui balancent" },
+        { text: "30 sec Chat-vache (à quatre pattes, dos qui s'arrondit / se creuse)" },
+        { text: "30 sec Étirement doux au choix (mollets, ischios, épaules)" },
+        { text: "→ Répéter 2 tours au total" }
+      ], conseil: "Cette séance peut être utilisée seule pour un réveil musculaire en douceur, ou comme échauffement avant une autre séance Premiers Pas. Mouvements amples mais sans forcer, on cherche la fluidité, pas l'intensité.",
+      chargeable: true,
+      chargement: {
+        type: "surmesure",
+        nom: "🌱 Premiers Pas - Mobilité",
+        repeat: 2,
+        phases: [
+          { type: "travail", sec: 30, text: "Rotations d'épaules" },
+          { type: "travail", sec: 30, text: "Cercles de hanches" },
+          { type: "travail", sec: 30, text: "Flexions latérales du buste" },
+          { type: "travail", sec: 30, text: "Montée de genoux, bras qui balancent" },
+          { type: "travail", sec: 30, text: "Chat-vache" },
+          { type: "travail", sec: 30, text: "Étirement doux au choix" }
+        ]
+      }
+    }},
+  
     {
         title: "Séance Pompes",
         material: ["poids-corps"],
@@ -3576,6 +3784,49 @@ const workouts = [
   
   
     
+  
+    { title: "🌱 Premiers Pas - Cardio Léger Sans Impact", material: ["poids-corps"], body: "complet", duration: 12, type: "CARDIO", level: "Facile",
+    desc: "<strong>6 tours, chaque minute :</strong> Course légère sur place 30 sec puis Pas chassés sur place 30 sec.",
+    details: { format_label: "PREMIERS PAS — CARDIO LÉGER — 12 min", intro: "Chaque minute, alterner :", exercises: [
+        { text: "30 sec Course légère sur place" },
+        { text: "30 sec Pas chassés sur place" },
+        { text: "→ Répéter 6 fois au total (12 minutes)" }
+      ], conseil: "Aucun saut : la course sur place reste légère, pieds qui décollent à peine du sol. Si l'essoufflement arrive trop vite, ralentissez le rythme plutôt que de vous arrêter — l'idée est de bouger en continu, à votre allure.",
+      chargeable: true,
+      chargement: {
+        type: "surmesure",
+        nom: "🌱 Premiers Pas - Cardio Léger",
+        repeat: 6,
+        phases: [
+          { type: "travail", sec: 30, text: "Course légère sur place" },
+          { type: "travail", sec: 30, text: "Pas chassés sur place" }
+        ]
+      }
+    }},
+  
+    { title: "🔰 Débutant - Cardio Doux Progressif", material: ["poids-corps"], body: "complet", duration: 12, type: "CARDIO", level: "Facile",
+    desc: "<strong>CARDIO 12 min :</strong> Course légère sur place, Montées de genoux lentes, Pas chassés, Talons-fesses lents.",
+    details: { format_label: "DÉBUTANT — CARDIO DOUX PROGRESSIF — 12 min", intro: "Chaque minute, changer de mouvement (1 minute par mouvement, 4 mouvements, 3 tours au total) :", exercises: [
+        { text: "1 min Course légère sur place" },
+        { text: "1 min Montées de genoux lentes" },
+        { text: "1 min Pas chassés" },
+        { text: "1 min Talons-fesses lents" },
+        { text: "→ Répéter 3 fois au total (12 minutes)" }
+      ], conseil: "Cette séance prolonge le travail cardio sans impact des séances Premiers Pas, avec un format un peu plus long et plus varié. Gardez un rythme que vous pouvez tenir en continu — mieux vaut ralentir que s'arrêter complètement.",
+      chargeable: true,
+      chargement: {
+        type: "surmesure",
+        nom: "🔰 Débutant - Cardio Doux Progressif",
+        repeat: 3,
+        phases: [
+          { type: "travail", sec: 60, text: "Course légère sur place" },
+          { type: "travail", sec: 60, text: "Montées de genoux lentes" },
+          { type: "travail", sec: 60, text: "Pas chassés" },
+          { type: "travail", sec: 60, text: "Talons-fesses lents" }
+        ]
+      }
+    }},
+  
     {
         title: "Séances Fractionné course",
         material: ["poids-corps", "tapis-incurve"],
