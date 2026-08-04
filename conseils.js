@@ -1655,3 +1655,407 @@ function effacerToutJSON() {
     alert('✅ Toutes les données ont été effacées.');
     if (typeof displayConseils === 'function') displayConseils();
 }
+
+/* ============================================================
+   ESTIMATEUR DE CHARGES — pour débutants (MUSCU)
+   À coller à la toute fin de conseils.js
+   ============================================================ */
+
+/* ---------- 1. TABLE DE RÉFÉRENCE DES EXERCICES ----------
+   Chaque exercice cible est rattaché à un test de référence
+   (push / pull / legs) et un ratio par rapport au 1RM estimé
+   de ce test, calé pour viser une charge confortable en 8-12 reps
+   (environ 65-70% du 1RM estimé), pas une charge maximale.
+   Ratios basés sur les standards de force relative usuels
+   (T-Nation 4:3:2:1, ratios bench/incline/DB, Fitness Volt). */
+
+const CHARGES_REF_EXOS = {
+    push: [
+        { nom: "Développé couché",                         ratio: 0.70 },
+        { nom: "Développé couché (Bench press)",            ratio: 0.70 },
+        { nom: "Développé couché prise serrée (Close-grip bench press)", ratio: 0.65 },
+        { nom: "Développé incliné haltères (Incline dumbbell press)",    ratio: 0.50 },
+        { nom: "Développé militaire (Overhead press)",      ratio: 0.40 },
+        { nom: "Développé militaire haltères (Dumbbell overhead press)", ratio: 0.38 },
+        { nom: "Chest fly avec élastique",                  ratio: 0.30 },
+        { nom: "Écarté haltères couché (Dumbbell fly)",      ratio: 0.30 },
+        { nom: "Dips",                                      ratio: 0.55 },
+        { nom: "Extension triceps haltère (Triceps overhead extension)", ratio: 0.20 },
+        { nom: "Extension triceps poulie haute",            ratio: 0.25 },
+        { nom: "Extension triceps à la poulie haute (Triceps pushdown)", ratio: 0.25 },
+        { nom: "Barre au front",                            ratio: 0.25 },
+        { nom: "Élévation frontale haltères (Front raise)", ratio: 0.18 },
+        { nom: "Élévation latérale avec haltères",          ratio: 0.18 },
+        { nom: "Élévation latérale haltères (Lateral raise)", ratio: 0.18 },
+        { nom: "Chest Press Jammer Arm",                    ratio: 0.55 },
+        { nom: "Landmine Press à un bras",                  ratio: 0.35 },
+        { nom: "Landmine press à un bras",                  ratio: 0.35 },
+        { nom: "Pompe",                                     ratio: null } // référence elle-même
+    ],
+    pull: [
+        { nom: "Rowing barre (Barbell row)",                ratio: 0.85 },
+        { nom: "Rowing haltère unilatéral (Single-arm dumbbell row)", ratio: 0.40 },
+        { nom: "Rowing buste penché jammer arms",            ratio: 0.45 },
+        { nom: "Rowing horizontal poulie basse",             ratio: 0.75 },
+        { nom: "Tirage vertical poulie haute (Lat pulldown)", ratio: 0.85 },
+        { nom: "Tirage poulie haute prise serrée (Close-grip lat pulldown)", ratio: 0.80 },
+        { nom: "Curl barre (Barbell curl)",                  ratio: 0.35 },
+        { nom: "Curl haltères (Dumbbell curl)",              ratio: 0.16 },
+        { nom: "Curl incliné",                               ratio: 0.14 },
+        { nom: "Curl incliné haltères (Incline dumbbell curl)", ratio: 0.14 },
+        { nom: "Curl marteau (Hammer curl)",                 ratio: 0.16 },
+        { nom: "Curl à la barre EZ",                         ratio: 0.35 },
+        { nom: "Curl biceps à la poulie basse",              ratio: 0.35 },
+        { nom: "Haussement d'épaules barre (Barbell shrug)", ratio: 0.90 },
+        { nom: "Shrug jammer arms",                          ratio: 0.60 },
+        { nom: "Oiseau avec haltères",                       ratio: 0.12 },
+        { nom: "Oiseau haltères (Reverse fly)",               ratio: 0.12 },
+        { nom: "Oiseau à la poulie basse (Cable reverse fly)", ratio: 0.20 },
+        { nom: "Traction - Traction lestée",                 ratio: null },
+        { nom: "Tractions (Pull-up)",                        ratio: null }
+    ],
+    legs: [
+        { nom: "Squat barre (Back squat)",                   ratio: 0.65 },
+        { nom: "Squat avant (Front squat)",                  ratio: 0.55 },
+        { nom: "Squat gobelet (Goblet squat)",                ratio: 0.45 },
+        { nom: "Goblet squat haltère talons surélevés",       ratio: 0.40 },
+        { nom: "Landmine squat",                              ratio: 0.40 },
+        { nom: "Fentes avant haltères (Dumbbell lunge)",      ratio: 0.25 },
+        { nom: "Fentes arrière haltères (Reverse dumbbell lunge)", ratio: 0.25 },
+        { nom: "Fentes marchées haltères (Walking lunge)",    ratio: 0.22 },
+        { nom: "Fentes jammer arms (poids sur les 2 jammers arms)", ratio: 0.45 },
+        { nom: "Soulevé de terre (Deadlift)",                 ratio: 0.80 },
+        { nom: "Soulevé de terre jambes tendues (Romanian deadlift)", ratio: 0.65 },
+        { nom: "Soulevé de terre à la barre jambes tendues",  ratio: 0.65 },
+        { nom: "Deadlift jambes tendues à l'élastique (focus lombaire)", ratio: 0.30 },
+        { nom: "Extension de jambes (Leg extension)",         ratio: 0.45 },
+        { nom: "Flexion de jambes (Leg curl)",                ratio: 0.35 },
+        { nom: "Poussée de hanches (Hip thrust)",             ratio: 0.75 },
+        { nom: "Relevé de bassin (Hip raise)",                ratio: null },
+        { nom: "Enroulement de bassin (Hip thrust / crunch bas)", ratio: null },
+        { nom: "Abduction de hanche (Hip abduction)",         ratio: 0.20 },
+        { nom: "Élévation des mollets (Calf raise)",          ratio: 0.55 },
+        { nom: "Élévation des mollets debout (Standing calf raise)", ratio: 0.55 },
+        { nom: "Extension Mollets debout avec Landmine",      ratio: 0.45 },
+        { nom: "Squat", ratio: null } // référence elle-même
+    ]
+};
+
+/* ---------- 2. INJECTION DE LA CARTE DANS infos.html ---------- */
+/* On hook displayConseils() en y ajoutant un appel supplémentaire */
+(function() {
+    var originalDisplayConseils = displayConseils;
+    displayConseils = function() {
+        originalDisplayConseils();
+
+        var savedCharges = {};
+        try { savedCharges = JSON.parse(localStorage.getItem('charges_estimees')) || {}; } catch(e) {}
+        var hasCharges = Object.keys(savedCharges).length > 0;
+
+        var saveSectionRef = document.getElementById('section-sauvegarde');
+        var chargesSection = document.getElementById('section-charges-estimees');
+        if (!chargesSection) {
+            chargesSection = document.createElement('div');
+            chargesSection.id = 'section-charges-estimees';
+            chargesSection.style.marginTop = '24px';
+            var sectionConseils = document.getElementById('section-conseils');
+            // On l'insère juste après la grille de conseils, avant le carnet
+            sectionConseils.parentNode.insertBefore(chargesSection, sectionConseils.nextSibling);
+        }
+        chargesSection.innerHTML =
+            '<div class="card-grid">' +
+            '<div class="card card-muscu">' +
+            '<div>' +
+            '<span class="tag tag-body">Musculation</span>' +
+            '<span class="tag tag-material">DÉBUTANT</span>' +
+            '<h3>🧮 Estimateur de charges</h3>' +
+            '<div class="card-desc">' + (hasCharges ? 'Charges estimées disponibles pour pré-remplir vos séances MUSCU.' : "Vous débutez en musculation ? Estimez vos charges de départ en 3 tests rapides (5-10 min).") + '</div>' +
+            '</div>' +
+            '<div class="card-buttons">' +
+            '<button onclick="openEstimateurCharges()" class="btn-full">' + (hasCharges ? '🔄 Refaire le test' : '🧮 Lancer le test') + '</button>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+    };
+})();
+
+/* ---------- 3. MODALE — 3 TESTS + RÉSULTATS ---------- */
+
+function openEstimateurCharges() {
+    document.getElementById('modal-title').textContent = 'Estimateur de charges';
+    document.getElementById('modal-box').className = 'type-muscu';
+    document.getElementById('modal-badges').innerHTML =
+        '<span class="modal-badge modal-badge-type">Musculation</span>' +
+        '<span class="modal-badge modal-badge-mat">DÉBUTANT</span>';
+
+    var html = '';
+    html += '<div style="margin-bottom:16px;">';
+    html += '<p style="font-size:0.92em;color:#888;line-height:1.5;">3 tests rapides (5-10 min au total) pour estimer vos charges de départ sur les principaux mouvements de musculation. Faites une vraie série à l\'échec (ou proche) pour chaque test, avec une bonne technique.</p>';
+    html += '</div>';
+
+    // Infos perso
+    html += '<div style="background:#f8f8f8;border-radius:10px;padding:14px;margin-bottom:16px;">';
+    html += '<label style="font-size:0.8em;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#888;display:block;margin-bottom:6px;">Poids de corps (kg)</label>';
+    html += '<input type="number" id="ec-poids-corps" min="30" max="200" step="0.5" placeholder="ex: 70" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:0.95em;margin-bottom:12px;">';
+    html += '<label style="font-size:0.8em;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#888;display:block;margin-bottom:6px;">Sexe</label>';
+    html += '<select id="ec-sexe" style="width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:0.95em;">';
+    html += '<option value="H">Homme</option><option value="F">Femme</option>';
+    html += '</select>';
+    html += '</div>';
+
+    // Test 1 : Poussée
+    html += '<div style="border:1px solid #eee;border-radius:10px;padding:14px;margin-bottom:14px;">';
+    html += '<div style="font-weight:800;margin-bottom:8px;">1️⃣ Poussée (Pectoraux / Épaules / Triceps)</div>';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Avez-vous des haltères disponibles ?</label>';
+    html += '<select id="ec-push-materiel" onchange="ecToggleMateriel(\'push\')" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px;">';
+    html += '<option value="non">Non — test au poids de corps (pompes)</option>';
+    html += '<option value="oui">Oui — test développé haltères léger</option>';
+    html += '</select>';
+    html += '<div id="ec-push-nomateriel">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Nombre de pompes complètes réalisées d\'affilée (max)</label>';
+    html += '<input type="number" id="ec-push-reps" min="0" max="80" placeholder="ex: 12" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;">';
+    html += '</div>';
+    html += '<div id="ec-push-materiel-zone" style="display:none;">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Poids d\'un haltère utilisé (kg)</label>';
+    html += '<input type="number" id="ec-push-poids" min="1" max="60" step="0.5" placeholder="ex: 8" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:8px;">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Nombre de reps réalisées avec ce poids (développé couché haltères)</label>';
+    html += '<input type="number" id="ec-push-poids-reps" min="1" max="30" placeholder="ex: 10" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;">';
+    html += '</div>';
+    html += '</div>';
+
+    // Test 2 : Tirage
+    html += '<div style="border:1px solid #eee;border-radius:10px;padding:14px;margin-bottom:14px;">';
+    html += '<div style="font-weight:800;margin-bottom:8px;">2️⃣ Tirage (Dos / Biceps)</div>';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Avez-vous accès à une barre de traction ou élastique/poulie ?</label>';
+    html += '<select id="ec-pull-materiel" onchange="ecToggleMateriel(\'pull\')" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px;">';
+    html += '<option value="non">Non — pas de test possible, estimation prudente</option>';
+    html += '<option value="oui">Oui — test tractions (ou rowing élastique/poulie)</option>';
+    html += '</select>';
+    html += '<div id="ec-pull-materiel-zone" style="display:none;">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Type de test</label>';
+    html += '<select id="ec-pull-type" onchange="ecTogglePullType()" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px;">';
+    html += '<option value="tractions">Tractions complètes</option>';
+    html += '<option value="rowing">Rowing élastique/poulie (poids + reps)</option>';
+    html += '</select>';
+    html += '<div id="ec-pull-tractions-zone">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Nombre de tractions complètes réalisées (max)</label>';
+    html += '<input type="number" id="ec-pull-reps" min="0" max="40" placeholder="ex: 5" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;">';
+    html += '</div>';
+    html += '<div id="ec-pull-rowing-zone" style="display:none;">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Poids ou résistance utilisée (kg)</label>';
+    html += '<input type="number" id="ec-pull-poids" min="1" max="100" step="0.5" placeholder="ex: 20" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:8px;">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Nombre de reps réalisées avec ce poids</label>';
+    html += '<input type="number" id="ec-pull-poids-reps" min="1" max="30" placeholder="ex: 12" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;">';
+    html += '</div>';
+    html += '</div>';
+    html += '</div>';
+
+    // Test 3 : Jambes
+    html += '<div style="border:1px solid #eee;border-radius:10px;padding:14px;margin-bottom:16px;">';
+    html += '<div style="font-weight:800;margin-bottom:8px;">3️⃣ Jambes (Quadriceps / Fessiers)</div>';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Avez-vous un haltère/kettlebell disponible ?</label>';
+    html += '<select id="ec-legs-materiel" onchange="ecToggleMateriel(\'legs\')" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:10px;">';
+    html += '<option value="non">Non — test au poids de corps (squats)</option>';
+    html += '<option value="oui">Oui — test goblet squat avec charge</option>';
+    html += '</select>';
+    html += '<div id="ec-legs-nomateriel">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Nombre de squats complets réalisés d\'affilée en 45 sec</label>';
+    html += '<input type="number" id="ec-legs-reps" min="0" max="80" placeholder="ex: 25" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;">';
+    html += '</div>';
+    html += '<div id="ec-legs-materiel-zone" style="display:none;">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Poids utilisé en goblet squat (kg)</label>';
+    html += '<input type="number" id="ec-legs-poids" min="1" max="60" step="0.5" placeholder="ex: 16" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;margin-bottom:8px;">';
+    html += '<label style="font-size:0.85em;display:block;margin-bottom:6px;">Nombre de reps réalisées avec ce poids</label>';
+    html += '<input type="number" id="ec-legs-poids-reps" min="1" max="30" placeholder="ex: 12" style="width:100%;padding:8px;border-radius:8px;border:1px solid #ddd;">';
+    html += '</div>';
+    html += '</div>';
+
+    html += '<button onclick="ecCalculerCharges()" class="btn-full" style="margin-bottom:10px;">📊 Calculer mes charges</button>';
+    html += '<div id="ec-resultats"></div>';
+
+    document.getElementById('modal-body').innerHTML = html;
+    document.getElementById('modal-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function ecToggleMateriel(zone) {
+    var materiel = document.getElementById('ec-' + zone + '-materiel').value;
+    if (zone === 'pull') {
+        document.getElementById('ec-pull-materiel-zone').style.display = (materiel === 'oui') ? 'block' : 'none';
+    } else {
+        document.getElementById('ec-' + zone + '-nomateriel').style.display = (materiel === 'non') ? 'block' : 'none';
+        document.getElementById('ec-' + zone + '-materiel-zone').style.display = (materiel === 'oui') ? 'block' : 'none';
+    }
+}
+
+function ecTogglePullType() {
+    var type = document.getElementById('ec-pull-type').value;
+    document.getElementById('ec-pull-tractions-zone').style.display = (type === 'tractions') ? 'block' : 'none';
+    document.getElementById('ec-pull-rowing-zone').style.display = (type === 'rowing') ? 'block' : 'none';
+}
+
+/* La formule Epley standard (1RM = poids × (1 + reps/30)) n'est fiable
+   que jusqu'à environ 10-12 reps : au-delà, elle surestime fortement
+   car elle ignore le basculement vers l'endurance musculaire.
+   On plafonne donc l'effet des reps au-delà de 12 : chaque rep
+   supplémentaire ne compte plus que pour 20% de son poids normal. */
+function ecRepsAjustees(reps) {
+    if (reps <= 12) return reps;
+    return 12 + (reps - 12) * 0.2;
+}
+
+function ecEpley(poids, reps) {
+    var repsAjustees = ecRepsAjustees(reps);
+    return poids * (1 + repsAjustees / 30);
+}
+
+function ecCalculerCharges() {
+    var poidsCorps = parseFloat(document.getElementById('ec-poids-corps').value);
+    var sexe = document.getElementById('ec-sexe').value;
+
+    if (!poidsCorps || poidsCorps < 30) {
+        document.getElementById('ec-resultats').innerHTML = '<div style="color:#e74c3c;padding:10px;text-align:center;">⚠️ Merci d\'indiquer votre poids de corps.</div>';
+        return;
+    }
+
+    var coefSexe = (sexe === 'F') ? 0.65 : 1.0; // ajustement global femme/homme sur la force relative haut du corps surtout
+
+    var resultats = {};
+
+    // --- TEST PUSH ---
+    var push1RM = null;
+    var pushMateriel = document.getElementById('ec-push-materiel').value;
+    if (pushMateriel === 'oui') {
+        var pPoids = parseFloat(document.getElementById('ec-push-poids').value) || 0;
+        var pReps = parseFloat(document.getElementById('ec-push-poids-reps').value) || 0;
+        if (pPoids > 0 && pReps > 0) {
+            // 2 haltères, donc poids total = pPoids * 2
+            push1RM = ecEpley(pPoids * 2, pReps);
+        }
+    } else {
+        var pushReps = parseFloat(document.getElementById('ec-push-reps').value) || 0;
+        if (pushReps > 0) {
+            var chargeEffectivePompe = poidsCorps * 0.65; // ~65% du poids de corps en pompe
+            push1RM = ecEpley(chargeEffectivePompe, pushReps);
+        }
+    }
+
+    // --- TEST PULL ---
+    var pull1RM = null;
+    var pullMateriel = document.getElementById('ec-pull-materiel').value;
+    if (pullMateriel === 'oui') {
+        var pullType = document.getElementById('ec-pull-type').value;
+        if (pullType === 'tractions') {
+            var pullReps = parseFloat(document.getElementById('ec-pull-reps').value) || 0;
+            if (pullReps > 0) {
+                var chargeEffectiveTraction = poidsCorps * 0.9; // quasi tout le poids de corps
+                pull1RM = ecEpley(chargeEffectiveTraction, pullReps);
+            }
+        } else {
+            var rPoids = parseFloat(document.getElementById('ec-pull-poids').value) || 0;
+            var rReps = parseFloat(document.getElementById('ec-pull-poids-reps').value) || 0;
+            if (rPoids > 0 && rReps > 0) {
+                pull1RM = ecEpley(rPoids, rReps);
+            }
+        }
+    }
+    // Si pas de matériel, on estime prudemment le tirage à partir du push (ratio dos/poitrine ~1.1)
+    if (pull1RM === null && push1RM !== null) {
+        pull1RM = push1RM * 1.1;
+    }
+
+    // --- TEST LEGS ---
+    var legs1RM = null;
+    var legsMateriel = document.getElementById('ec-legs-materiel').value;
+    if (legsMateriel === 'oui') {
+        var lPoids = parseFloat(document.getElementById('ec-legs-poids').value) || 0;
+        var lReps = parseFloat(document.getElementById('ec-legs-poids-reps').value) || 0;
+        if (lPoids > 0 && lReps > 0) {
+            legs1RM = ecEpley(lPoids, lReps);
+        }
+    } else {
+        var legsReps = parseFloat(document.getElementById('ec-legs-reps').value) || 0;
+        if (legsReps > 0) {
+            // squat poids de corps en 45 sec = test d'endurance, conversion approximative en équivalent reps strict (/1.5)
+            var repsEquivalent = legsReps / 1.5;
+            var chargeEffectiveSquat = poidsCorps * 1.0; // tout le poids de corps en squat
+            legs1RM = ecEpley(chargeEffectiveSquat, repsEquivalent);
+        }
+    }
+
+    if (!push1RM && !pull1RM && !legs1RM) {
+        document.getElementById('ec-resultats').innerHTML = '<div style="color:#e74c3c;padding:10px;text-align:center;">⚠️ Merci de compléter au moins un test.</div>';
+        return;
+    }
+
+    // Construction des résultats par exercice
+    var charges = {};
+    function remplirGroupe(groupe, ref1RM) {
+        if (ref1RM === null) return;
+        CHARGES_REF_EXOS[groupe].forEach(function(exo) {
+            if (exo.ratio === null) return;
+            var charge = ref1RM * exo.ratio * coefSexe;
+            // arrondi au 0.5 kg le plus proche, minimum 0
+            charge = Math.max(0, Math.round(charge * 2) / 2);
+            charges[exo.nom] = charge;
+        });
+    }
+    remplirGroupe('push', push1RM);
+    remplirGroupe('pull', pull1RM);
+    remplirGroupe('legs', legs1RM);
+    resultats = charges;
+
+    // Sauvegarde
+    localStorage.setItem('charges_estimees', JSON.stringify(resultats));
+    localStorage.setItem('charges_estimees_meta', JSON.stringify({ date: new Date().toLocaleDateString('fr-FR'), poidsCorps: poidsCorps, sexe: sexe }));
+
+    // Affichage
+    var html = '<div style="background:#f0f9f0;border-radius:10px;padding:14px;margin-top:6px;">';
+    html += '<div style="font-weight:800;margin-bottom:10px;">✅ Charges de départ estimées (8-12 reps)</div>';
+
+    var groupesAffichage = [
+        { titre: '💪 Poussée', exos: CHARGES_REF_EXOS.push },
+        { titre: '🔙 Tirage', exos: CHARGES_REF_EXOS.pull },
+        { titre: '🦵 Jambes', exos: CHARGES_REF_EXOS.legs }
+    ];
+
+    groupesAffichage.forEach(function(groupe) {
+        var lignes = groupe.exos.filter(function(e) { return charges.hasOwnProperty(e.nom); });
+        if (!lignes.length) return;
+        html += '<div style="margin-bottom:12px;">';
+        html += '<div style="font-weight:700;font-size:0.85em;color:#555;margin-bottom:6px;">' + groupe.titre + '</div>';
+        lignes.forEach(function(e) {
+            html += '<div style="display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid #e8e8e8;font-size:0.9em;">';
+            html += '<span>' + e.nom + '</span><span style="font-weight:700;">' + charges[e.nom] + ' kg</span>';
+            html += '</div>';
+        });
+        html += '</div>';
+    });
+
+    html += '<p style="font-size:0.78em;color:#888;margin-top:10px;line-height:1.4;">Ces charges sont des points de départ estimés, pas des maximums. Ajustez librement dans vos séances selon votre ressenti — l\'objectif est de pouvoir réaliser 8 à 12 répétitions propres.</p>';
+    html += '</div>';
+
+    document.getElementById('ec-resultats').innerHTML = html;
+
+    // Rafraîchir la carte d'accueil si on revient à la liste
+    if (typeof displayConseils === 'function') {
+        // léger délai pour ne pas perturber la modale ouverte
+        setTimeout(displayConseils, 100);
+    }
+}
+
+/* ---------- 4. OUVERTURE AUTOMATIQUE DEPUIS UNE AUTRE PAGE ----------
+   Si on arrive sur infos.html via le lien "Pas sûr de vos charges ?"
+   présent dans les séances MUSCU (infos.html?outil=estimateur),
+   on ouvre directement la modale au chargement de la page. */
+(function() {
+    var params = new URLSearchParams(window.location.search);
+    if (params.get('outil') === 'estimateur') {
+        // On attend que displayConseils() ait eu le temps de construire la carte
+        window.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                if (typeof openEstimateurCharges === 'function') openEstimateurCharges();
+            }, 150);
+        });
+    }
+})();
