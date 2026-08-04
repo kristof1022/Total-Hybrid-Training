@@ -2,10 +2,15 @@
 
 const workouts = [
 
+ /*boutons: "both"     // les deux boutons
+boutons: "direct"   // uniquement "⚡ Démarrage direct"
+boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement actuel par défaut, pas besoin de l'écrire)*/
+  
+  
   
 /* SEANCES TABATA */
   
-    { title: "🌱 Premiers Pas - Corps Complet", material: ["poids-corps"], body: "complet", duration: 12, type: "TABATA", level: "Facile",
+    { title: "🌱 Premiers Pas - Corps Complet", material: ["poids-corps"], body: "complet", duration: 12, type: "TABATA", level: "Facile", boutons: "direct",
     desc: "<strong>3 tours (30 sec travail / 20 sec repos) :</strong> Squats sur chaise, Pompes inclinées, Course légère sur place, Superman, Gainage genoux au sol.",
     details: { format_label: "PREMIERS PAS — CORPS COMPLET — 12 min", intro: "3 tours, 30 sec de travail / 20 sec de repos :", exercises: [
         { text: "30 sec Squats sur banc/chaise (s'asseoir / se relever) / 20 sec repos" },
@@ -14,7 +19,7 @@ const workouts = [
         { text: "30 sec Superman (extension dos au sol) / 20 sec repos" },
         { text: "30 sec Gainage genoux au sol (tenir le maximum, sans forcer) / 20 sec repos" },
         { text: "→ Répéter 3 tours au total" }
-      ], conseil: "Séance idéale pour démarrer en douceur. Aucun saut, aucun impact. Ralentissez ou faites une pause supplémentaire si besoin — l'objectif est de tenir la séance en entier, pas d'aller vite. Le gainage se fait genoux au sol, pas en planche complète.",
+      ], conseil: "Séance idéale pour démarrer en douceur. Aucun saut, aucun impact. Ralentissez ou faites une pause supplémentaire si besoin — l'objectif est de tenir la séance en entier, pas d'aller vite. Le gainage se fait genoux au sol, pas en planche complète.<br><br>clic sur ⚡GO!⚡ pour commencer<br>envie de modifier la séance avant de commencer? clic sur 🚀Charger Préparer Go!🚀",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -32,7 +37,7 @@ const workouts = [
       }
     }},
   
-    { title: "🌱 Premiers Pas - Bas du Corps en Douceur", material: ["poids-corps"], body: "bas", duration: 12, type: "TABATA", level: "Facile",
+    { title: "🌱 Premiers Pas - Bas du Corps en Douceur", material: ["poids-corps"], body: "bas", duration: 12, type: "TABATA", level: "Facile", boutons: "direct",
     desc: "<strong>3 tours (30 sec travail / 20 sec repos) :</strong> Squats sur chaise, Fentes statiques, Pont fessier, Extension de jambe assis, Montées sur pointes de pieds.",
     details: { format_label: "PREMIERS PAS — BAS DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 20 sec de repos :", exercises: [
         { text: "30 sec Squats sur chaise/banc / 20 sec repos" },
@@ -59,7 +64,7 @@ const workouts = [
       }
     }},
   
-    { title: "🌱 Premiers Pas - Gainage Initiation", material: ["poids-corps"], body: "abdos", duration: 8, type: "TABATA", level: "Facile",
+    { title: "🌱 Premiers Pas - Gainage Initiation", material: ["poids-corps"], body: "abdos", duration: 8, type: "TABATA", level: "Facile",  boutons: "direct",
     desc: "<strong>4 tours (15 sec travail / 30 sec repos) :</strong> Gainage genoux au sol, Gainage latéral droit, Gainage latéral gauche, Crunch léger.",
     details: { format_label: "PREMIERS PAS — GAINAGE INITIATION — 8 min", intro: "4 tours, 15 sec de travail / 30 sec de repos — temps de repos volontairement long pour bien récupérer :", exercises: [
         { text: "15 sec Gainage genoux au sol / 30 sec repos" },
@@ -84,7 +89,7 @@ const workouts = [
       }
     }},
   
-    { title: "🔰 Débutant - Haut du Corps Bases", material: ["poids-corps"], body: "haut", duration: 12, type: "TABATA", level: "Facile",
+    { title: "🔰 Débutant - Haut du Corps Bases", material: ["poids-corps"], body: "haut", duration: 12, type: "TABATA", level: "Facile",  boutons: "direct",
     desc: "<strong>3 tours (30 sec travail / 15 sec repos) :</strong> Pompes inclinées/genoux, Dips sur chaise, Superman, Y-W au sol.",
     details: { format_label: "DÉBUTANT — HAUT DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 15 sec de repos :", exercises: [
         { text: "30 sec Pompes inclinées ou sur genoux / 15 sec repos" },
@@ -109,7 +114,7 @@ const workouts = [
       }
     }},
   
-    { title: "🔰 Débutant - Bas du Corps Bases", material: ["poids-corps"], body: "bas", duration: 12, type: "TABATA", level: "Facile",
+    { title: "🔰 Débutant - Bas du Corps Bases", material: ["poids-corps"], body: "bas", duration: 12, type: "TABATA", level: "Facile",  boutons: "direct",
     desc: "<strong>3 tours (30 sec travail / 15 sec repos) :</strong> Squats, Fentes alternées sans saut, Pont fessier, Chaise au mur.",
     details: { format_label: "DÉBUTANT — BAS DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 15 sec de repos :", exercises: [
         { text: "30 sec Squats / 15 sec repos" },
@@ -134,7 +139,7 @@ const workouts = [
       }
     }},
   
-    { title: "🔰 Débutant - Abdos Initiation", material: ["poids-corps"], body: "abdos", duration: 10, type: "TABATA", level: "Facile",
+    { title: "🔰 Débutant - Abdos Initiation", material: ["poids-corps"], body: "abdos", duration: 10, type: "TABATA", level: "Facile",  boutons: "direct",
     desc: "<strong>4 tours (20 sec travail / 15 sec repos) :</strong> Crunch, Gainage classique, Relevé de bassin jambes pliées, Gainage latéral alterné.",
     details: { format_label: "DÉBUTANT — ABDOS INITIATION — 10 min", intro: "4 tours, 20 sec de travail / 15 sec de repos :", exercises: [
         { text: "20 sec Crunch / 15 sec repos" },
@@ -159,7 +164,7 @@ const workouts = [
       }
     }},
   
-    { title: "WOD TABATA 30/10", material: ["poids-corps"], body: "complet", duration: 6.5, type: "TABATA", level: "Facile", desc: "<strong>30 sec travail / 10 sec repos :</strong> Squats, Burpees, Mountain Climbers, Jumping jacks, Fente avant(lunges).",
+    { title: "WOD TABATA 30/10", material: ["poids-corps"], body: "complet", duration: 6.5, type: "TABATA", level: "Facile",  boutons: "direct", desc: "<strong>30 sec travail / 10 sec repos :</strong> Squats, Burpees, Mountain Climbers, Jumping jacks, Fente avant(lunges).",
       details: { format_label: "TABATA — 6 min 30", intro: "30 sec travail / 10 sec repos — 2 tours complets :", exercises: [
           { text: "30 sec SQUATS / 10 sec repos" }, { text: "30 sec BURPEES / 10 sec repos", image: "images/infosbulles/BURPEES1.png" }, { text: "30 sec MOUNTAIN CLIMBERS / 10 sec repos" }, { text: "30 sec JUMPING JACKS / 10 sec repos" }, { text: "30 sec FENTES AVANT / 10 sec repos" }, { text: "→ Répéter une 2ème fois (même ordre)" }
         ], conseil: "30 secondes de travail / 10 secondes de repos.",
@@ -180,7 +185,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD TABATA 40/10", material: ["poids-corps"], body: "complet", duration: 10, type: "TABATA", level: "Facile", desc: "<strong>40 sec travail / 10 sec repos :</strong> Squats sautées, Pompes(push-ups), Sit-ups(abdos), Burpees.",
+    { title: "WOD TABATA 40/10", material: ["poids-corps"], body: "complet", duration: 10, type: "TABATA", level: "Facile",  boutons: "both", desc: "<strong>40 sec travail / 10 sec repos :</strong> Squats sautées, Pompes(push-ups), Sit-ups(abdos), Burpees.",
       details: { format_label: "TABATA — 10 min", intro: "3 tours avec 40 sec de travail et 10 sec de repos :", exercises: [
           { text: "40 sec SQUATS SAUTÉS / 10 sec repos" }, { text: "40 sec POMPES / 10 sec repos", image: "images/infosbulles/POMPES1.png" }, { text: "40 sec SIT-UPS / 10 sec repos" }, { text: "40 sec BURPEES / 10 sec repos", image: "images/infosbulles/BURPEES1.png" }, { text: "→ Répéter 3 tours au total" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -202,7 +207,7 @@ const workouts = [
         }              
     }},
 
-    { title: "WOD TABATA 30/10 ABDOS GAINAGE", material: ["poids-corps"], body: "abdos", duration: 5, type: "TABATA", level: "Facile", desc: "<strong>30 sec travail / 10 sec repos pour les abdos :</strong> focus gainage.",
+    { title: "WOD TABATA 30/10 ABDOS GAINAGE", material: ["poids-corps"], body: "abdos", duration: 5, type: "TABATA", level: "Facile",  boutons: "direct", desc: "<strong>30 sec travail / 10 sec repos pour les abdos :</strong> focus gainage.",
       details: { format_label: "TABATA ABDOS — 5 min 10", intro: "30 sec travail / 10 sec repos — 2 tours :", exercises: [
           { text: "30 sec GAINAGE SUR LES COUDES / 10 sec repos" }, { text: "30 sec GAINAGE LATÉRAL GAUCHE / 10 sec repos" }, { text: "30 sec GAINAGE SUR LES MAINS / 10 sec repos" }, { text: "30 sec GAINAGE LATÉRAL DROIT / 10 sec repos" }
         ], conseil: "30 secondes de travail / 10 secondes de repos. Focus gainage, à enchaîner avec le WOD TABATA 30/10 CEINTURE ABDOMINALE DYNAMIQUE.",
@@ -222,7 +227,7 @@ const workouts = [
         }
       }},  
   
-    { title: "WOD TABATA 30/10 CEINTURE ABDOMINALE DYNAMIQUE", material: ["poids-corps"], body: "abdos", duration: 5, type: "TABATA", level: "Facile", 
+    { title: "WOD TABATA 30/10 CEINTURE ABDOMINALE DYNAMIQUE", material: ["poids-corps"], body: "abdos", duration: 5, type: "TABATA", level: "Facile",   boutons: "direct",
      desc: "<strong>30 sec travail / 10 sec repos pour la ceinture abdominale</strong>",
      details: { format_label: "TABATA ABDOS — 5 min 10", intro: "30 sec travail / 10 sec repos — 2 tours :", 
      exercises: [{ text: "30 sec Sit-ups / 10 sec repos" },
@@ -247,7 +252,7 @@ const workouts = [
         }
       }},
   
-    { title: "WOD TABATA 20/10 BAS DU CORPS ET CARDIO", material: ["poids-corps"], body: "complet", duration: 12, type: "TABATA", level: "Facile", 
+    { title: "WOD TABATA 20/10 BAS DU CORPS ET CARDIO", material: ["poids-corps"], body: "complet", duration: 12, type: "TABATA", level: "Facile", boutons: "direct",
      desc: "<strong>20 sec travail / 10 sec - 12 minutes</strong>",
      details: { format_label: "TABATA ABDOS — 12 min ", intro: "20 sec travail / 10 sec repos — 4 tours :", 
      exercises: [{ text: "20 sec Air Squats / 10 sec repos" },
@@ -276,7 +281,7 @@ const workouts = [
         }
       }},
   
-      { title: "WOD TABATA 40/20 RENFO Course à pied 🏃‍♀️", material: ["poids-corps"], body: "complet", duration: 20, type: "TABATA", level: "Facile", 
+      { title: "WOD TABATA 40/20 RENFO Course à pied 🏃‍♀️", material: ["poids-corps"], body: "complet", duration: 20, type: "TABATA", level: "Facile", boutons: "direct",
      desc: "<strong>40 sec travail / 20 sec - 20 minutes</strong>",
      details: { format_label: "TABATA RENFO Course à pied (run) — 20 min ", intro: "40 sec travail / 20 sec repos — 4 tours :", 
      exercises: [{ text: "40 sec Fentes arrière alternées / 20 sec repos" },
@@ -310,6 +315,7 @@ const workouts = [
     duration: 10,
     type: "TABATA",
     level: "Facile",
+    boutons: "direct",
     desc: "<strong>20 sec travail / 10 sec - 20 minutes</strong> <br>'Programme débutant 10min/jour'",
     details: {
       format_label: "TABATA HAUT DU CORPS — 20 min",
@@ -357,6 +363,7 @@ const workouts = [
     duration: 10,
     type: "TABATA",
     level: "Facile",
+    boutons: "direct",
     desc: "<strong>20 sec travail / 10 sec - 20 minutes</strong> <br>'Programme débutant 10min/jour'",
     details: {
       format_label: "TABATA BAS DU CORPS — 10 min",
@@ -404,6 +411,7 @@ const workouts = [
     duration: 10,
     type: "TABATA",
     level: "Facile",
+    boutons: "direct",
     desc: "<strong>20 sec travail / 10 sec - 20 minutes</strong> <br>'Programme débutant 10min/jour'",
     details: {
       format_label: "TABATA BAS DU CORPS — 10 min",
@@ -450,7 +458,7 @@ const workouts = [
   
 /* SEANCES AMRAP */
   
-  { title: "🔰 Débutant - Full Body Essentiels", material: ["poids-corps"], body: "complet", duration: 15, type: "AMRAP", level: "Facile",
+  { title: "🔰 Débutant - Full Body Essentiels", material: ["poids-corps"], body: "complet", duration: 15, type: "AMRAP", level: "Facile", boutons: "both",
     desc: "<strong>AMRAP 15 min :</strong> 8 Squats, 6 Pompes sur genoux, 8 Sit-ups assistés, 10 sec gainage.",
     details: { format_label: "DÉBUTANT — FULL BODY — AMRAP 15 MIN", intro: "Enchaîner le plus de tours possible pendant 15 minutes :", exercises: [
         { text: "8 Squats" },
@@ -476,7 +484,7 @@ const workouts = [
       }
     }},
   
-  { title: "WOD AMRAP 6 EXOS", material: ["poids-corps"], body: "complet", duration: 28, type: "AMRAP", level: "Facile", 
+  { title: "WOD AMRAP 6 EXOS", material: ["poids-corps"], body: "complet", duration: 28, type: "AMRAP", level: "Facile", boutons: "both",
    desc: "<strong>4 tours (1' repos) :</strong> 1 min Burpees, 1 min Pompes(push-ups), 1 min Squat jump, 1 min Marche de l'ours, 1 min Mountain climber, 1 min Sit-up(abdos).",
       details: { format_label: "AMRAP 28 MINUTES", intro: "Réaliser 4 rounds (1 min repos entre chaque) :", 
                 exercises: [
@@ -505,7 +513,7 @@ const workouts = [
                   }
                }},
 
-    { title: "WOD AMRAP 4 EXOS", material: ["traction"], body: "complet", duration: 30, type: "AMRAP", level: "Moyen", desc: "<strong>Pendant 30 min :</strong> 5 Burpees, 7 Tractions(pull-ups), 10 Pompes(push-ups), 15 Squats.",
+    { title: "WOD AMRAP 4 EXOS", material: ["traction"], body: "complet", duration: 30, type: "AMRAP", level: "Moyen", boutons: "both", desc: "<strong>Pendant 30 min :</strong> 5 Burpees, 7 Tractions(pull-ups), 10 Pompes(push-ups), 15 Squats.",
       details: { format_label: "AMRAP 30 MINUTES", intro: "Enchaîner les exercices suivants pendant 30 minutes :", exercises: [
           { text: "5 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "7 Tractions (pull-ups)" }, { text: "10 Pompes", image: "images/infosbulles/POMPES1.png" }, { text: "15 Squats" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -525,7 +533,7 @@ const workouts = [
         }
     }},
 
-    { title: "WOD AMRAP 3 EXOS", material: ["traction"], body: "complet", duration: 20, type: "AMRAP", level: "Facile", desc: "<strong>Pendant 20 min :</strong> 5 Tractions(pull-ups), 10 Pompes(push-ups), 15 Squats.",
+    { title: "WOD AMRAP 3 EXOS", material: ["traction"], body: "complet", duration: 20, type: "AMRAP", level: "Facile", boutons: "both", desc: "<strong>Pendant 20 min :</strong> 5 Tractions(pull-ups), 10 Pompes(push-ups), 15 Squats.",
       details: { format_label: "AMRAP 20 MINUTES", intro: "Enchaîner les exercices suivants pendant 20 minutes :", exercises: [
           { text: "5 Tractions (pull-ups)" }, { text: "10 Pompes", image: "images/infosbulles/POMPES1.png" }, { text: "15 Squats" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -544,7 +552,7 @@ const workouts = [
         }            
         }},
   
-    { title: "WOD AMRAP spécial RENFO NATATION 🏊", material: ["poids-corps"], body: "complet", duration: 20, type: "AMRAP", level: "Facile", desc: "<strong>Pendant 20 min :</strong> Pompes(Push-ups), Superman(Lombaires), Sit-ups(abdos), Fentes sautées alternées (alternating jumping lunge), Burpees sans saut.",
+    { title: "WOD AMRAP spécial RENFO NATATION 🏊", material: ["poids-corps"], body: "complet", duration: 20, type: "AMRAP", level: "Facile", boutons: "both", desc: "<strong>Pendant 20 min :</strong> Pompes(Push-ups), Superman(Lombaires), Sit-ups(abdos), Fentes sautées alternées (alternating jumping lunge), Burpees sans saut.",
       details: { format_label: "AMRAP 20 MINUTES", intro: "Enchaîner les exercices suivants pendant 20 minutes :", exercises: [
           { text: "12 Pompes(Push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "15 Superman(Lombaires)" }, { text: "15 Sit-Ups(abdos)" }, { text: "20 Fentes sautées alternées - 10/jambe (alternating jumping lunge)" }, { text: "10 Burpees sans saut", image: "images/infosbulles/BURPEES1.png" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -579,7 +587,7 @@ const workouts = [
         }
     }},
 
-    { title: "Le WOD Cindy", material: ["traction"], body: "complet", duration: 20, type: "AMRAP", level: "Moyen", desc: "<strong>AMRAP 20 min :</strong> 5 Pull-ups(tractions), 10 Push-ups(pompes), 15 Air Squats.",
+    { title: "Le WOD Cindy", material: ["traction"], body: "complet", duration: 20, type: "AMRAP", level: "Moyen", boutons: "both", desc: "<strong>AMRAP 20 min :</strong> 5 Pull-ups(tractions), 10 Push-ups(pompes), 15 Air Squats.",
       details: { format_label: "AMRAP 20 MINUTES", intro: "Réaliser les exercices :", exercises: [
           { text: "5 Tractions (pull-ups)" }, { text: "10 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "15 Squats poids de corps (air squats)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -598,7 +606,7 @@ const workouts = [
         }
       }},
 
-    { title: "Le WOD Mary", material: ["poids-corps"], body: "complet", duration: 20, type: "AMRAP", level: "Intense", desc: "5 Handstand Push-ups(pompes inversées), 10 Pistols(squat une jambe), 15 Pull-ups(tractions).",
+    { title: "Le WOD Mary", material: ["poids-corps"], body: "complet", duration: 20, type: "AMRAP", level: "Intense", boutons: "both", desc: "5 Handstand Push-ups(pompes inversées), 10 Pistols(squat une jambe), 15 Pull-ups(tractions).",
       details: { format_label: "AMRAP 20 MINUTES", exercises: [
           { text: "5 Handstand Push-ups (pompes en poirier contre un mur)" }, { text: "10 Pistols (squats sur une seule jambe)" }, { text: "15 Tractions (pull-ups)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -617,7 +625,7 @@ const workouts = [
         }       
       }},
 
-    { title: "Le WOD Nicole", material: ["traction", "tapis-incurve"], body: "complet", duration: 20, type: "AMRAP", level: "Intense", desc: "Run 400m, Max Pull-ups(tractions).",
+    { title: "Le WOD Nicole", material: ["traction", "tapis-incurve"], body: "complet", duration: 20, type: "AMRAP", level: "Intense", boutons: "direct", desc: "Run 400m, Max Pull-ups(tractions).",
       details: { format_label: "AMRAP 20 MINUTES", exercises: [
           { text: "400 mètres de course à pied" }, { text: "Maximum de tractions (pull-ups)" }
         ], conseil: "Le score est le nombre total de tractions effectuées.",
@@ -633,7 +641,7 @@ const workouts = [
         }            
       }},
 
-    { title: "Le WOD Jump & Push", material: ["box-jump"], body: "complet", duration: 20, type: "AMRAP", level: "Moyen", desc: "10 Box Jumps, 15 Push-ups(pompes), 20 Sit-ups(abdos).",
+    { title: "Le WOD Jump & Push", material: ["box-jump"], body: "complet", duration: 20, type: "AMRAP", level: "Moyen", boutons: "both", desc: "10 Box Jumps, 15 Push-ups(pompes), 20 Sit-ups(abdos).",
       details: { format_label: "AMRAP 20 MINUTES", exercises: [
           { text: "10 Box jumps (sauts sur boîte/banc)" }, { text: "15 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "20 Sit-ups (abdos)" }
         ], conseil: "On peut remplacer les box jumps par des squats jumps (sans matériel).",
@@ -650,7 +658,7 @@ const workouts = [
         }                   
         }},
 
-    { title: "Le WOD Plank & Push", material: ["poids-corps"], body: "complet", duration: 15, type: "AMRAP", level: "Facile", desc: "10 Push-ups(pompes), 20 Sit-ups(abdos), 30 sec Plank(gainage planche-abdos).",
+    { title: "Le WOD Plank & Push", material: ["poids-corps"], body: "complet", duration: 15, type: "AMRAP", level: "Facile", boutons: "direct", desc: "10 Push-ups(pompes), 20 Sit-ups(abdos), 30 sec Plank(gainage planche-abdos).",
       details: { format_label: "AMRAP 15 MINUTES", exercises: [
           { text: "10 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "20 Sit-ups (abdos)" }, { text: "30 sec de gainage en planche" }
         ], conseil: "Sur la planche, aspirer le nombril et serrer les fessiers.",
@@ -665,7 +673,7 @@ const workouts = [
         }               
         }},
 
-    { title: "Le WOD Cindy XXX", material: ["traction"], body: "complet", duration: 20, type: "AMRAP", level: "Intense", desc: "<strong>AMRAP 20 min :</strong> WOD CINDY version hard ; Pull-ups(tractions), Push-ups(pompes), Air Squats.",
+    { title: "Le WOD Cindy XXX", material: ["traction"], body: "complet", duration: 20, type: "AMRAP", level: "Intense", boutons: "both", desc: "<strong>AMRAP 20 min :</strong> WOD CINDY version hard ; Pull-ups(tractions), Push-ups(pompes), Air Squats.",
       details: { format_label: "AMRAP 20 MINUTES", intro: "Enchaîner les séries progressives :", exercises: [
           { text: "10 Pull-Ups(tractions) + 20 Push-Ups(pompes) + 30 Air Squats" }, { text: "15 Pull-Ups + 30 Push-Ups + 45 Air Squats" }, { text: "20 Pull-Ups + 40 Push-Ups + 60 Air Squats" }, { text: "25 Pull-Ups + 50 Push-Ups + 75 Air Squats" }, { text: "30 Pull-Ups + 60 Push-Ups + 90 Air Squats" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -688,7 +696,7 @@ const workouts = [
 
 /* SEANCES EMOM */  
   
-      { title: "Le WOD Death by Burpees", material: ["poids-corps"], body: "complet", duration: 15, type: "EMOM", level: "Intense", desc: "<strong>EMOM :</strong> Minute 1 : 1 Burpee, Minute 2 : 2 Burpees...",
+      { title: "Le WOD Death by Burpees", material: ["poids-corps"], body: "complet", duration: 15, type: "EMOM", level: "Intense", boutons: "both", desc: "<strong>EMOM :</strong> Minute 1 : 1 Burpee, Minute 2 : 2 Burpees...",
       details: { format_label: "EMOM 15 MINUTES", exercises: [
           { text: "1ère minute : 1 burpee (reste de la minute = repos)", image: "images/infosbulles/BURPEES1.png" },
           { text: "2ème minute : 2 burpees" }, { text: "3ème minute : 3 burpees" },
@@ -708,7 +716,7 @@ const workouts = [
         }       
         }},
 
-    { title: "Le WOD Chelsea", material: ["traction"], body: "complet", duration: 30, type: "EMOM", level: "Moyen", desc: "<strong>EMOM 30 min :</strong> 5 Pull-ups(tractions), 10 Push-ups(pompes), 15 Squats.",
+    { title: "Le WOD Chelsea", material: ["traction"], body: "complet", duration: 30, type: "EMOM", level: "Moyen", boutons: "both", desc: "<strong>EMOM 30 min :</strong> 5 Pull-ups(tractions), 10 Push-ups(pompes), 15 Squats.",
       details: { format_label: "EMOM 30 MINUTES", exercises: [
           { text: "5 Tractions (pull-ups)" }, { text: "10 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "15 Squats au poids de corps (air squats)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -729,7 +737,7 @@ const workouts = [
 
 
   
-    { title: "Le WOD Orbison", material: ["poids-corps"], body: "complet", duration: 20, type: "EMOM", level: "Moyen", desc: "<strong>EMOM 20 min :</strong> 4 Burpees, 6 Air Squats, 8 Sit-Ups(abdos).",
+    { title: "Le WOD Orbison", material: ["poids-corps"], body: "complet", duration: 20, type: "EMOM", level: "Moyen", boutons: "both", desc: "<strong>EMOM 20 min :</strong> 4 Burpees, 6 Air Squats, 8 Sit-Ups(abdos).",
       details: { format_label: "EMOM 20 MINUTES", exercises: [
           { text: "4 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "6 Air squats" }, { text: "8 Sit-ups (abdos)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -746,7 +754,7 @@ const workouts = [
         }        
         }},
   
-    { title: "WOD EMOM spécial RENFO NATATION 🏊", material: ["machineguidee", "kettle", "barre"], body: "complet", duration: 20, type: "EMOM", level: "Facile", desc: "<strong>Chaque minute :</strong> Tirage poulie haute(dos), Kettlebell swing, Développé militaire barre(épaules), Fente avec kettlebells.",
+    { title: "WOD EMOM spécial RENFO NATATION 🏊", material: ["machineguidee", "kettle", "barre"], body: "complet", duration: 20, type: "EMOM", level: "Facile", boutons: "both", desc: "<strong>Chaque minute :</strong> Tirage poulie haute(dos), Kettlebell swing, Développé militaire barre(épaules), Fente avec kettlebells.",
       details: { format_label: "EMOM 10 MINUTES", exercises: [
           { text: "minute 1 : 10 Tirages poulie haute" }, { text: " minute 2 : 12 Kettlebell swings lourd" }, { text: " minute 3 : 10 Dévelloppés militaire barre" }, { text: " minute 4 : 20 Fentes kettlebell alternée (10/jambe) "}, { text: " minute 5 : repos " }
         ], conseil: "on peut remplacer le tirage poulie haute par des tractions",
@@ -780,7 +788,7 @@ const workouts = [
         }        
         }},
 
-    { title: "WOD 3 EXOS 10 MIN", material: ["poids-corps"], body: "complet", duration: 10, type: "EMOM", level: "Facile", desc: "<strong>Chaque minute :</strong> 5 Burpees, 10 Squats jump, 5 Pompes(push-ups).",
+    { title: "WOD 3 EXOS 10 MIN", material: ["poids-corps"], body: "complet", duration: 10, type: "EMOM", level: "Facile", boutons: "both", desc: "<strong>Chaque minute :</strong> 5 Burpees, 10 Squats jump, 5 Pompes(push-ups).",
       details: { format_label: "EMOM 10 MINUTES", exercises: [
           { text: "5 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "10 Squats jump" }, { text: "5 Pompes", image: "images/infosbulles/POMPES1.png" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -797,7 +805,7 @@ const workouts = [
         }        
         }},
 
-    { title: "WOD Burpees Pyramide", material: ["poids-corps"], body: "complet", duration: 16, type: "EMOM", level: "Intense", desc: "<strong>Pyramide Burpees :</strong> Commencer à 6 burpees la 1ère min, puis gravir et descendre la pyramide pendant 16 minutes",
+    { title: "WOD Burpees Pyramide", material: ["poids-corps"], body: "complet", duration: 16, type: "EMOM", level: "Intense", boutons: "both", desc: "<strong>Pyramide Burpees :</strong> Commencer à 6 burpees la 1ère min, puis gravir et descendre la pyramide pendant 16 minutes",
       details: { format_label: "EMOM 16 MINUTES — PYRAMIDE BURPEES", intro: "Monter puis descendre la pyramide :",
                 // ── Image locale (fichier dans le dossier images/) ──
                 image: "images/PyrBurpees.png",
@@ -832,7 +840,7 @@ const workouts = [
 
 /* SEANCES FOR TIME */    
   
-    { title: "Le WOD du Voyageur", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "100 Air Squats, 50 Push-ups(pompes), 100 Sit-ups(abdos), 50 Push-ups, 100 Air Squats.",
+    { title: "Le WOD du Voyageur", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "100 Air Squats, 50 Push-ups(pompes), 100 Sit-ups(abdos), 50 Push-ups, 100 Air Squats.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "100 Air squats" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Sit-ups (abdos)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Air squats" }
         ], conseil: "Durée estimée 20 minutes. Entraînement parfait en déplacement.",
@@ -851,15 +859,35 @@ const workouts = [
           ]
         }
       }},
-    
-    { title: "Le WOD du Voyageur#2", material: ["elastique"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "100 Air Squats, 50 Push-ups(pompes), 50 Rowings élastique (tirages dos à l'élastique),  100 Sit-ups(abdos), 50 Rowings élastique (tirages dos à l'élastique), 50 Push-ups, 100 Air Squats.",
+  
+  { title: "Le WOD du Voyageur#2", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "100 Fentes avant, 50 Push-ups(pompes), 100 Sit-ups(abdos), 50 Push-ups, 100 Fentes arrières.",
       details: { format_label: "FOR TIME", exercises: [
-          { text: "100 Air squats" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" },{ text: "50 Rowings élastique (tirages dos à l'élastique)" }, { text: "100 Sit-ups (abdos)" },{ text: "50 Rowings élastique (tirages dos à l'élastique)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Air squats" }
+          { text: "100 Fentes avant alternées (50 par jambes)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Sit-ups (abdos)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Fentes arrière alternées (50 par jambes)" }
         ], conseil: "Durée estimée 20 minutes. Entraînement parfait en déplacement.",
         chargeable: true,
         chargement: {
           type: "fortime",
           nom: "Le WOD du Voyageur#2",
+          exercices: [
+            { text: "100 Fentes avant alternées (50 par jambes)" },
+            { text: "50 Pompes (push-ups)" },
+            
+            { text: "100 Sit-ups (abdos)" },
+            
+            { text: "50 Pompes (push-ups)" },
+            { text: "100 Fentes arrière alternées (50 par jambes)" }
+          ]
+        }
+      }},
+    
+    { title: "Le WOD du Voyageur#3", material: ["elastique"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "100 Air Squats, 50 Push-ups(pompes), 50 Rowings élastique (tirages dos à l'élastique),  100 Sit-ups(abdos), 50 Rowings élastique (tirages dos à l'élastique), 50 Push-ups, 100 Air Squats.",
+      details: { format_label: "FOR TIME", exercises: [
+          { text: "100 Air squats" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" },{ text: "50 Rowings élastique (tirages dos à l'élastique)" }, { text: "100 Sit-ups (abdos)" },{ text: "50 Rowings élastique (tirages dos à l'élastique)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Air squats" }
+        ], conseil: "Durée estimée 20 minutes. Entraînement parfait en déplacement. Variante avec un élastique pour travailler le dos",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD du Voyageur#3",
           exercices: [
             { text: "100 Air squats" },
             { text: "50 Pompes (push-ups)" },
@@ -871,8 +899,28 @@ const workouts = [
           ]
         }
       }},
+  
+    { title: "Le WOD du Voyageur#4", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "100 Fentes avant, 50 Push-ups(pompes), 100 Sit-ups(abdos), 50 Push-ups, 100 Fentes arrières.",
+      details: { format_label: "FOR TIME", exercises: [
+          { text: "100 Fentes avant alternées (50 par jambes)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Sit-ups (abdos)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Fentes arrière alternées (50 par jambes)" }
+        ], conseil: "Durée estimée 20 minutes. Entraînement parfait en déplacement. Variante avec un élastique pour travailler le dos",
+        chargeable: true,
+        chargement: {
+          type: "fortime",
+          nom: "Le WOD du Voyageur#4",
+          exercices: [
+            { text: "100 Fentes avant alternées (50 par jambes)" },
+            { text: "50 Pompes (push-ups)" },
+            { text: "50 Rowings élastique (tirages dos à l'élastique)" },
+            { text: "100 Sit-ups (abdos)" },
+            { text: "50 Rowings élastique (tirages dos à l'élastique)" },
+            { text: "50 Pompes (push-ups)" },
+            { text: "100 Fentes arrière alternées (50 par jambes)" }
+          ]
+        }
+      }},
 
-    { title: "Le WOD 10 to 1", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "10-9-8-7-6-5-4-3-2-1 répétitions de : Burpees et Sit-ups(abdos).",
+    { title: "Le WOD 10 to 1", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "10-9-8-7-6-5-4-3-2-1 répétitions de : Burpees et Sit-ups(abdos).",
       details: { format_label: "FOR TIME", intro: "Réaliser 10 puis 9 / 8 / 7 / 6 / 5 / 4 / 3 / 2 / 1 reps des exercices suivants :", exercises: [
           { text: "Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "Sit-ups (abdos)" }
         ], conseil: "Format dégressif — durée estimée 15 minutes.",
@@ -886,7 +934,7 @@ const workouts = [
         }
       }},
 
-    { title: "Le WOD Annie", material: ["corde"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "50-40-30-20-10 : Double-Unders et Sit-ups(abdos).",
+    { title: "Le WOD Annie", material: ["corde"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both", desc: "50-40-30-20-10 : Double-Unders et Sit-ups(abdos).",
       details: { format_label: "FOR TIME", intro: "Réaliser 50 puis 40 / 30 / 20 / 10 reps :", exercises: [
           { text: "Double unders (corde à sauter)" }, { text: "Sit-ups (abdos)" }
         ], scaled: { intro: "VERSION SCALED — même schéma 50 / 40 / 30 / 20 / 10 :", exercises: [
@@ -902,7 +950,7 @@ const workouts = [
         }        
         }},
 
-    { title: "Le WOD Angie", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "100 Pull-ups(tractions), 100 Push-ups(pompes), 100 Sit-ups(abdos), 100 Squats.",
+    { title: "Le WOD Angie", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both", desc: "100 Pull-ups(tractions), 100 Push-ups(pompes), 100 Sit-ups(abdos), 100 Squats.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "100 Tractions (pull-ups)" }, { text: "100 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "100 Sit-ups (abdos)" }, { text: "100 Squats au poids de corps (air squats)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -918,7 +966,7 @@ const workouts = [
         }
         }},
 
-    { title: "Le WOD Barbara", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "5 rounds (3' repos) : 20 Pull-ups, 30 Push-ups, 40 Sit-ups, 50 Squats.",
+    { title: "Le WOD Barbara", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both", desc: "5 rounds (3' repos) : 20 Pull-ups, 30 Push-ups, 40 Sit-ups, 50 Squats.",
       details: { format_label: "5 ROUNDS FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "20 Tractions (pull-ups)" }, { text: "30 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "40 Sit-ups (abdos)" }, { text: "50 Squats au poids de corps (air squats)" }, { text: "3 minutes de pause entre les rounds" }
         ], scaled: { intro: "VERSION SCALED — 5 rounds :", exercises: [
@@ -934,7 +982,7 @@ const workouts = [
         }
     }},
   
-    { title: "Le WOD FRAN", material: ["traction", "barre"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "3 rounds : 21-15-9 Thrusters (43/30 kg) + Tractions (Pull-ups)",
+    { title: "Le WOD FRAN", material: ["traction", "barre"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "3 rounds : 21-15-9 Thrusters (43/30 kg) + Tractions (Pull-ups)",
       details: { format_label: "5 ROUNDS FOR TIME", intro: "Réaliser 3 rounds en dégressif :", exercises: [
         { text: "21 Thrusters (43/30 kg) / 21 Tractions (Pull-ups)" },
         { text: "15 Thrusters (43/30 kg) / 15 Tractions (Pull-ups)" },
@@ -952,7 +1000,7 @@ const workouts = [
         }
     }},
 
-    { title: "Le WOD Murph", material: ["traction", "gilet-leste"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "1.6km course, 100 Pull-ups(tractions), 200 Push-ups(pompes), 300 Squats, 1.6km course.",
+    { title: "Le WOD Murph", material: ["traction", "gilet-leste"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "1.6km course, 100 Pull-ups(tractions), 200 Push-ups(pompes), 300 Squats, 1.6km course.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "1,6 km de course à pied" }, { text: "100 Tractions (pull-ups)" }, { text: "200 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "300 Squats au poids de corps (air squats)" }, { text: "1,6 km de course à pied" }
         ], conseil: "Durée estimée 50 minutes. WOD très dur — ne pas hésiter à partitionner les séries de tractions / pompes / squats. Les plus forts portent un gilet lesté (9 kg homme / 6 kg femme).",
@@ -966,7 +1014,7 @@ const workouts = [
         }
         }},
 
-    { title: "Le WOD Sit-ups & Burpees", material: ["poids-corps"], body: "abdos", duration: 0, type: "FOR TIME", level: "Intense", desc: "10-20-30-40-30-20-10 : Sit-ups(abdos) et Burpees.",
+    { title: "Le WOD Sit-ups & Burpees", material: ["poids-corps"], body: "abdos", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "10-20-30-40-30-20-10 : Sit-ups(abdos) et Burpees.",
       details: { format_label: "FOR TIME", intro: "Réaliser 10-20-30-40-30-20-10 répétitions de :", exercises: [
           { text: "Sit-ups (abdos)" }, { text: "Burpees", image: "images/infosbulles/BURPEES1.png" }
         ], conseil: "Durée estimée 15 minutes en format pyramidale. Mieux vaut un rythme régulier et lent pour les burpees.",
@@ -986,7 +1034,7 @@ const workouts = [
         }
         }},
 
-    { title: "Le WOD Candy", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "5 rounds : 20 Pull-ups(tractions), 40 Push-ups(pompes), 60 Squats.",
+    { title: "Le WOD Candy", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "5 rounds : 20 Pull-ups(tractions), 40 Push-ups(pompes), 60 Squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "20 Tractions (pull-ups)" }, { text: "40 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "60 Squats au poids de corps (air squats)" }
         ], conseil: "Durée estimée 40 minutes. Version allégée du Murph (sans la course).",
@@ -1003,7 +1051,7 @@ const workouts = [
         }
         }},
 
-    { title: "Le WOD Karabel", material: ["ballon-leste"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "10 rounds : 15 Wall Balls(ballon lesté) et 15 Burpees.",
+    { title: "Le WOD Karabel", material: ["ballon-leste"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "10 rounds : 15 Wall Balls(ballon lesté) et 15 Burpees.",
       details: { format_label: "FOR TIME", intro: "Réaliser 10 rounds :", exercises: [
           { text: "15 Wall balls (ballon lesté)" }, { text: "15 Burpees", image: "images/infosbulles/BURPEES1.png" }
         ], conseil: "Durée estimée 15 minutes.",
@@ -1018,7 +1066,7 @@ const workouts = [
         }
                }},
 
-    { title: "Le WOD Handstand", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "5 rounds : 10 HSPU(pompes inversées), 20 Squats, 10 HSPU, 20 Lunges(fentes).",
+    { title: "Le WOD Handstand", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both", desc: "5 rounds : 10 HSPU(pompes inversées), 20 Squats, 10 HSPU, 20 Lunges(fentes).",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "10 Handstand Push-ups (pompes en poirier contre un mur)" }, { text: "20 Squats au poids de corps (air squats)" }, { text: "10 Handstand Push-ups (pompes en poirier contre un mur)" }, { text: "20 Fentes (lunges)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1035,7 +1083,7 @@ const workouts = [
         }       
         }},
 
-    { title: "Le WOD Super Legs", material: ["poids-corps"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", desc: "<strong>5 rounds :</strong> 20 Air Squats, 20 Alternating Lunges(fentes), 20 Split Squat Jumps, 10 Squat Jumps.",
+    { title: "Le WOD Super Legs", material: ["poids-corps"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", boutons: "direct", desc: "<strong>5 rounds :</strong> 20 Air Squats, 20 Alternating Lunges(fentes), 20 Split Squat Jumps, 10 Squat Jumps.",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "20 Squats au poids de corps (air squats)" }, { text: "20 Fentes alternées (lunges)" }, { text: "20 Fentes sautées" }, { text: "10 Squats sautés (squats jumps)" }
         ], conseil: "Ça brûle ! Penser à ne pas s'avachir avec la fatigue, on garde le buste droit.",
@@ -1050,7 +1098,7 @@ const workouts = [
         }       
         }},
 
-    { title: "Le WOD Air Squat Galore", material: ["poids-corps"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", desc: "500 Air Squats pour le temps.",
+    { title: "Le WOD Air Squat Galore", material: ["poids-corps"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", boutons: "direct", desc: "500 Air Squats pour le temps.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "500 Squats au poids de corps le plus rapidement possible (air-squats)" }
         ], conseil: "Durée estimée 20 minutes.",
@@ -1064,7 +1112,7 @@ const workouts = [
         }       
         }},
 
-    { title: "Le WOD Lunges & Run", material: ["poids-corps", "tapis-incurve"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", desc: "5 rounds : Run 400m, 30 Walking Lunges(fentes marchées).",
+    { title: "Le WOD Lunges & Run", material: ["poids-corps", "tapis-incurve"], body: "bas", duration: 0, type: "FOR TIME", level: "Facile", boutons: "direct", desc: "5 rounds : Run 400m, 30 Walking Lunges(fentes marchées).",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "400m de course à pied" }, { text: "30 Fentes marchées (walking lunges)" }
         ], conseil: "Durée estimée 25 minutes. Utiliser la course pour récupérer le souffle après les fentes.",
@@ -1079,7 +1127,7 @@ const workouts = [
         }              
         }},
 
-    { title: "Le WOD Burpee Marathon", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "150 Burpees le plus vite possible.",
+    { title: "Le WOD Burpee Marathon", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "150 Burpees le plus vite possible.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "150 Burpees le plus rapidement possible", image: "images/infosbulles/BURPEES1.png" }
         ], conseil: "Trouver un rythme pour tenir le plus longtemps possible sans pause. Mieux vaut être lent.",
@@ -1093,7 +1141,7 @@ const workouts = [
         }              
         }},
 
-    { title: "Le WOD Cloverfield", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "Run 2400m(course à pied), 150 Burpees, Run 2400m.",
+    { title: "Le WOD Cloverfield", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "Run 2400m(course à pied), 150 Burpees, Run 2400m.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "1,6 km de course à pied (run)" }, { text: "150 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "1,6 km de course à pied (run)" }
         ], conseil: "Trouver un rythme pour tenir le plus longtemps possible sans pause. Mieux vaut être lent.",
@@ -1107,12 +1155,12 @@ const workouts = [
         }                
         }},
 
-    { title: "Le WOD Shawn", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "Run 8km. Toutes les 5 min : 50 Squats et 50 Push-ups(pompes).",
+    { title: "Le WOD Shawn", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "Run 8km. Toutes les 5 min : 50 Squats et 50 Push-ups(pompes).",
       details: { format_label: "FOR TIME", exercises: [
           { text: "8 km de course à pied avec un arrêt toutes les 5 minutes pour exécuter :" }, { text: "→ 50 Squats au poids de corps (air-squats)" }, { text: "→ 50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }
         ], conseil: "Prévoir de quoi s'hydrater, l'effort dépasse l'heure de travail." }},
 
-    { title: "Le WOD Zachary Tellier", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "10 Burpees au départ, puis enchainement Burpees / Push-ups(pompes) / Lunges(fentes) / Sit-ups(abdos).",
+    { title: "Le WOD Zachary Tellier", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both", desc: "10 Burpees au départ, puis enchainement Burpees / Push-ups(pompes) / Lunges(fentes) / Sit-ups(abdos).",
       details: { format_label: "FOR TIME", intro: "'10 burpees buy-in'", exercises: [
           { text: "10 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "10 Burpees + 25 Push-ups" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges + 100 Sit-ups" }, { text: "10 Burpees + 25 Push-ups + 50 Lunges + 100 Sit-ups + 150 Air Squats" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1128,7 +1176,7 @@ const workouts = [
         } 
         }},
 
-    { title: "Le WOD Loredo", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "<strong>6 tours :</strong> 24 Squats, 24 Push-ups(pompes), 24 Walking Lunges(fentes marchées), 400m Run.",
+    { title: "Le WOD Loredo", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "both", desc: "<strong>6 tours :</strong> 24 Squats, 24 Push-ups(pompes), 24 Walking Lunges(fentes marchées), 400m Run.",
       details: { format_label: "FOR TIME", intro: "Réaliser 6 rounds :", exercises: [
           { text: "24 Air squats" }, { text: "24 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "24 Fentes marchées (walking lunges)" }, { text: "400m Course à pied (run)" }
         ], scaled: { intro: "VERSION SCALED — 4 rounds :", exercises: [
@@ -1145,7 +1193,7 @@ const workouts = [
         }               
         }},
 
-    { title: "Le WOD Bert", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "50 Burpees, 400m Run(course), 100 Push-ups(pompes), 400m Run, 150 Walking Lunges(fentes marchées), 400m Run, 200 Squats, 400m Run, 150 Walking Lunges, 400m Run, 100 Push-ups, 400m Run, 50 Burpees.",
+    { title: "Le WOD Bert", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both", desc: "50 Burpees, 400m Run(course), 100 Push-ups(pompes), 400m Run, 150 Walking Lunges(fentes marchées), 400m Run, 200 Squats, 400m Run, 150 Walking Lunges, 400m Run, 100 Push-ups, 400m Run, 50 Burpees.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "50 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "400m Run" }, { text: "100 Push-Ups (pompes)", image: "images/infosbulles/POMPES1.png" }, { text: "400m Run" }, { text: "150 Walking Lunges (fentes marchées)" }, { text: "400m Run" }, { text: "200 Air Squats" }, { text: "400m Run" }, { text: "150 Walking Lunges" }, { text: "400m Run" }, { text: "100 Push-Ups" }, { text: "400m Run" }, { text: "50 Burpees" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1161,7 +1209,7 @@ const workouts = [
         }        
         }},
 
-    { title: "Le WOD Hero Mark Klement", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "<strong>7 tours :</strong> 74-44-11 reps de Burpees, Push-ups(pompes), Sit-ups(abdos), Air squats.",
+    { title: "Le WOD Hero Mark Klement", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both",  desc: "<strong>7 tours :</strong> 74-44-11 reps de Burpees, Push-ups(pompes), Sit-ups(abdos), Air squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 74 puis 44 puis 11 reps de :", exercises: [
           { text: "Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "Sit-ups (abdos)" }, { text: "Air squats" }
         ], scaled: { intro: "VERSION SCALED — mêmes séries avec :", exercises: [
@@ -1177,7 +1225,7 @@ const workouts = [
         }        
         }},
 
-    { title: "Le WOD Hero Maupin", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "800m Run(course), 49 Push-ups(pompes), 49 Sit-ups(abdos), 49 Air Squats.",
+    { title: "Le WOD Hero Maupin", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "both", desc: "800m Run(course), 49 Push-ups(pompes), 49 Sit-ups(abdos), 49 Air Squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds :", exercises: [
           { text: "800m de course à pied (run)" }, { text: "49 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "49 Sit-ups (abdos)" }, { text: "49 Air squats" }
         ], scaled: { intro: "VERSION SCALED — 4 rounds :", exercises: [
@@ -1194,7 +1242,7 @@ const workouts = [
         }                    
         }},
 
-    { title: "Le WOD Chad", material: ["box-jump","gilet-leste"], body: "bas", duration: 0, type: "FOR TIME", level: "Intense", desc: "1000 Box Step-ups. Option : gilet lesté.",
+    { title: "Le WOD Chad", material: ["box-jump","gilet-leste"], body: "bas", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct",  desc: "1000 Box Step-ups. Option : gilet lesté.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "1000 montées de box à 50cm (Box Step-Ups)" }, { text: "Avec gilet lesté : 20 kg/homme, 15 kg/femme" }
         ], scaled: { intro: "VERSION SCALED (sans gilet) :", exercises: [
@@ -1210,7 +1258,7 @@ const workouts = [
         }        
         }},
 
-    { title: "Le WOD Cooper", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Facile", desc: "10 rounds : 10 Burpees, 10 Air Squats, 10 Push-ups(pompes), 10 Sit-ups(abdos).",
+    { title: "Le WOD Cooper", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Facile", boutons: "both", desc: "10 rounds : 10 Burpees, 10 Air Squats, 10 Push-ups(pompes), 10 Sit-ups(abdos).",
       details: { format_label: "FOR TIME", intro: "Réaliser 10 rounds :", exercises: [
           { text: "10 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "10 Air squats" }, { text: "10 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "10 Sit-ups (abdos)" }
         ], scaled: { intro: "VERSION SCALED — 5 rounds :", exercises: [
@@ -1227,7 +1275,7 @@ const workouts = [
         }        
         }},
 
-    { title: "Le WOD It's a trap", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "commencer par 200m Run(course) puis effectuer 100 Burpees avec toutes les 2 minutes un Run de 200m.",
+    { title: "Le WOD It's a trap", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "both", desc: "commencer par 200m Run(course) puis effectuer 100 Burpees avec toutes les 2 minutes un Run de 200m.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "200m de course à pied au départ (run)" }, { text: "Burpees pendant 2min puis 200m de course à pied", image: "images/infosbulles/BURPEES1.png" }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "..." }, { text: "Burpees pendant 2min puis 200m de course à pied" }, { text: "jusque 100 burpees effectué" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1243,7 +1291,7 @@ const workouts = [
         }       
         }},
 
-    { title: "Le WOD The Longest Mile", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "4 rounds : 10 Burpees, 100m Run(course), 10 Air Squats, 100m Run, 10 Push-ups(pompes), 100m Run, 10 Sit-ups(abdos), 100m Run.",
+    { title: "Le WOD The Longest Mile", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "both", desc: "4 rounds : 10 Burpees, 100m Run(course), 10 Air Squats, 100m Run, 10 Push-ups(pompes), 100m Run, 10 Sit-ups(abdos), 100m Run.",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds :", exercises: [
           { text: "10 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "100m Run" }, { text: "10 Air Squats" }, { text: "100m Run" }, { text: "10 Push-Ups (pompes)", image: "images/infosbulles/POMPES1.png" }, { text: "100m Run" }, { text: "10 Sit-Ups (abdos)" }, { text: "100m Run" }
         ], scaled: { intro: "VERSION SCALED — 3 rounds (mêmes exercices)", exercises: [
@@ -1260,7 +1308,7 @@ const workouts = [
         }  
         }},
 
-    { title: "Le WOD Durante Core", material: ["poids-corps"], body: "abdos", duration: 0, type: "FOR TIME", level: "Facile", desc: "<strong>ABDOS - 5 tours :</strong> 10 Hollow Rocks, 10 V-ups, 10 Tuck-ups, 10 sec Hollow Hold, 1 minute de pause.",
+    { title: "Le WOD Durante Core", material: ["poids-corps"], body: "abdos", duration: 0, type: "FOR TIME", level: "Facile", boutons: "both", desc: "<strong>ABDOS - 5 tours :</strong> 10 Hollow Rocks, 10 V-ups, 10 Tuck-ups, 10 sec Hollow Hold, 1 minute de pause.",
       details: { format_label: "FOR TIME", intro: "Réaliser 5 rounds :", exercises: [
           { text: "10 Hollow Rocks" }, { text: "10 V-Ups" }, { text: "10 Tucks-Ups" }, { text: "10 sec Hollow Hold" }, { text: "1 minute de pause" }
         ], scaled: { intro: "VERSION SCALED — 5 rounds :", exercises: [
@@ -1277,7 +1325,7 @@ const workouts = [
         }       
         }},
 
-    { title: "Le WOD Dee", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "4 rounds : 40 Air Squats, 30 Hand Release Push-Up(pompes), 20 Burpees.",
+    { title: "Le WOD Dee", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "both", desc: "4 rounds : 40 Air Squats, 30 Hand Release Push-Up(pompes), 20 Burpees.",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds :", exercises: [
           { text: "40 Air Squats" }, { text: "30 Pompes avec décollement des mains en position basse (Hand Release Push-Ups)" }, { text: "20 Burpees" }, { text: "400m de course à pied (run)" }
         ], scaled: { intro: "VERSION SCALED — 4 rounds :", exercises: [
@@ -1294,7 +1342,7 @@ const workouts = [
         }              
         }},
 
-    { title: "Le WOD Riley", material: ["poids-corps","gilet-leste"], body: "complet", duration: 0, level: "Intense", type: "FOR TIME", desc: "2.4km Run, 150 Burpees, 2.4km Run.",
+    { title: "Le WOD Riley", material: ["poids-corps","gilet-leste"], body: "complet", duration: 0, level: "Intense", boutons: "both", type: "FOR TIME", desc: "2.4km Run, 150 Burpees, 2.4km Run.",
       details: { format_label: "FOR TIME", intro: "Avec gilet lesté de 9 kg/6 kg :", exercises: [
           { text: "2400m de course à pied (run)" }, { text: "150 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "2400m de course à pied" }
         ], scaled: { intro: "VERSION SCALED (avec ou sans gilet) :", exercises: [
@@ -1310,7 +1358,7 @@ const workouts = [
         }              
         }},
 
-    { title: "WOD For Time 6 EXOS#1", material: ["traction", "station-dips"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "<strong>4 tours (1' repos) :</strong> 10 Tractions(pull-ups), 15 Tractions australiennes, 10 Dips, 15 Pompes diamant(push-ups), 10 Fentes/jambe(lunges), 15 Squats.",
+    { title: "WOD For Time 6 EXOS#1", material: ["traction", "station-dips"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "both", desc: "<strong>4 tours (1' repos) :</strong> 10 Tractions(pull-ups), 15 Tractions australiennes, 10 Dips, 15 Pompes diamant(push-ups), 10 Fentes/jambe(lunges), 15 Squats.",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds (1 min repos entre chaque) :", exercises: [
           { text: "10 Tractions (pull-ups)" }, { text: "15 Tractions australiennes" }, { text: "10 Dips" }, { text: "15 Pompes diamant" }, { text: "10 Fentes/jambe (lunges)" }, { text: "15 Squats" }, { text: "1 minute de repos" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1327,7 +1375,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD 500 REPS", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "50 Montées de genoux, 50 Squats, 50 Demi squats sautés, 50 Pompes(push-ups), 50 Mountains climbers, 50 Coups de genoux, 50 Fentes(lunges), 50 Directs bras gauche/droit, 50 Burpees, 50 Jumping jacks.",
+    { title: "WOD 500 REPS", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "direct", desc: "50 Montées de genoux, 50 Squats, 50 Demi squats sautés, 50 Pompes(push-ups), 50 Mountains climbers, 50 Coups de genoux, 50 Fentes(lunges), 50 Directs bras gauche/droit, 50 Burpees, 50 Jumping jacks.",
       details: { format_label: "FOR TIME", exercises: [
           { text: "50 Montées de genoux" }, { text: "50 Squats" }, { text: "50 Demi-squats sautés (position basse)" }, { text: "50 Pompes", image: "images/infosbulles/POMPES1.png" }, { text: "50 Mountains climbers" }, { text: "50 Coups de genoux" }, { text: "50 Fentes (vers l'avant)" }, { text: "50 Directs bras avant / bras arrière" }, { text: "50 Burpees" }, { text: "50 Jumping jacks" }
         ], conseil: "WOD orienté sport de combat.",
@@ -1341,7 +1389,7 @@ const workouts = [
         }        
         }},
 
-    { title: "WOD For Time 6 EXOS#2", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", desc: "<strong>4 tours (1' repos) :</strong> 15 Burpees, 15 Squats jump, 15 Pompes(push-ups), 15 Tractions(pull-ups), 15 Fentes(lunges), 15 Sit-ups(abdos).",
+    { title: "WOD For Time 6 EXOS#2", material: ["traction"], body: "complet", duration: 0, type: "FOR TIME", level: "Moyen", boutons: "both", desc: "<strong>4 tours (1' repos) :</strong> 15 Burpees, 15 Squats jump, 15 Pompes(push-ups), 15 Tractions(pull-ups), 15 Fentes(lunges), 15 Sit-ups(abdos).",
       details: { format_label: "FOR TIME", intro: "Réaliser 4 rounds (1 min repos entre chaque) :", exercises: [
           { text: "15 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "15 Squats jump" }, { text: "15 Pompes", image: "images/infosbulles/POMPES1.png" }, { text: "15 Tractions (pull-ups)" }, { text: "15 Fentes (lunges)" }, { text: "15 Sit-ups (abdos)" }, { text: "1 minute de repos" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1358,7 +1406,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD 1000 REPS", material: ["traction", "station-dips", "box-jump"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "100 Tractions australiennes(pull-ups), 100 Pompes diamants(push-ups), 100 Squats jumps, 100 Mountain climbers, 100 Burpees, 100 Dips, 100 Gainage dynamique, 100 Box jumps, 100 Relevés de jambe, 100 Fentes marchées(walking lunges)",
+    { title: "WOD 1000 REPS", material: ["traction", "station-dips", "box-jump"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "100 Tractions australiennes(pull-ups), 100 Pompes diamants(push-ups), 100 Squats jumps, 100 Mountain climbers, 100 Burpees, 100 Dips, 100 Gainage dynamique, 100 Box jumps, 100 Relevés de jambe, 100 Fentes marchées(walking lunges)",
       details: { format_label: "FOR TIME — 1000 REPS", exercises: [
           { text: "100 Tractions australiennes" }, { text: "100 Pompes diamants" }, { text: "100 Squats jump" }, { text: "100 Mountain climbers" }, { text: "100 Burpees" }, { text: "100 Dips" }, { text: "100 Gainage dynamique" }, { text: "100 Box jump" }, { text: "100 Relevés de jambes" }, { text: "100 Fentes marchées (walking lunges)" }
         ], conseil: "WOD haut niveau.",
@@ -1372,7 +1420,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD BRI", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", desc: "<strong>36Reps / 2X18Reps / 3x12Reps / 4X9Reps / 6X6Reps :</strong> Burpees, Pompes(push-ups), Sit-ups(abdos), Squats.",
+    { title: "WOD BRI", material: ["poids-corps"], body: "complet", duration: 0, type: "FOR TIME", level: "Intense", boutons: "direct", desc: "<strong>36Reps / 2X18Reps / 3x12Reps / 4X9Reps / 6X6Reps :</strong> Burpees, Pompes(push-ups), Sit-ups(abdos), Squats.",
       details: { format_label: "FOR TIME — 720 REPS", intro: "À chaque étape : Burpees / Push-ups(pompes) / Sit-ups(abdos) / Squats", exercises: [
           { text: "Étape 1 : 36 reps × 4 exercices (1 fois)" }, { text: "Étape 2 : 18 reps × 4 exercices (2 fois)" }, { text: "Étape 3 : 12 reps × 4 exercices (3 fois)" }, { text: "Étape 4 : 9 reps × 4 exercices (4 fois)" }, { text: "Étape 5 : 6 reps × 4 exercices (6 fois)" }
         ], conseil: "720 reps au total. À chaque étape on effectue 36 reps de chaque mouvement.",
@@ -1390,7 +1438,7 @@ const workouts = [
         }        
         }},
 
-    { title: "WOD HYBRID ANDRE", material: ["rameur"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", desc: "<strong>FOR TIME:</strong> alternance Rameur(row), Burpees.",
+    { title: "WOD HYBRID ANDRE", material: ["rameur"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", boutons: "direct", desc: "<strong>FOR TIME:</strong> alternance Rameur(row), Burpees.",
       details: { format_label: "HYBRID — FOR TIME", exercises: [
           { text: "1000m Rameur" }, { text: "50 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "800m Rameur" }, { text: "40 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "600m Rameur" }, { text: "30 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "400m Rameur" }, { text: "20 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "200m Rameur" }, { text: "10 Burpees", image: "images/infosbulles/BURPEES1.png" }
         ], conseil: "Durée estimée 40 minutes.",
@@ -1404,7 +1452,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD HYBRID DOMINO", material: ["poids-corps", "tapis-incurve"], body: "complet", duration: 0, type: "HYBRID", level: "Moyen", desc: "<strong>FOR TIME:</strong> alternance Course à pied(run), Squats/Burpees/Pompes(Push-ups)/Sit-ups(abdos).",
+    { title: "WOD HYBRID DOMINO", material: ["poids-corps", "tapis-incurve"], body: "complet", duration: 0, type: "HYBRID", level: "Moyen", boutons: "direct", desc: "<strong>FOR TIME:</strong> alternance Course à pied(run), Squats/Burpees/Pompes(Push-ups)/Sit-ups(abdos).",
       details: { format_label: "HYBRID — FOR TIME", exercises: [
           { text: "5 min Course à pied" }, { text: "50 Squats au poids de corps" }, { text: "5 min Course à pied" }, { text: "50 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "5 min Course à pied" }, { text: "50 Pompes (Push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "5 min Course à pied" }, { text: "50 Sit-ups (abdos)" }
         ], conseil: "Durée estimée 45 minutes.",
@@ -1418,7 +1466,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD HYBRID 4 TOURS#1", material: ["ballon-leste", "tapis-incurve", "traction"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", desc: "<strong>4 TOURS FOR TIME:</strong> 600m. Course à pied(run), 30 Lancers de ballon lesté(wall-ball), 20 Sit-ups(abdos), 20 Tractions(pull-ups).",
+    { title: "WOD HYBRID 4 TOURS#1", material: ["ballon-leste", "tapis-incurve", "traction"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", boutons: "direct", desc: "<strong>4 TOURS FOR TIME:</strong> 600m. Course à pied(run), 30 Lancers de ballon lesté(wall-ball), 20 Sit-ups(abdos), 20 Tractions(pull-ups).",
       details: { format_label: "HYBRID — 4 TOURS FOR TIME", intro: "Effectuer 4 tours :", exercises: [
           { text: "600m de course à pied" }, { text: "30 Wall-Balls (ballon lesté)" }, { text: "20 Sit-ups (abdos)" }, { text: "20 Tractions (pull-ups)" }
         ], conseil: "-",
@@ -1433,7 +1481,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD HYBRID 4 TOURS#2", material: ["rameur", "tapis-incurve", "box-jump", "ski-erg"], body: "complet", duration: 0, type: "HYBRID", level: "Moyen", desc: "<strong>4 TOUS FOR TIME:</strong> 400m. Course à pied(run), 15 Burpees Box-jump Over, 400m. de rameur(row), 400 m. de SkiERG.",
+    { title: "WOD HYBRID 4 TOURS#2", material: ["rameur", "tapis-incurve", "box-jump", "ski-erg"], body: "complet", duration: 0, type: "HYBRID", level: "Moyen", boutons: "direct", desc: "<strong>4 TOUS FOR TIME:</strong> 400m. Course à pied(run), 15 Burpees Box-jump Over, 400m. de rameur(row), 400 m. de SkiERG.",
       details: { format_label: "HYBRID — 4 TOURS FOR TIME", intro: "Effectuer 4 tours :", exercises: [
           { text: "400m de course à pied (rapide)" }, { text: "15 Burpees Box Jump Over" }, { text: "400m de Rameur (rapide)" }, { text: "400m de SkiERG (rapide)" }
         ], conseil: "Ajuster la hauteur de la box-jump selon le niveau, ou effectuer des burpees simples.",
@@ -1448,7 +1496,7 @@ const workouts = [
         }       
         }},
 
-    { title: "WOD HYBRID AMRAP40", material: ["rameur", "tapis-incurve", "ballon-leste", "sand-bag"], body: "complet", duration: 40, type: "HYBRID", level: "Moyen", desc: "<strong>AMRAP de 40 minutes:</strong> 1km de Rameur(row), 20 Fentes marchées avec sandbag(Lunges), 1km de Course à pied(run), 20 lancé de ballon lesté(wall-balls).",
+    { title: "WOD HYBRID AMRAP40", material: ["rameur", "tapis-incurve", "ballon-leste", "sand-bag"], body: "complet", duration: 40, type: "HYBRID", level: "Moyen", boutons: "direct", desc: "<strong>AMRAP de 40 minutes:</strong> 1km de Rameur(row), 20 Fentes marchées avec sandbag(Lunges), 1km de Course à pied(run), 20 lancé de ballon lesté(wall-balls).",
       details: { format_label: "HYBRID — AMRAP 40 MINUTES", intro: "Enchaîner le circuit en effectuant un maximum de tours :", exercises: [
           { text: "1 km de Rameur" }, { text: "20 Fentes marchées avec SandBag" }, { text: "1 km de Course à pied" }, { text: "20 Lancés de ballon lesté contre un mur (wall-balls)" }
         ], conseil: "Pour les fentes et les wall-balls, adapter le poids en fonction du niveau et/ou de votre forme du jour.",
@@ -1464,7 +1512,7 @@ const workouts = [
                 
       }},
   
-    { title: "WOD HYBRID 3 PYRAMIDES RUN", material: ["poids-corps", "tapis-incurve"], body: "complet", duration: 0, type: "HYBRID", level: "Moyen", desc: "<strong>FOR TIME 3 ROUNDS:</strong> 200m run + 10 burpees, 400m run + 15 air squats, 600m run + 20 sit-ups(abdos), 400m run + 15 air squats, 200m run + 10 burpees.",
+    { title: "WOD HYBRID 3 PYRAMIDES RUN", material: ["poids-corps", "tapis-incurve"], body: "complet", duration: 0, type: "HYBRID", level: "Moyen", boutons: "direct", desc: "<strong>FOR TIME 3 ROUNDS:</strong> 200m run + 10 burpees, 400m run + 15 air squats, 600m run + 20 sit-ups(abdos), 400m run + 15 air squats, 200m run + 10 burpees.",
       details: { format_label: "WOD HYBRID 3 PYRAMIDES RUN", intro: "Effectuer 3 tours :", exercises: [
           { text: "200m run + 10 burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "400m run + 15 air squats" }, { text: "600m run + 20 sit-ups(abdos)" }, { text: "400m run + 15 air squats" }, { text: "200m run + 10 burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "prendre 1 min à 2 minutes de récup au besoin entre 2 rounds" }
         ], conseil: "Pour les burpees, mieux vaut un rythme lent et faire les 10 répétitions sans coupure.",
@@ -1486,6 +1534,7 @@ const workouts = [
         duration: 53,
         type: "HYBRID",
         level: "Intense",
+        boutons: "direct", 
         desc: "3 AMRAP à enchaîner : <br>🔹course à pied(run), <br>🔹Squat (Back Squat), <br>🔹Développé Couché (bench press), <br>🔹Soulevé de terre (deadlift)",
         details: {
             format_label: "AMRAP : 3x12 minutes ",
@@ -1521,6 +1570,7 @@ const workouts = [
         duration: 53,
         type: "HYBRID",
         level: "Intense",
+        boutons: "direct", 
         desc: "3 AMRAP à enchaîner : <br>🔹course à pied(run)🔄Deadlift ou presse à cuisse, <br>🔹Skierg🔄Développé Couché, <br>🔹Rameur🔄Traction ou Tirage poulie haute",
         details: {
             format_label: "AMRAP : 3x12 minutes ",
@@ -1550,7 +1600,7 @@ const workouts = [
     }, 
   
   
-    { title: "WOD P'F''T", material: ["poids-corps", "tapis-incurve", "rameur", "ballon-leste"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", desc: "<strong>FOR TIME:</strong> 1000m de course à pied, 50 Burpees Broad Jumps, 100 fentes stationnaires, 1000m de rameur, 30 pompes relâchement des mains (push-ups hand release), 100 Wallballs (6 kg pour les hommes / 4 kg pour les femmes).",
+    { title: "WOD P'F''T", material: ["poids-corps", "tapis-incurve", "rameur", "ballon-leste"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", boutons: "direct", desc: "<strong>FOR TIME:</strong> 1000m de course à pied, 50 Burpees Broad Jumps, 100 fentes stationnaires, 1000m de rameur, 30 pompes relâchement des mains (push-ups hand release), 100 Wallballs (6 kg pour les hommes / 4 kg pour les femmes).",
       details: { format_label: "WOD P'F''T", intro: "FOR TIME :", exercises: [
           { text: "1000m de course à pied" }, { text: "50 Burpees Broad Jumps" }, { text: "100 fentes" }, { text: "1000m de rameur" }, { text: "30 pompes relâchement des mains (push-ups hand release)" }, { text: "100 Wallballs (6 kg/4 kg)" }
         ], conseil: "Vous pouvez remplacer les burpees broad jump par de simples burpees. <br>Permet de connaître son niveau HYROX : <br>15 – 25 minutes : Hyrox PRO<br>25 – 35 minutes : Hyrox Open<br>30 – 40 minutes : Hyrox Doubles<br>35 – 45 minutes : Hyrox Relais",
@@ -1565,7 +1615,7 @@ const workouts = [
       }},
 
   
-    { title: "🌱 Premiers Pas - Mobilité & Réveil Musculaire", material: ["poids-corps"], body: "complet", duration: 6, type: "MUSCU", level: "Facile",
+    { title: "🌱 Premiers Pas - Mobilité & Réveil Musculaire", material: ["poids-corps"], body: "complet", duration: 6, type: "MUSCU", level: "Facile", boutons: "direct", 
     desc: "<strong>2 tours (30 sec par mouvement) :</strong> Rotations d'épaules, Cercles de hanches, Flexions latérales, Montée de genoux, Chat-vache, étirements doux.",
     details: { format_label: "PREMIERS PAS — MOBILITÉ — 10 min", intro: "2 tours, 30 sec par mouvement, à réaliser en douceur et sans chrono strict si besoin :", exercises: [
         { text: "30 sec Rotations d'épaules (avant puis arrière)" },
@@ -1599,6 +1649,7 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Facile",
+        boutons: "edit",
         desc: "Programme progressif pour améliorer son nombre maximum de répétitions en pompes.",
         details: {
             format_label: "PROGRAMME POMPES PROGRESSIF",
@@ -1648,7 +1699,7 @@ const workouts = [
         }
     },
 
-    { title: "RENFO Haut & Postérieur", material: ["barre"], body: "complet", duration: 0, type: "MUSCU", level: "Moyen", desc: "5 rounds : 10 Deadlifts (soulevé de terre), 10 Bench Press (développé couché).",
+    { title: "RENFO Haut & Postérieur", material: ["barre"], body: "complet", duration: 0, type: "MUSCU", level: "Moyen", boutons: "direct", desc: "5 rounds : 10 Deadlifts (soulevé de terre), 10 Bench Press (développé couché).",
       details: { format_label: "MUSCU / RENFORCEMENT", intro: "Réaliser 5 séries de ces 2 exercices (superset) :", exercises: [
           { text: "10 Soulevés de terre (Deadlift → renforcement chaîne postérieure)" }, { text: "10 Développés couchés (Bench Press → renforcement pectoraux, triceps, avant de l'épaule)" }
         ], conseil: "Entraînement barre libre — adapter la charge à votre niveau. Demander conseils si vous débutez sur ces mouvements.",
@@ -1663,7 +1714,7 @@ const workouts = [
         }     
         }},
 
-    { title: "WOD 300", material: ["barre", "haltere", "box-jump", "traction"], body: "complet", duration: 0, type: "MUSCU", level: "Intense", desc: "<strong>l'entrainement spartiate :</strong> 25 Tractions, 50 Deadlifts(soulevé de terre), 50 Pompes(push-ups), 50 Box jumps, 50 relevés de jambes avec barre, 50 Arrachés épaules à 1 bras(25-25), 25 Tractions.",
+    { title: "WOD 300", material: ["barre", "haltere", "box-jump", "traction"], body: "complet", duration: 0, type: "MUSCU", level: "Intense", boutons: "direct", desc: "<strong>l'entrainement spartiate :</strong> 25 Tractions, 50 Deadlifts(soulevé de terre), 50 Pompes(push-ups), 50 Box jumps, 50 relevés de jambes avec barre, 50 Arrachés épaules à 1 bras(25-25), 25 Tractions.",
       details: { format_label: "FOR TIME — L'ENTRAÎNEMENT SPARTIATE", exercises: [
           { text: "25 Tractions (pull-ups)" }, { text: "50 Soulevé de terre 60 kg (deadlift)" }, { text: "50 Pompes (push-ups)", image: "images/infosbulles/POMPES1.png" }, { text: "50 Sauts box jump" }, { text: "50 Relevés de jambes avec barre 60 kg" }, { text: "50 Arrachés épaules 1 bras (25-25) — haltère 16 kg" }, { text: "25 Tractions (pull-ups)" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1679,7 +1730,7 @@ const workouts = [
         }     
           }},
 
-    { title: "RENFO 10TOURS/3EXOS", material: ["poids-corps"], body: "complet", duration: 0, type: "MUSCU", level: "Facile", desc: "10 Squats, 5 Pompes(push-ups), 10 Sit-ups(abdos).",
+    { title: "RENFO 10TOURS/3EXOS", material: ["poids-corps"], body: "complet", duration: 0, type: "MUSCU", level: "Facile", boutons: "both", desc: "10 Squats, 5 Pompes(push-ups), 10 Sit-ups(abdos).",
       details: { format_label: "RENFO — 10 TOURS", intro: "Enchaîner les 10 tours :", exercises: [
           { text: "10 Squats" }, { text: "5 Pompes", image: "images/infosbulles/POMPES1.png" }, { text: "10 Sit-ups (abdos)" }, { text: "30 sec à 1 min de repos entre les tours" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
@@ -1696,7 +1747,7 @@ const workouts = [
         }       
         }},
 
-    { title: "RENFO 5TOURS/3EXOS", material: ["station-dips"], body: "complet", duration: 0, type: "MUSCU", level: "Facile", desc: "20 Squats, 10 Dips, 1 min de gainage(abdos).",
+    { title: "RENFO 5TOURS/3EXOS", material: ["station-dips"], body: "complet", duration: 0, type: "MUSCU", level: "Facile", boutons: "both", desc: "20 Squats, 10 Dips, 1 min de gainage(abdos).",
       details: { format_label: "RENFO — 5 TOURS", intro: "Enchaîner les 5 tours :", exercises: [
           { text: "20 Squats" }, { text: "10 Dips" }, { text: "1 minute de gainage" }, { text: "1 minute de repos" }
         ], conseil: "Alterner le type de gainage (latéral, dynamique, appui main, appui coude). Dips : sur station ou entre 2 bancs.",
@@ -1711,7 +1762,7 @@ const workouts = [
         }        
         }},
   
-  { title: "Séance Stabilité bas du corps", material: ["elastique"], body: "bas", duration: 12, type: "MUSCU", level: "Moyen", desc: "améliorer sa stabilité en 12 minutes",
+  { title: "Séance Stabilité bas du corps", material: ["elastique"], body: "bas", duration: 12, type: "MUSCU", level: "Moyen", boutons: "direct", desc: "améliorer sa stabilité en 12 minutes",
       details: { format_label: "RENFO STABILITÉ BAS DU CORPS", exercises: [
           { text: "tripode (pieds nus) : 2 minutes" }, { text: "Split squat isomètrique : 45 secondes — 2 fois par jambe" }, { text: "Pallof Press statique : 2x2min" }, { text: "Monster walk : 3 minutes" }
         ], conseil: "-",
@@ -1747,6 +1798,8 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "Séance pectoraux biceps : Développé couché, SUPERSET Curl à la barre/Chest Press Jammer Arm, SUPERSET Curl incliné/Chest fly avec élastique (point d'accroche bas), TRISET Oiseau aux haltères/Elévations latèrale aux haltères/Abdos obliques.",
         details: {
             format_label: "MUSCU",
@@ -1867,6 +1920,8 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "Séance dos triceps : Traction, TRISET Barre au front/Rowing buste penché jammer arms/Shrug jammer arms, SUPERSET Rowing poulie basse/Dips, Landmine Press à un bras",
         details: {
             format_label: "MUSCU",
@@ -1977,6 +2032,8 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "Séance Jambes : Fentes, Landmine squat, Soulevé de terre jambes tendues, Goblet squat haltère talons surélevés, Extension Mollets debout, Sit-ups lestés ",
         details: {
             format_label: "MUSCU",
@@ -2090,6 +2147,8 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "Séance dos triceps : TRISET Landmine press à un bras/Situp/Obliques suspendu à la barre, BISET Oiseau avec haltères/Élévation latérale avec haltères",
         details: {
             format_label: "MUSCU",
@@ -2184,6 +2243,8 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Moyen",
+         boutons: "edit",
+        estimateur: true,
         desc: "Séance ① ➡️ Mouvement principal : Développé couché | Soulevé de terre jambes tendues | Rowing horizontal poulie basse | Épaules/Biceps (Superset) ",
         details: {
             format_label: "MUSCU",
@@ -2286,6 +2347,8 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "Séance ② ➡️ Mouvement principal : Tractions | Chest Press Jammer Arm | Goblet squat | Extension triceps poulie haute/Sit-ups(Superset) ",
         details: {
             format_label: "MUSCU",
@@ -2379,6 +2442,8 @@ const workouts = [
         duration: 0,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "Séance ③ ➡️ Mouvement principal : Fentes Jammer Arms | Rowing buste penché Jammer Arm + Shrugs Jammer Arm | Landmine Press | Extension mollets debout/Abdo obliques(Superset) ",
         details: {
             format_label: "MUSCU",
@@ -2486,6 +2551,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 5 jours — Jour 1/5.</strong> Séance poussée : développé couché, écarté, dips, extensions triceps. 4 exercices, 3-4 séries.",
         details: {
             format_label: "SPLIT 5 JOURS — PECTORAUX / TRICEPS",
@@ -2572,6 +2639,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 5 jours — Jour 2/5.</strong> Séance tirée : tractions, rowing, tirage, curl biceps. 4 exercices, 3-4 séries.",
         details: {
             format_label: "SPLIT 5 JOURS — DOS / BICEPS",
@@ -2658,6 +2727,8 @@ const workouts = [
         duration: 55,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 5 jours — Jour 3/5.</strong> Développé militaire, élévations latérales, oiseau, élévations frontales. 4 exercices, 3-4 séries.",
         details: {
             format_label: "SPLIT 5 JOURS — ÉPAULES",
@@ -2752,6 +2823,8 @@ const workouts = [
         duration: 65,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 5 jours — Jour 4/5.</strong> Squat, fentes, leg press, leg curl, mollets. Séance complète bas du corps.",
         details: {
             format_label: "SPLIT 5 JOURS — JAMBES",
@@ -2850,6 +2923,8 @@ const workouts = [
         duration: 55,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 5 jours — Jour 5/5.</strong> Biceps, triceps, avant-bras et gainageabdominaux. Séance finition.",
         details: {
             format_label: "SPLIT 5 JOURS — BRAS / ABDOMINAUX",
@@ -2957,6 +3032,8 @@ const workouts = [
         duration: 55,
         type: "MUSCU",
         level: "Moyen",
+        boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 4 jours — Jour 1/4.</strong> Pectoraux, épaules (faisceau antérieur & médial), triceps. Corps complet sur la semaine.",
         details: {
             format_label: "PLAN 4 JOURS — HAUT POUSSÉE",
@@ -3042,6 +3119,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 4 jours — Jour 2/4.</strong> Accent quadriceps : squat, fente, leg press, mollets.",
         details: {
             format_label: "PLAN 4 JOURS — BAS QUADRICEPS",
@@ -3118,6 +3197,8 @@ const workouts = [
         duration: 55,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 4 jours — Jour 3/4.</strong> Dos, biceps, trapèzes. Séance tirée complète pour le haut du corps.",
         details: {
             format_label: "PLAN 4 JOURS — HAUT TIRÉE",
@@ -3204,6 +3285,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 4 jours — Jour 4/4.</strong> Accent ischio-jambiers et fessiers : soulevé de terre, hip thrust, leg curl.",
         details: {
             format_label: "PLAN 4 JOURS — BAS ISCHIO / FESSIERS",
@@ -3295,6 +3378,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 3 jours — Jour 1/3.</strong> Corps complet : squat, développé couché, tractions, abdos. Exercices polyarticulaires prioritaires.",
         details: {
             format_label: "PLAN 3 JOURS — FULL BODY A",
@@ -3383,6 +3468,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 3 jours — Jour 2/3.</strong> Corps complet : soulevé de terre, développé incliné, rowing, fentes, abdos.",
         details: {
             format_label: "PLAN 3 JOURS — FULL BODY B",
@@ -3482,6 +3569,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 3 jours — Jour 3/3.</strong> Corps complet : squat avant, développé couché prise serrée, rowing haltères, hip thrust, gainage.",
         details: {
             format_label: "PLAN 3 JOURS — FULL BODY C",
@@ -3592,6 +3681,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 2 jours — Jour 1/2.</strong> Programme minimaliste : mouvements de poussée + jambes. Tout le corps travaillé en 2 séances.",
         details: {
             format_label: "PLAN 2 JOURS — POUSSÉE + JAMBES",
@@ -3691,6 +3782,8 @@ const workouts = [
         duration: 60,
         type: "MUSCU",
         level: "Moyen",
+      boutons: "edit",
+        estimateur: true,
         desc: "<strong>Planification 2 jours — Jour 2/2.</strong> Programme minimaliste : mouvements de tirée + chaîne postérieure. Complémentaire du Jour 1.",
         details: {
             format_label: "PLAN 2 JOURS — TIRÉE + POSTÉRIEUR",
@@ -3785,7 +3878,7 @@ const workouts = [
   
     
   
-    { title: "🌱 Premiers Pas - Cardio Léger Sans Impact", material: ["poids-corps"], body: "complet", duration: 12, type: "CARDIO", level: "Facile",
+    { title: "🌱 Premiers Pas - Cardio Léger Sans Impact", material: ["poids-corps"], body: "complet", duration: 12, type: "CARDIO", level: "Facile", boutons: "direct",
     desc: "<strong>6 tours, chaque minute :</strong> Course légère sur place 30 sec puis Pas chassés sur place 30 sec.",
     details: { format_label: "PREMIERS PAS — CARDIO LÉGER — 12 min", intro: "Chaque minute, alterner :", exercises: [
         { text: "30 sec Course légère sur place" },
@@ -3804,7 +3897,7 @@ const workouts = [
       }
     }},
   
-    { title: "🔰 Débutant - Cardio Doux Progressif", material: ["poids-corps"], body: "complet", duration: 12, type: "CARDIO", level: "Facile",
+    { title: "🔰 Débutant - Cardio Doux Progressif", material: ["poids-corps"], body: "complet", duration: 12, type: "CARDIO", level: "Facile", boutons: "direct",
     desc: "<strong>CARDIO 12 min :</strong> Course légère sur place, Montées de genoux lentes, Pas chassés, Talons-fesses lents.",
     details: { format_label: "DÉBUTANT — CARDIO DOUX PROGRESSIF — 12 min", intro: "Chaque minute, changer de mouvement (1 minute par mouvement, 4 mouvements, 3 tours au total) :", exercises: [
         { text: "1 min Course légère sur place" },
@@ -3828,7 +3921,7 @@ const workouts = [
     }},
   
     {
-        title: "Séances Fractionné course",
+        title: "Exemples de séances fractionné course",
         material: ["poids-corps", "tapis-incurve"],
         body: "complet",
         duration: 0,
@@ -3842,7 +3935,7 @@ const workouts = [
         }
     },
 
-    { title: "Séance BikeERG orientée FORCE", material: ["bike-erg"], body: "bas", duration: 40, type: "CARDIO", level: "Intense",
+    { title: "Séance BikeERG orientée FORCE", material: ["bike-erg"], body: "bas", duration: 40, type: "CARDIO", level: "Intense", 
       desc: "Séance de fractionné 40 min sur BikeERG. ▪️ 10 min échauffement. ▪️ 20 min fractionné (10×1min effort / 1min récup). ▪️ 10 min retour au calme. Choisir son damper et son plage RPM cible.",
       details: {
         format_label: "BIKEERG FORCE — 40 MINUTES",
@@ -3854,7 +3947,7 @@ const workouts = [
       }
     },
 
-    { title: "Séance intervalle BikeERG", material: ["bike-erg"], body: "bas", duration: 30, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pendant 30 minutes.",
+    { title: "Séance intervalle BikeERG", material: ["bike-erg"], body: "bas", duration: 30, type: "CARDIO", level: "Moyen", boutons: "direct", desc: "séance de fractionné pendant 30 minutes.",
       details: { format_label: "SÉANCE CARDIO — 30 MINUTES", exercises: [
           { text: "Échauffement : 10 minutes (damper 2-3)" }, { text: "Fractionné : 14 minutes — 7 fois :" }, { text: "→ 1 minute intensité max. (pédalage le plus rapide possible)" }, { text: "→ 1 minute de récupération" }, { text: "Récupération : 10 minutes (damper 2-3)" }
         ], conseil: "Adapter le damper (minimum 3) et le RPM selon votre niveau.",
@@ -3895,6 +3988,7 @@ const workouts = [
         duration: 60,
         type: "CARDIO",
         level: "Moyen",
+       boutons: "direct",
         desc: "4 ateliers à enchaîner : SkiErg, Rameur, BikeErg et Tapis Incurvé. <br>▪️2 séquences de travail. <br>▪️5 minutes par atelier. <br>▪️12 niveaux de progression. <br>▪️1 heure.",
         details: {
             format_label: "CARDIO — 60 MINUTES",
@@ -3928,6 +4022,7 @@ const workouts = [
         duration: 40,
         type: "CARDIO",
         level: "Moyen",
+        boutons: "direct",
         desc: "Séance structurée sur rameur Concept2 — 40 minutes avec 6 phases de travail progressif. 12 niveaux disponibles. Damper 3-5.",
         details: {
             format_label: "RAMEUR TEMPO — 40 MINUTES",
@@ -3960,6 +4055,7 @@ const workouts = [
         duration: 40,
         type: "CARDIO",
         level: "Moyen",
+        boutons: "direct",
         desc: "Séance structurée sur SkiErg Concept2 — 40 minutes avec 6 phases de travail progressif. 12 niveaux disponibles. Haut du corps dominant.",
         details: {
             format_label: "SKIERG TEMPO — 40 MINUTES",
@@ -3992,6 +4088,7 @@ const workouts = [
         duration: 20,
         type: "CARDIO",
         level: "Intense",
+        boutons: "direct",
         desc: "Séance structurée sur Assault Bike — 20 minutes intenses corps entier. 12 niveaux en RPM. 5 min échauffement + séquence TEMPO + 3 min retour au calme.",
         details: {
             format_label: "ASSAULT BIKE TEMPO — 20 MINUTES",
@@ -4015,7 +4112,7 @@ const workouts = [
         }
     },
 
-    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", desc: "séance de fractionné pyramidale. <br>▪️20 niveaux disponibles.  <br>▪️40 minutes",
+    { title: "Séance RUN TEMPO sur tapis", material: ["tapis-incurve"], body: "bas", duration: 40, type: "CARDIO", level: "Moyen", boutons: "direct", desc: "séance de fractionné pyramidale. <br>▪️20 niveaux disponibles.  <br>▪️40 minutes",
       details: {
         format_label: "CARDIO PYRAMIDAL — 40 MINUTES",
         type_special: "run_tempo",
@@ -4388,6 +4485,7 @@ const workouts = [
         duration: 0,
         type: "CARDIO",
         level: "Intense",
+      boutons: "direct",
         desc: "Séance fractionné : 10X400 mètres / récup:1 minute",
         details: {
             format_label: "FRACTIONNE - FOR TIME",
@@ -4620,13 +4718,28 @@ function openModal(index) {
         var footer3 = document.getElementById('modal-footer');
         var existingBtn3 = document.getElementById('btn-charger');
         if (existingBtn3) existingBtn3.remove();
+        var existingBtn3Direct = document.getElementById('btn-charger-direct');
+        if (existingBtn3Direct) existingBtn3Direct.remove();
+
         if (d.chargeable && footer3) {
-            var btnCharger3 = document.createElement('button');
-            btnCharger3.id = 'btn-charger';
-            btnCharger3.className = 'btn-modal-charger';
-            btnCharger3.textContent = '🚀 Charger dans Ma Séance';
-            btnCharger3.onclick = function() { chargerSeanceErgo(); };
-            footer3.insertBefore(btnCharger3, footer3.firstChild);
+            var modeBoutons3 = w.boutons || 'edit';
+            if (modeBoutons3 === 'both' || modeBoutons3 === 'edit') {
+                var btnCharger3 = document.createElement('button');
+                btnCharger3.id = 'btn-charger';
+                btnCharger3.className = 'btn-modal-charger';
+                btnCharger3.textContent = '🚀 Charger et modifier';
+                btnCharger3.onclick = function() { chargerSeanceErgo(false); };
+                footer3.insertBefore(btnCharger3, footer3.firstChild);
+            }
+            if (modeBoutons3 === 'both' || modeBoutons3 === 'direct') {
+                var btnDirect3 = document.createElement('button');
+                btnDirect3.id = 'btn-charger-direct';
+                btnDirect3.className = 'btn-modal-charger';
+                btnDirect3.style.background = '#1a6b3c';
+                btnDirect3.textContent = '⚡ GO! ⚡';
+                btnDirect3.onclick = function() { chargerSeanceErgo(true); };
+                footer3.insertBefore(btnDirect3, footer3.firstChild);
+            }
         }
         return;
     }
@@ -4676,13 +4789,27 @@ function openModal(index) {
         var footerBike = document.getElementById('modal-footer');
         var existingBtnBike = document.getElementById('btn-charger');
         if (existingBtnBike) existingBtnBike.remove();
+        var existingBtnBikeDirect = document.getElementById('btn-charger-direct');
+        if (existingBtnBikeDirect) existingBtnBikeDirect.remove();
         if (d.chargeable && footerBike) {
-            var btnChargerBike = document.createElement('button');
-            btnChargerBike.id = 'btn-charger';
-            btnChargerBike.className = 'btn-modal-charger';
-            btnChargerBike.textContent = '🚀 Charger dans Ma Séance';
-            btnChargerBike.onclick = function() { chargerSeanceBikeERGForce(); };
-            footerBike.insertBefore(btnChargerBike, footerBike.firstChild);
+            var modeBoutonsBike = w.boutons || 'edit';
+            if (modeBoutonsBike === 'both' || modeBoutonsBike === 'edit') {
+                var btnChargerBike = document.createElement('button');
+                btnChargerBike.id = 'btn-charger';
+                btnChargerBike.className = 'btn-modal-charger';
+                btnChargerBike.textContent = '🚀 Charger et modifier';
+                btnChargerBike.onclick = function() { chargerSeanceBikeERGForce(false); };
+                footerBike.insertBefore(btnChargerBike, footerBike.firstChild);
+            }
+            if (modeBoutonsBike === 'both' || modeBoutonsBike === 'direct') {
+                var btnDirectBike = document.createElement('button');
+                btnDirectBike.id = 'btn-charger-direct';
+                btnDirectBike.className = 'btn-modal-charger';
+                btnDirectBike.style.background = '#1a6b3c';
+                btnDirectBike.textContent = '⚡ GO! ⚡';
+                btnDirectBike.onclick = function() { chargerSeanceBikeERGForce(true); };
+                footerBike.insertBefore(btnDirectBike, footerBike.firstChild);
+            }
         }
         return;
     }
@@ -4730,25 +4857,38 @@ function openModal(index) {
         rtOverlay.classList.add('open');
         document.body.style.overflow = 'hidden';
 
-        // Bouton Charger
+        // Boutons Charger / Démarrage direct (w.boutons = 'both' | 'direct' | 'edit', défaut: 'edit')
         var footer2 = document.getElementById('modal-footer');
         var existingBtn2 = document.getElementById('btn-charger');
         if (existingBtn2) existingBtn2.remove();
+        var existingBtn2Direct = document.getElementById('btn-charger-direct');
+        if (existingBtn2Direct) existingBtn2Direct.remove();
+
+        var fnCharger = isAssaultBike ? chargerSeanceAssaultBike :
+                         isSkiErg     ? chargerSeanceSkiErg :
+                         isRameur2    ? chargerSeanceRameur :
+                         function(modeDirect) { chargerSeance({ type: 'avec_niveaux' }, modeDirect); };
+
         if (d.chargeable && footer2) {
-            var btnCharger2 = document.createElement('button');
-            btnCharger2.id = 'btn-charger';
-            btnCharger2.className = 'btn-modal-charger';
-            btnCharger2.textContent = '🚀 Charger dans Ma Séance';
-            if (isAssaultBike) {
-                btnCharger2.onclick = function() { chargerSeanceAssaultBike(); };
-            } else if (isSkiErg) {
-                btnCharger2.onclick = function() { chargerSeanceSkiErg(); };
-            } else if (isRameur2) {
-                btnCharger2.onclick = function() { chargerSeanceRameur(); };
-            } else {
-                btnCharger2.onclick = function() { chargerSeance({ type: 'avec_niveaux' }); };
+            var modeBoutons2 = w.boutons || 'edit';
+
+            if (modeBoutons2 === 'both' || modeBoutons2 === 'edit') {
+                var btnCharger2 = document.createElement('button');
+                btnCharger2.id = 'btn-charger';
+                btnCharger2.className = 'btn-modal-charger';
+                btnCharger2.textContent = '🚀 Charger|Préparer|Go! 🚀';
+                btnCharger2.onclick = function() { fnCharger(false); };
+                footer2.insertBefore(btnCharger2, footer2.firstChild);
             }
-            footer2.insertBefore(btnCharger2, footer2.firstChild);
+            if (modeBoutons2 === 'both' || modeBoutons2 === 'direct') {
+                var btnDirect2 = document.createElement('button');
+                btnDirect2.id = 'btn-charger-direct';
+                btnDirect2.className = 'btn-modal-charger';
+                btnDirect2.style.background = '#1a6b3c';
+                btnDirect2.textContent = '⚡ GO! ⚡';
+                btnDirect2.onclick = function() { fnCharger(true); };
+                footer2.insertBefore(btnDirect2, footer2.firstChild);
+            }
         }
         return;
     }
@@ -4830,19 +4970,50 @@ function openModal(index) {
         html += '<div class="modal-conseil"><strong>&#x1F4A1; Conseil</strong>' + d.conseil + '</div>';
     }
 
-    document.getElementById('modal-body').innerHTML = html;
+  document.getElementById('modal-body').innerHTML = html;
 
-    // Bouton "Charger dans Ma Séance" si chargeable
+    // Gestion des boutons de chargement : w.boutons = 'both' | 'direct' | 'edit' (défaut: 'edit')
     var footerMain = document.getElementById('modal-footer');
     var existingBtnMain = document.getElementById('btn-charger');
     if (existingBtnMain) existingBtnMain.remove();
+    var existingBtnDirect = document.getElementById('btn-charger-direct');
+    if (existingBtnDirect) existingBtnDirect.remove();
+
     if (d.chargeable && d.chargement) {
-        var btnCharger = document.createElement('button');
-        btnCharger.id = 'btn-charger';
-        btnCharger.className = 'btn-modal-charger';
-        btnCharger.textContent = '🚀 Charger dans Ma Séance';
-        btnCharger.onclick = function() { chargerSeance(d.chargement); };
-        footerMain.insertBefore(btnCharger, footerMain.firstChild);
+        // Par défaut MUSCU reste sur "edit" (le sportif gère ses charges/séries),
+        // mais reste pilotable explicitement via w.boutons si besoin un jour.
+        var modeBoutons = w.boutons || 'edit';
+
+        if (modeBoutons === 'both' || modeBoutons === 'edit') {
+            var btnCharger = document.createElement('button');
+            btnCharger.id = 'btn-charger';
+            btnCharger.className = 'btn-modal-charger';
+            btnCharger.textContent = '🚀 Charger|Préparer|Go! 🚀';
+            btnCharger.onclick = function() { chargerSeance(d.chargement, false); };
+            footerMain.insertBefore(btnCharger, footerMain.firstChild);
+        }
+        if (modeBoutons === 'both' || modeBoutons === 'direct') {
+            var btnDirect = document.createElement('button');
+            btnDirect.id = 'btn-charger-direct';
+            btnDirect.className = 'btn-modal-charger';
+            btnDirect.style.background = '#1a6b3c';
+            btnDirect.textContent = '⚡ GO! ⚡';
+            btnDirect.onclick = function() { chargerSeance(d.chargement, true); };
+            footerMain.insertBefore(btnDirect, footerMain.firstChild);
+        }
+    }
+
+    // Bouton vers l'estimateur de charges, uniquement pour les séances MUSCU avec poids/reps
+    var existingBtnEstim = document.getElementById('btn-estimateur');
+    if (existingBtnEstim) existingBtnEstim.remove();
+    if (w.estimateur && footerMain) {
+        var btnEstim = document.createElement('a');
+        btnEstim.id = 'btn-estimateur';
+        btnEstim.className = 'btn-modal-charger';
+        btnEstim.href = 'infos.html?outil=estimateur';
+        btnEstim.textContent = '🧮 Pas sûr de vos charges ?';
+        btnEstim.style.cssText = 'background:#b8860b;display:block;text-align:center;box-sizing:border-box;width:100%;';
+        footerMain.insertBefore(btnEstim, footerMain.firstChild);
     }
 
     const modalOverlay = document.getElementById('modal-overlay');
@@ -4906,13 +5077,7 @@ function modalShowMedia(type, src) {
 }
 
 
-function chargerSeance(chargement) {
-    // Cas muscu : passage direct avec données structurées
-    if (chargement && chargement.type === 'muscu') {
-        const encoded = encodeURIComponent(JSON.stringify(chargement));
-        window.location.href = 'seances_perso.html?seance=' + encoded;
-        return;
-    }
+function chargerSeance(chargement, modeDirect) {
     // Cas spécial Run Tempo : construire les phases depuis le niveau actif
     if (chargement && chargement.type === 'avec_niveaux') {
         var niveauActif = window._niveauActif || 1;
@@ -4941,7 +5106,9 @@ function chargerSeance(chargement) {
         }
     }
     const encoded = encodeURIComponent(JSON.stringify(chargement));
-    window.location.href = 'seances_perso.html?seance=' + encoded;
+    var url = 'seances_perso.html?seance=' + encoded;
+    if (modeDirect) url += '&direct=1';
+    window.location.href = url;
 }
 
 function selectNiveau(n) {
@@ -5040,7 +5207,7 @@ function selectNiveauErgo(n) {
     if (container) container.innerHTML = html;
 }
 
-function chargerSeanceErgo() {
+function chargerSeanceErgo(modeDirect) {
     var niveauActif = window._niveauActif || 1;
     var niveaux = window._niveauxActifs;
     var niveau = niveaux ? niveaux.find(function(nv) { return nv.n === niveauActif; }) : null;
@@ -5081,7 +5248,9 @@ function chargerSeanceErgo() {
     };
 
     const encoded = encodeURIComponent(JSON.stringify(chargement));
-    window.location.href = 'seances_perso.html?seance=' + encoded;
+    var url = 'seances_perso.html?seance=' + encoded;
+    if (modeDirect) url += '&direct=1';
+    window.location.href = url;
 }
 
 function selectNiveauRameur(n) {
@@ -5097,41 +5266,8 @@ function selectNiveauRameur(n) {
         if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
     }
 
-    // Tableau des splits par phase
-    var html = '<div class="run-tempo-phases-wrap">';
-    html += '<p class="modal-section-title" style="margin:12px 0 8px;">🚣 Splits /500m — Niveau ' + n + '</p>';
-    html += '<table style="width:100%; border-collapse:collapse; font-size:0.88em; margin-bottom:14px;">';
-    html += '<thead><tr class="rameur-thead">';
-    html += '<th style="padding:6px 8px; text-align:left;">Phase</th>';
-    html += '<th style="padding:6px 8px; text-align:left;">Durée</th>';
-    html += '<th style="padding:6px 8px; text-align:center;">Split /500m</th>';
-    html += '</tr></thead><tbody>';
-
-    var phases = [
-        { label: "🔥 Attaque",    dur: "1 min",  split: niveau.attaque,    cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "🔼 Transition",  dur: "2 min",  split: niveau.transition,  cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "📍 La Base",     dur: "8 min",  split: niveau.base,        cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "📈 Remontée",   dur: "3 min",  split: niveau.remontee,    cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "💪 Soutenu",    dur: "2 min",  split: niveau.soutenu,     cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "🚀 Pointe",     dur: "1 min",  split: niveau.pointe,      cls: "run-effort" }
-    ];
-
-    phases.forEach(function(p) {
-        var splitDisplay = p.cls === 'run-effort' ? '<strong class="rameur-split-effort">' + p.split + '</strong>' : '<em class="rameur-split-recup">' + p.split + '</em>';
-        html += '<tr class="' + p.cls + '" style="border-bottom:1px solid #eee;">';
-        html += '<td style="padding:6px 8px;">' + p.label + '</td>';
-        html += '<td class="rameur-dur">' + p.dur + '</td>';
-        html += '<td style="padding:6px 8px; text-align:center;">' + splitDisplay + '</td>';
-        html += '</tr>';
-    });
-    html += '</tbody></table>';
-
     // Déroulé complet
+    var html = '<div class="run-tempo-phases-wrap">';
     html += '<ul class="modal-exercises run-tempo-list">';
     var deroulé = [
         { min: "0:00-0:10",  label: "🏃 Échauffement — ramer tranquillement avec 3 accélérations de 30sec (damper 1-3)", cls: "run-recup" },
@@ -5160,7 +5296,7 @@ function selectNiveauRameur(n) {
     if (container) container.innerHTML = html;
 }
 
-function chargerSeanceRameur() {
+function chargerSeanceRameur(modeDirect) {
     var niveauActif = window._niveauActif || 1;
     var niveaux = window._niveauxActifs;
     var niveau = niveaux ? niveaux.find(function(nv) { return nv.n === niveauActif; }) : null;
@@ -5189,7 +5325,9 @@ function chargerSeanceRameur() {
     };
 
     const encoded = encodeURIComponent(JSON.stringify(chargement));
-    window.location.href = 'seances_perso.html?seance=' + encoded;
+    var url = 'seances_perso.html?seance=' + encoded;
+    if (modeDirect) url += '&direct=1';
+    window.location.href = url;
 }
 
 function closeModal() {
@@ -5379,7 +5517,7 @@ function _updateBikeERGSynthese() {
     container.innerHTML = html;
 }
 
-function chargerSeanceBikeERGForce() {
+function chargerSeanceBikeERGForce(modeDirect) {
     var damper = window._bikeergDamper || 3;
     var rpmIdx = window._bikeergRpmIdx || 0;
     var rpm    = (window._bikeergRpms || [])[rpmIdx] || '70↔75';
@@ -5401,7 +5539,9 @@ function chargerSeanceBikeERGForce() {
         phases: phases
     };
     var encoded = encodeURIComponent(JSON.stringify(chargement));
-    window.location.href = 'seances_perso.html?seance=' + encoded;
+    var url = 'seances_perso.html?seance=' + encoded;
+    if (modeDirect) url += '&direct=1';
+    window.location.href = url;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -5421,43 +5561,8 @@ function selectNiveauSkiErg(n) {
         if (btn) btn.className = 'btn-niveau' + (i === n ? ' active' : '');
     }
 
-    // Tableau des splits par phase
-    var html = '<div class="run-tempo-phases-wrap">';
-    html += '<p class="modal-section-title" style="margin:12px 0 8px;">🎿 Splits /500m — Niveau ' + n + '</p>';
-    html += '<table style="width:100%; border-collapse:collapse; font-size:0.88em; margin-bottom:14px;">';
-    html += '<thead><tr class="rameur-thead">';
-    html += '<th style="padding:6px 8px; text-align:left;">Phase</th>';
-    html += '<th style="padding:6px 8px; text-align:left;">Durée</th>';
-    html += '<th style="padding:6px 8px; text-align:center;">Split /500m</th>';
-    html += '</tr></thead><tbody>';
-
-    var phases = [
-        { label: "🔥 Attaque",    dur: "1 min",  split: niveau.attaque,    cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "🔼 Transition",  dur: "2 min",  split: niveau.transition,  cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "📍 La Base",     dur: "8 min",  split: niveau.base,        cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "📈 Remontée",   dur: "3 min",  split: niveau.remontee,    cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "💪 Soutenu",    dur: "2 min",  split: niveau.soutenu,     cls: "run-effort" },
-        { label: "😮‍💨 Récup",       dur: "1 min",  split: "Récupération",    cls: "run-recup"  },
-        { label: "🚀 Pointe",     dur: "1 min",  split: niveau.pointe,      cls: "run-effort" }
-    ];
-
-    phases.forEach(function(p) {
-        var splitDisplay = p.cls === 'run-effort' ?
-            '<strong class="rameur-split-effort">' + p.split + '</strong>' :
-            '<em class="rameur-split-recup">' + p.split + '</em>';
-        html += '<tr class="' + p.cls + '" style="border-bottom:1px solid #eee;">';
-        html += '<td style="padding:6px 8px;">' + p.label + '</td>';
-        html += '<td class="rameur-dur">' + p.dur + '</td>';
-        html += '<td style="padding:6px 8px; text-align:center;">' + splitDisplay + '</td>';
-        html += '</tr>';
-    });
-    html += '</tbody></table>';
-
     // Déroulé complet
+    var html = '<div class="run-tempo-phases-wrap">';
     html += '<ul class="modal-exercises run-tempo-list">';
     var deroule = [
         { min: "0:00-0:10", label: "🎿 Échauffement — skier tranquillement, 3 accélérations de 30sec progressives", cls: "run-recup" },
@@ -5486,7 +5591,7 @@ function selectNiveauSkiErg(n) {
     if (container) container.innerHTML = html;
 }
 
-function chargerSeanceSkiErg() {
+function chargerSeanceSkiErg(modeDirect) {
     var niveauActif = window._niveauActif || 1;
     var niveaux = window._niveauxActifs;
     var niveau = niveaux ? niveaux.find(function(nv) { return nv.n === niveauActif; }) : null;
@@ -5514,7 +5619,9 @@ function chargerSeanceSkiErg() {
         phases: phases
     };
     var encoded = encodeURIComponent(JSON.stringify(chargement));
-    window.location.href = 'seances_perso.html?seance=' + encoded;
+    var url = 'seances_perso.html?seance=' + encoded;
+    if (modeDirect) url += '&direct=1';
+    window.location.href = url;
 }
 
 // ══════════════════════════════════════════════════════════════
@@ -5534,40 +5641,6 @@ function selectNiveauAssaultBike(n) {
     }
 
     var html = '<div class="run-tempo-phases-wrap">';
-    html += '<p class="modal-section-title" style="margin:12px 0 8px;">🚴 Cibles RPM — Niveau ' + n + '</p>';
-    html += '<table style="width:100%; border-collapse:collapse; font-size:0.88em; margin-bottom:14px;">';
-    html += '<thead><tr class="rameur-thead">';
-    html += '<th style="padding:6px 8px; text-align:left;">Phase</th>';
-    html += '<th style="padding:6px 8px; text-align:left;">Durée</th>';
-    html += '<th style="padding:6px 8px; text-align:center;">RPM cible</th>';
-    html += '</tr></thead><tbody>';
-
-    var phases = [
-        { label: "🔥 Attaque",   dur: "30 sec", split: niveau.attaque,    cls: "run-effort" },
-        { label: "😮‍💨 Récup",      dur: "30 sec", split: "RPM très bas",    cls: "run-recup"  },
-        { label: "🔼 Transition", dur: "1 min",  split: niveau.transition,  cls: "run-effort" },
-        { label: "😮‍💨 Récup",      dur: "1 min",  split: "RPM très bas",    cls: "run-recup"  },
-        { label: "📍 La Base",    dur: "3 min",  split: niveau.base,        cls: "run-effort" },
-        { label: "😮‍💨 Récup",      dur: "1 min",  split: "RPM très bas",    cls: "run-recup"  },
-        { label: "📈 Remontée",  dur: "1 min",  split: niveau.remontee,    cls: "run-effort" },
-        { label: "😮‍💨 Récup",      dur: "30 sec", split: "RPM très bas",    cls: "run-recup"  },
-        { label: "💪 Soutenu",   dur: "1 min",  split: niveau.soutenu,     cls: "run-effort" },
-        { label: "😮‍💨 Récup",      dur: "30 sec", split: "RPM très bas",    cls: "run-recup"  },
-        { label: "🚀 Pointe",    dur: "20 sec", split: niveau.pointe,      cls: "run-effort" }
-    ];
-
-    phases.forEach(function(p) {
-        var splitDisplay = p.cls === 'run-effort' ?
-            '<strong class="rameur-split-effort">' + p.split + ' RPM</strong>' :
-            '<em class="rameur-split-recup">' + p.split + '</em>';
-        html += '<tr class="' + p.cls + '" style="border-bottom:1px solid #eee;">';
-        html += '<td style="padding:6px 8px;">' + p.label + '</td>';
-        html += '<td class="rameur-dur">' + p.dur + '</td>';
-        html += '<td style="padding:6px 8px; text-align:center;">' + splitDisplay + '</td>';
-        html += '</tr>';
-    });
-    html += '</tbody></table>';
-
     html += '<ul class="modal-exercises run-tempo-list">';
     var deroule = [
         { min: "0:00-0:05", label: "🚴 Échauffement — pédalage modéré, montée en température progressive", cls: "run-recup" },
@@ -5597,7 +5670,7 @@ function selectNiveauAssaultBike(n) {
     if (container) container.innerHTML = html;
 }
 
-function chargerSeanceAssaultBike() {
+function chargerSeanceAssaultBike(modeDirect) {
     var niveauActif = window._niveauActif || 1;
     var niveaux = window._niveauxActifs;
     var niveau = niveaux ? niveaux.find(function(nv) { return nv.n === niveauActif; }) : null;
@@ -5626,5 +5699,7 @@ function chargerSeanceAssaultBike() {
         phases: phases
     };
     var encoded = encodeURIComponent(JSON.stringify(chargement));
-    window.location.href = 'seances_perso.html?seance=' + encoded;
+    var url = 'seances_perso.html?seance=' + encoded;
+    if (modeDirect) url += '&direct=1';
+    window.location.href = url;
 }
