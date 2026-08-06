@@ -5004,6 +5004,7 @@ function openModal(index) {
     }
 
     // Bouton vers l'estimateur de charges, uniquement pour les séances MUSCU avec poids/reps
+    // Inséré APRÈS "Charger|Préparer|Go!" (en 2e position, avant "Fermer la fiche")
     var existingBtnEstim = document.getElementById('btn-estimateur');
     if (existingBtnEstim) existingBtnEstim.remove();
     if (w.estimateur && footerMain) {
@@ -5013,7 +5014,12 @@ function openModal(index) {
         btnEstim.href = 'infos.html?outil=estimateur';
         btnEstim.textContent = '🧮 Pas sûr de vos charges ?';
         btnEstim.style.cssText = 'background:#b8860b;display:block;text-align:center;box-sizing:border-box;width:100%;';
-        footerMain.insertBefore(btnEstim, footerMain.firstChild);
+        var btnFermer = footerMain.querySelector('.btn-modal-close');
+        if (btnFermer) {
+            footerMain.insertBefore(btnEstim, btnFermer);
+        } else {
+            footerMain.appendChild(btnEstim);
+        }
     }
 
     const modalOverlay = document.getElementById('modal-overlay');
