@@ -2517,7 +2517,7 @@ function chargerDepuisLocalStorage() {
                 // Pour les autres types on lance après un court délai fixe (10 tentatives = 500ms max)
                 var pret = (c.type !== 'surmesure' && c.type !== 'tabata')
                     ? tentatives >= 4
-                    : (nbPhasesDOM >= nbPhasesAttendues || tentatives > 20);
+                    : (nbPhasesDOM >= nbPhasesAttendues || tentatives > 60);
                 if (pret) {
                     clearInterval(attendre);
                     lanceur();
@@ -2538,10 +2538,14 @@ window.addEventListener('DOMContentLoaded', function() {
     ftAddExo('', 0);
     emomInitDefault();
 
-    // Chargement localStorage APRÈS l'init (setTimeout garantit que tout est prêt)
-    setTimeout(function() {
+    // Chargement après que TOUT soit prêt — load attend les scripts externes
+    if (document.readyState === 'complete') {
         chargerDepuisLocalStorage();
-    }, 50);
+    } else {
+        window.addEventListener('load', function() {
+            chargerDepuisLocalStorage();
+        });
+    }
 
     var backButton=document.getElementById('backToTop');
     if (backButton) {
