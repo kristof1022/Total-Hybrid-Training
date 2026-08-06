@@ -2496,33 +2496,37 @@ function chargerDepuisLocalStorage() {
 
     // Démarrage direct : on saute l'onglet "Préparer" et on va droit sur "En séance".
     if (modeDirect) {
-        var lanceurParType = {
-            tabata:      tabLancer,
-            surmesure:   tabLancer,
-            fortime:     ftLancer,
-            amrap:       amrapLancer,
-            emom:        emomLancer,
-            intervalles: itvLancer,
-            muscu:       window.lancer
-        };
-        var lanceur = lanceurParType[c.type];
-        if (lanceur) {
-            var nbPhasesAttendues = (c.phases || []).length;
+        // tabata, surmesure, fortime, amrap, emom, intervalles : remplissage DOM 100% synchrone
+        // -> on appelle le lanceur directement via setTimeout(0) pour laisser le navigateur
+        //    finaliser le rendu du DOM avant d'appeler showMode()
+        // muscu : le remplissage utilise des setTimeout(100ms) internes -> on poll le DOM
+        if (c.type === 'muscu') {
+            var nbBlocsAttendus = (c.blocs || []).length;
             var tentatives = 0;
             var attendre = setInterval(function() {
                 tentatives++;
-                var listePhasesDOM = document.getElementById('tab-phases-list');
-                var nbPhasesDOM = listePhasesDOM ? listePhasesDOM.querySelectorAll('.phase-item').length : 0;
-                // Pour surmesure/tabata on attend que toutes les phases soient dans le DOM
-                // Pour les autres types on lance après un court délai fixe (10 tentatives = 500ms max)
-                var pret = (c.type !== 'surmesure' && c.type !== 'tabata')
-                    ? tentatives >= 4
-                    : (nbPhasesDOM >= nbPhasesAttendues || tentatives > 60);
-                if (pret) {
+                var muscuList = document.getElementById('muscu-blocs-list');
+                var nbBlocsDOM = muscuList ? muscuList.querySelectorAll('.muscu-bloc').length : 0;
+                var pret = (typeof window.lancer === 'function' && nbBlocsDOM >= nbBlocsAttendus);
+                if (pret || tentatives >= 80) { // 4 sec max
                     clearInterval(attendre);
-                    lanceur();
+                    if (typeof window.lancer === 'function') window.lancer();
                 }
             }, 50);
+        } else {
+            var lanceurParType = {
+                tabata:      tabLancer,
+                surmesure:   tabLancer,
+                fortime:     ftLancer,
+                amrap:       amrapLancer,
+                emom:        emomLancer,
+                intervalles: itvLancer
+            };
+            var lanceur = lanceurParType[c.type];
+            if (typeof lanceur === 'function') {
+                // setTimeout(0) : laisse le navigateur terminer le rendu avant de lancer
+                setTimeout(function() { lanceur(); }, 0);
+            }
         }
     }
 
