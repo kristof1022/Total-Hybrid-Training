@@ -2331,9 +2331,11 @@ function itvCounterAdj(type, delta) {
 function chargerDepuisLocalStorage() {
     // Lire depuis l'URL d'abord, sinon depuis localStorage
     var data = null;
+    var modeDirect = false;
     var params = new URLSearchParams(window.location.search);
     if (params.get('seance')) {
         data = decodeURIComponent(params.get('seance'));
+        modeDirect = (params.get('direct') === '1');
         // Nettoyer l'URL sans recharger la page
         window.history.replaceState({}, '', 'seances_perso.html');
     } else {
@@ -2491,6 +2493,39 @@ function chargerDepuisLocalStorage() {
             }
         });
     }
+
+    // Démarrage direct : on saute l'onglet "Préparer" et on va droit sur "En séance".
+    if (modeDirect) {
+        var lanceurParType = {
+            tabata:      tabLancer,
+            surmesure:   tabLancer,
+            fortime:     ftLancer,
+            amrap:       amrapLancer,
+            emom:        emomLancer,
+            intervalles: itvLancer,
+            muscu:       window.lancer
+        };
+        var lanceur = lanceurParType[c.type];
+        if (lanceur) {
+            var nbPhasesAttendues = (c.phases || []).length;
+            var tentatives = 0;
+            var attendre = setInterval(function() {
+                tentatives++;
+                var listePhasesDOM = document.getElementById('tab-phases-list');
+                var nbPhasesDOM = listePhasesDOM ? listePhasesDOM.querySelectorAll('.phase-item').length : 0;
+                // Pour surmesure/tabata on attend que toutes les phases soient dans le DOM
+                // Pour les autres types on lance après un court délai fixe (10 tentatives = 500ms max)
+                var pret = (c.type !== 'surmesure' && c.type !== 'tabata')
+                    ? tentatives >= 4
+                    : (nbPhasesDOM >= nbPhasesAttendues || tentatives > 20);
+                if (pret) {
+                    clearInterval(attendre);
+                    lanceur();
+                }
+            }, 50);
+        }
+    }
+
     return true;
 }
 
@@ -2646,6 +2681,7 @@ function lancer() {
     buildExecPanels();
     startChrono();
 }
+window.lancer = lancer; // exposé pour permettre le démarrage direct depuis chargerDepuisLocalStorage()
 
 /* ══ EXÉCUTION ═══════════════════════════════════════ */
 
