@@ -13,13 +13,13 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
     { title: "🌱 Premiers Pas - Corps Complet", material: ["poids-corps"], body: "complet", duration: 12, type: "TABATA", level: "Facile", boutons: "direct",
     desc: "<strong>3 tours (30 sec travail / 20 sec repos) :</strong> Squats sur chaise, Pompes inclinées, Course légère sur place, Superman, Gainage genoux au sol.",
     details: { format_label: "PREMIERS PAS — CORPS COMPLET — 12 min", intro: "3 tours, 30 sec de travail / 20 sec de repos :", exercises: [
-        { text: "30 sec Squats sur banc/chaise (s'asseoir / se relever) / 20 sec repos" },
+        { text: "30 sec Squats sur banc ou chaise (s'asseoir / se relever) / 20 sec repos" },
         { text: "30 sec Pompes inclinées (mains sur table/banc ou mur) / 20 sec repos" },
         { text: "30 sec Course légère sur place / 20 sec repos" },
         { text: "30 sec Superman (extension dos au sol) / 20 sec repos" },
         { text: "30 sec Gainage genoux au sol (tenir le maximum, sans forcer) / 20 sec repos" },
         { text: "→ Répéter 3 tours au total" }
-      ], conseil: "Séance idéale pour démarrer en douceur. Aucun saut, aucun impact. Ralentissez ou faites une pause supplémentaire si besoin — l'objectif est de tenir la séance en entier, pas d'aller vite. Le gainage se fait genoux au sol, pas en planche complète.<br><br>clic sur ⚡GO!⚡ pour commencer<br>envie de modifier la séance avant de commencer? clic sur 🚀Charger Préparer Go!🚀",
+      ], conseil: "Séance idéale pour démarrer en douceur. Aucun saut, aucun impact. Ralentissez ou faites une pause supplémentaire si besoin — l'objectif est de tenir la séance en entier, pas d'aller vite. Le gainage se fait genoux au sol, pas en planche complète.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -28,7 +28,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         repos: 20,
         rounds: 3,
         exercices: [
-          { text: "Squats sur banc/chaise" },
+          { text: "Squats sur banc ou chaise" },
           { text: "Pompes inclinées" },
           { text: "Course légère sur place" },
           { text: "Superman" },
@@ -40,13 +40,13 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
     { title: "🌱 Premiers Pas - Bas du Corps en Douceur", material: ["poids-corps"], body: "bas", duration: 12, type: "TABATA", level: "Facile", boutons: "direct",
     desc: "<strong>3 tours (30 sec travail / 20 sec repos) :</strong> Squats sur chaise, Fentes statiques, Pont fessier, Extension de jambe assis, Montées sur pointes de pieds.",
     details: { format_label: "PREMIERS PAS — BAS DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 20 sec de repos :", exercises: [
-        { text: "30 sec Squats sur chaise/banc / 20 sec repos" },
+        { text: "30 sec Squats sur chaise ou banc / 20 sec repos" },
         { text: "30 sec Fentes statiques (descendre/remonter sans avancer, appui mur si besoin) / 20 sec repos" },
         { text: "30 sec Pont fessier au sol (relevé de bassin) / 20 sec repos" },
-        { text: "30 sec Extension de jambe assis sur chaise/banc, alterné / 20 sec repos" },
+        { text: "30 sec Extension de jambe assis sur chaise ou banc, alterné / 20 sec repos" },
         { text: "30 sec Montées sur pointes de pieds / 20 sec repos" },
         { text: "→ Répéter 3 tours au total" }
-      ], conseil: "Pas de saut, pas de fentes dynamiques : on reste sur des mouvements statiques et contrôlés. Pour la fente statique, vous pouvez vous tenir à un mur ou une chaise pour l'équilibre.",
+      ], conseil: "Pas de saut, pas de fentes dynamiques : on reste sur des mouvements statiques et contrôlés. Pour la fente statique, vous pouvez vous tenir à un mur ou une chaise pour l'équilibre.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -55,10 +55,10 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         repos: 20,
         rounds: 3,
         exercices: [
-          { text: "Squats sur chaise/banc" },
+          { text: "Squats sur chaise ou banc" },
           { text: "Fentes statiques" },
           { text: "Pont fessier" },
-          { text: "Extension de jambe assis, alterné" },
+          { text: "Extension de jambe assis sur chaise ou banc, alterné" },
           { text: "Montées sur pointes de pieds" }
         ]
       }
@@ -70,9 +70,9 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         { text: "15 sec Gainage genoux au sol / 30 sec repos" },
         { text: "15 sec Gainage latéral, genoux au sol, côté droit / 30 sec repos" },
         { text: "15 sec Gainage latéral, genoux au sol, côté gauche / 30 sec repos" },
-        { text: "8 répétitions Crunch léger et contrôlé / 30 sec repos" },
+        { text: "Crunch léger et contrôlé / 30 sec repos" },
         { text: "→ Répéter 4 tours au total" }
-      ], conseil: "Le gainage se fait toujours genoux au sol ici, jamais en planche complète sur les pieds. 15 secondes suffisent largement pour commencer à renforcer la sangle abdominale en toute sécurité. N'hésitez pas à arrêter avant la fin si la position devient inconfortable dans le bas du dos.",
+      ], conseil: "Le gainage se fait toujours genoux au sol ici, jamais en planche complète sur les pieds. 15 secondes suffisent largement pour commencer à renforcer la sangle abdominale en toute sécurité. N'hésitez pas à arrêter avant la fin si la position devient inconfortable dans le bas du dos.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -92,12 +92,12 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
     { title: "🔰 Débutant - Haut du Corps Bases", material: ["poids-corps"], body: "haut", duration: 12, type: "TABATA", level: "Facile",  boutons: "direct",
     desc: "<strong>3 tours (30 sec travail / 15 sec repos) :</strong> Pompes inclinées/genoux, Dips sur chaise, Superman, Y-W au sol.",
     details: { format_label: "DÉBUTANT — HAUT DU CORPS — 12 min", intro: "3 tours, 30 sec de travail / 15 sec de repos :", exercises: [
-        { text: "30 sec Pompes inclinées ou sur genoux / 15 sec repos" },
-        { text: "30 sec Dips sur chaise/banc / 15 sec repos" },
+        { text: "30 sec Pompes inclinées ou sur les genoux / 15 sec repos" },
+        { text: "30 sec Dips sur chaise ou banc / 15 sec repos" },
         { text: "30 sec Superman / 15 sec repos" },
         { text: "30 sec Y-W au sol / 15 sec repos" },
         { text: "→ Répéter 3 tours au total" }
-      ], conseil: "Pour les dips sur chaise, gardez les jambes pliées et les pieds proches de la chaise pour limiter la charge au début — plus les pieds s'éloignent, plus l'exercice est difficile. Pour les pompes, l'angle incliné (mains sur table) est plus facile que sur les genoux.",
+      ], conseil: "Pour les dips sur chaise, gardez les jambes pliées et les pieds proches de la chaise pour limiter la charge au début — plus les pieds s'éloignent et sont sur-élevés, plus l'exercice est difficile. Pour les pompes, l'angle incliné (mains sur table ou contre un mur) est plus facile que sur les genoux.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -106,8 +106,8 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         repos: 15,
         rounds: 3,
         exercices: [
-          { text: "Pompes inclinées / genoux" },
-          { text: "Dips sur chaise/banc" },
+          { text: "Pompes inclinées ou genoux" },
+          { text: "Dips sur chaise ou banc" },
           { text: "Superman" },
           { text: "Y-W au sol" }
         ]
@@ -122,7 +122,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         { text: "30 sec Pont fessier / 15 sec repos" },
         { text: "30 sec Chaise au mur (position statique, dos contre le mur) / 15 sec repos" },
         { text: "→ Répéter 3 tours au total" }
-      ], conseil: "On introduit ici la fente alternée (avec déplacement) et la chaise au mur, un grand classique pour renforcer les cuisses sans impact. Si la chaise au mur est trop difficile à tenir 30 sec, faites le temps que vous pouvez puis reposez-vous le reste du temps.",
+      ], conseil: "On introduit ici la fente alternée (avec déplacement, jambe droite devant puis jambe gauche) et la chaise au mur, un grand classique pour renforcer les cuisses sans impact. Si la chaise au mur est trop difficile à tenir 30 sec, faites le temps que vous pouvez puis reposez-vous le reste du temps.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -147,7 +147,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         { text: "20 sec Relevé de bassin, jambes pliées / 15 sec repos" },
         { text: "20 sec Gainage latéral alterné (10 sec chaque côté) / 15 sec repos" },
         { text: "→ Répéter 4 tours au total" }
-      ], conseil: "On passe ici au gainage classique sur les pieds (planche complète). Si c'est encore trop difficile, vous pouvez rester genoux au sol comme dans les séances Premiers Pas — c'est tout à fait normal de progresser à votre rythme.",
+      ], conseil: "On passe ici au gainage classique sur les pieds (planche complète). Si c'est encore trop difficile, vous pouvez rester genoux au sol comme dans les séances Premiers Pas — c'est tout à fait normal de progresser à votre rythme.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -167,7 +167,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
     { title: "WOD TABATA 30/10", material: ["poids-corps"], body: "complet", duration: 6.5, type: "TABATA", level: "Facile",  boutons: "direct", desc: "<strong>30 sec travail / 10 sec repos :</strong> Squats, Burpees, Mountain Climbers, Jumping jacks, Fente avant(lunges).",
       details: { format_label: "TABATA — 6 min 30", intro: "30 sec travail / 10 sec repos — 2 tours complets :", exercises: [
           { text: "30 sec SQUATS / 10 sec repos" }, { text: "30 sec BURPEES / 10 sec repos", image: "images/infosbulles/BURPEES1.png" }, { text: "30 sec MOUNTAIN CLIMBERS / 10 sec repos" }, { text: "30 sec JUMPING JACKS / 10 sec repos" }, { text: "30 sec FENTES AVANT / 10 sec repos" }, { text: "→ Répéter une 2ème fois (même ordre)" }
-        ], conseil: "30 secondes de travail / 10 secondes de repos.",
+        ], conseil: "30 secondes de travail / 10 secondes de repos.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
         chargeable: true,
         chargement: {
           type: "tabata",
@@ -190,7 +190,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
           { text: "40 sec SQUATS SAUTÉS / 10 sec repos" }, { text: "40 sec POMPES / 10 sec repos", image: "images/infosbulles/POMPES1.png" }, { text: "40 sec SIT-UPS / 10 sec repos" }, { text: "40 sec BURPEES / 10 sec repos", image: "images/infosbulles/BURPEES1.png" }, { text: "→ Répéter 3 tours au total" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
           { text: "Remplacer les sit-ups par des crunches" }, { text: "Pompes sur les genoux ou inclinées" }, { text: "Burpees sans saut et/ou sans pompe" }
-        ]}, conseil: "40 secondes de travail / 10 secondes de repos.",
+        ]}, conseil: "40 secondes de travail / 10 secondes de repos.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡<br>🔹Modifier la séance avant de commencer? clic sur 🚀Charger|Modifier|Go!🚀",
         chargeable: true,
         chargement: {
           type: "tabata",
@@ -210,7 +210,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
     { title: "WOD TABATA 30/10 ABDOS GAINAGE", material: ["poids-corps"], body: "abdos", duration: 5, type: "TABATA", level: "Facile",  boutons: "direct", desc: "<strong>30 sec travail / 10 sec repos pour les abdos :</strong> focus gainage.",
       details: { format_label: "TABATA ABDOS — 5 min 10", intro: "30 sec travail / 10 sec repos — 2 tours :", exercises: [
           { text: "30 sec GAINAGE SUR LES COUDES / 10 sec repos" }, { text: "30 sec GAINAGE LATÉRAL GAUCHE / 10 sec repos" }, { text: "30 sec GAINAGE SUR LES MAINS / 10 sec repos" }, { text: "30 sec GAINAGE LATÉRAL DROIT / 10 sec repos" }
-        ], conseil: "30 secondes de travail / 10 secondes de repos. Focus gainage, à enchaîner avec le WOD TABATA 30/10 CEINTURE ABDOMINALE DYNAMIQUE.",
+        ], conseil: "30 secondes de travail / 10 secondes de repos. <br>Focus gainage, à enchaîner avec le WOD TABATA 30/10 CEINTURE ABDOMINALE DYNAMIQUE.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
         chargeable: true,
         chargement: {
           type: "tabata",
@@ -235,7 +235,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
                  { text: "30 sec enroulement de bassin / 10 sec repos" },
                  { text: "30 sec de revelé de bassin, jambe gauche tendue / 10 sec repos" }
         ], 
-     conseil: "30 secondes de travail / 10 secondes de repos. abdos en dynamique, à enchaîner avec le WOD TABATA 30/10 ABDOS GAINAGE.",
+     conseil: "30 secondes de travail / 10 secondes de repos. <br>Abdos en dynamique, à enchaîner avec le WOD TABATA 30/10 ABDOS GAINAGE.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
         chargeable: true,
         chargement: {
           type: "tabata",
@@ -262,7 +262,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
                  { text: "20 sec Fentes arrières alternées/ 10 sec repos" },
                  { text: "20 sec Mountain climbers / 10 sec repos" },
                 ], 
-     conseil: "20 secondes de travail / 10 secondes de repos : s'échauffer avant l'entraînement",
+     conseil: "20 secondes de travail / 10 secondes de repos : s'échauffer avant l'entraînement.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
         chargeable: true,
         chargement: {
           type: "tabata",
@@ -290,7 +290,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
                  { text: "40 sec Gainage dynamique (planche puis chien tête en bas) / 20 sec repos" },
                  { text: "40 sec Extensions mollets / 20 sec repos" },
                 ], 
-     conseil: "▫️S'échauffer 5 min avant l'entraînement : quelques squats/jumping jacks et mobilisation articulaire et/ou course légère. <br>▫️Squat 'stop and go': descendre; rester 2 sec en position basse; remontée tonique.  <br>▫️Pour les extensions mollets, ne pas hésiter à poser les pointes de pied sur un support afin de bien étirer les mollets en position basse. <br>▫️Possibilité de faire du gainage commando (passage appui main/appui coude) à la place du gainage dynamique.",
+     conseil: "▫️S'échauffer 5 min avant l'entraînement : quelques squats/jumping jacks et mobilisation articulaire et/ou course légère. <br>▫️Squat 'stop and go': descendre; rester 2 sec en position basse; remontée tonique.  <br>▫️Pour les extensions mollets, ne pas hésiter à poser les pointes de pied sur un support afin de bien étirer les mollets en position basse. <br>▫️Possibilité de faire du gainage commando (passage appui main/appui coude) à la place du gainage dynamique.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
         chargeable: true,
         chargement: {
           type: "tabata",
@@ -332,7 +332,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         { text: "20 sec Pompes / 10 sec repos" },
         { text: "20 sec Superman / 10 sec repos" }
       ],
-      conseil: "Séances lundi - jeudi du programme débutant '10 minutes par jour'",
+      conseil: "Séances lundi - jeudi du programme débutant '10 minutes par jour' <br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -380,7 +380,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         { text: "20 sec Jumping jacks / 10 sec repos" },
         { text: "20 sec Squats / 10 sec repos" },
       ],
-      conseil: "Séances mardi - vendredi du programme débutant '10 minutes par jour'",
+      conseil: "Séances mardi - vendredi du programme débutant '10 minutes par jour' <br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -428,7 +428,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         { text: "20 sec Gainage latéral droit / 10 sec repos" },
         { text: "20 sec Gainage latéral gauche / 10 sec repos" },
       ],
-      conseil: "Séance mercredi du programme débutant '10 minutes par jour'",
+      conseil: "Séance mercredi du programme débutant '10 minutes par jour' <br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡",
       chargeable: true,
       chargement: {
         type: "tabata",
@@ -458,7 +458,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
   
 /* SEANCES AMRAP */
   
-  { title: "🔰 Débutant - Full Body Essentiels", material: ["poids-corps"], body: "complet", duration: 15, type: "AMRAP", level: "Facile", boutons: "both",
+  { title: "Débutant - Full Body Essentiels", material: ["poids-corps"], body: "complet", duration: 15, type: "AMRAP", level: "Facile", boutons: "both",
     desc: "<strong>AMRAP 15 min :</strong> 8 Squats, 6 Pompes sur genoux, 8 Sit-ups assistés, 10 sec gainage.",
     details: { format_label: "DÉBUTANT — FULL BODY — AMRAP 15 MIN", intro: "Enchaîner le plus de tours possible pendant 15 minutes :", exercises: [
         { text: "8 Squats" },
@@ -469,11 +469,11 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
           { text: "Squats sur chaise au lieu de squats libres" },
           { text: "Pompes inclinées (mains sur une table) au lieu de pompes sur genoux" },
           { text: "Gainage genoux au sol" }
-        ]}, conseil: "Premier format un peu plus libre : on découvre l'enchaînement sans contrainte de chrono par exercice. Avancez à votre rythme, faites des pauses quand vous en avez besoin, l'objectif est juste d'enchaîner le plus de tours confortablement.",
+        ]}, conseil: "Premier format un peu plus libre : on découvre l'enchaînement sans contrainte de chrono par exercice. Avancez à votre rythme, faites des pauses quand vous en avez besoin, l'objectif est juste d'enchaîner le plus de tours confortablement.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡<br>🔹Modifier la séance avant de commencer? clic sur 🚀Charger|Modifier|Go!🚀",
       chargeable: true,
       chargement: {
         type: "amrap",
-        nom: "🔰 Débutant - Full Body Essentiels",
+        nom: "Débutant - Full Body Essentiels",
         duree_min: 15,
         exercices: [
           { text: "8 Squats" },
@@ -495,7 +495,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
                 exercises: [
                 { text: "Pompes inclinées ou sur genoux" }, { text: "Burpees sans saut et/ou sans pompe" }, { text: "Remplacer les sit-ups par des crunches" }
                 ]},
-                conseil: "-",
+                conseil: "le but de cet AMRAP est de réaliser le plus de répétition durant la minute, adapter son rythme pour essayer de bouger pendant la minute entière (gérer sa vitesse sur les burpees)<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡<br>🔹Modifier la séance avant de commencer? clic sur 🚀Charger|Modifier|Go!🚀",
                chargeable: true,
                   chargement: {
                   type: "surmesure",
@@ -518,7 +518,7 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
           { text: "5 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "7 Tractions (pull-ups)" }, { text: "10 Pompes", image: "images/infosbulles/POMPES1.png" }, { text: "15 Squats" }
         ], scaled: { intro: "VERSION SCALED :", exercises: [
           { text: "Pompes inclinées ou sur les genoux" }, { text: "Burpees sans saut et/ou sans pompe" }, { text: "Tractions TRX ou avec élastique" }
-        ]}, conseil: "-",
+        ]}, conseil: "Enchaîner un maximum de répétition durant 30 minutes.<br><br>🔹Pour lancer la séance : clic sur ⚡GO!⚡<br>🔹Modifier la séance avant de commencer? clic sur 🚀Charger|Modifier|Go!🚀",
         chargeable: true,
         chargement: {
           type: "amrap",
@@ -1571,17 +1571,17 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         type: "HYBRID",
         level: "Intense",
         boutons: "direct", 
-        desc: "3 AMRAP à enchaîner : <br>🔹course à pied(run)🔄Deadlift ou presse à cuisse, <br>🔹Skierg🔄Développé Couché, <br>🔹Rameur🔄Traction ou Tirage poulie haute",
+        desc: "3 AMRAP à enchaîner : <br>🔹course à pied(run)🔄Deadlift ou presse à cuisse, <br>🔹Skierg🔄Push Press, <br>🔹Rameur🔄Développé Couché",
         details: {
             format_label: "AMRAP : 3x12 minutes ",
             exercises: [
-                { text: "AMRAP 1 : 400m course à pied(run) 🔄 12 reps Trap Bar ou Presse à cuisse" },
+                { text: "AMRAP 1 : 400m Course à pied(run) 🔄 12 reps Trap Bar ou Presse à cuisse" },
                 { text: "2 minutes de pause" },
-                { text: "AMRAP 2 : 500m de Skierg 🔄 12 reps Développés couchés à la barre ou aux haltères" },
+                { text: "AMRAP 2 : 500m de Skierg 🔄 12 reps Push Press" },
                 { text: "2 minutes de pause" },
-                { text: "AMRAP 3 : 500m de Rameur (Row) 🔄 12 reps Tractions (pull-ups) ou tirage à la poulie haute " }
+                { text: "AMRAP 3 : 500m de Rameur (Row) 🔄 12 reps Développés couchés à la barre ou aux haltères" }
             ],
-            conseil: "Allure constante sur les runs. Ne pas trop charger pour les exercices de musculation. En cas de doute, demander conseil ou faire des squats à vide, des pompes et des relevés de bassin au sol(hiptrusts)",
+            conseil: "Allure constante sur les ateliers cardio. <br>Attention aux dampers (levier de difficulté) des rameur et skierg: Ne pas les règler trop haut. <br>Ne pas trop charger pour les exercices de musculation. <br>En cas de doute, demander conseil ou faire des squats à vide, des pompes et des relevés de bassin au sol(hiptrusts)",
             chargeable: true,
             chargement: {
                 type: "intervalles",
@@ -1590,9 +1590,9 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
                     { type: "warmup",  reps: 1,  hasTimer: true,  dur: 300, instr: "Echauffement de 10 min, vélo ou course à pied et exercice de mobilité" },
                     { type: "travail", reps: 1, hasTimer: true,  dur: 720, instr: "<strong><u>AMRAP 1/3:</u></strong><br>🏃400m course à pied(run) <br>🔄 <br>12 reps Trap Bar ou Presse à cuisse" },
                     { type: "repos",   reps: 1,  dur: 120,                   instr: "Récupération" },
-                    { type: "travail", reps: 1, hasTimer: true,  dur: 720, instr: "<strong><u>AMRAP 2/3:</u></strong><br>⛷️500m de Skierg <br>🔄 <br>12 reps Développés couchés à la barre ou aux haltères" },
+                    { type: "travail", reps: 1, hasTimer: true,  dur: 720, instr: "<strong><u>AMRAP 2/3:</u></strong><br>⛷️500m de Skierg <br>🔄 <br>12 reps Push press aux haltères" },
                     { type: "repos",   reps: 1,  dur: 120,                   instr: "Récupération" },
-                    { type: "travail", reps: 1, hasTimer: true,  dur: 720, instr: "<strong><u>AMRAP 3/3:</u></strong><br>🚣500m de Rameur <br>🔄 <br>12 reps Tractions (pull-ups) ou tirage à la poulie haute" },
+                    { type: "travail", reps: 1, hasTimer: true,  dur: 720, instr: "<strong><u>AMRAP 3/3:</u></strong><br>🚣500m de Rameur <br>🔄 <br>12 reps Développés couchés à la barre ou aux haltères" },
                     { type: "recup",   reps: 1,  hasTimer: true,  dur: 300 , instr: "Retour au calme — course lente ou marche et/ou étirements légers" }
                 ]
             }

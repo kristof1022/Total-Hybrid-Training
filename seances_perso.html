@@ -2904,7 +2904,7 @@ function buildSetBlock(bi, si, bloc) {
     valZone.style.cssText = 'padding:8px 12px;border-top:1px solid #2a2a4a;background:#0f0f1a;';
     var valBtn = document.createElement('button'); valBtn.className = 'muscu-val-btn';
     valBtn.style.cssText = 'background:#1a2a0a;color:#cddc39;border:2px solid #cddc39;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:0.88em;width:100%;';
-    valBtn.textContent = '\u2713 Valider';
+    valBtn.textContent = 'Valider';
     valZone.appendChild(valBtn); wrap.appendChild(valZone);
 
     // Timer inline
@@ -3474,6 +3474,239 @@ window.calRendreMois = calRendreMois;
 window.addEventListener('load', function() {
     calRendreMois();
 });
+</script>
+
+
+<!-- ============================================================
+     AIDE CONTEXTUELLE — bouton ? par panneau + modale
+     ============================================================ -->
+<style>
+.btn-aide {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(120,120,120,0.18);
+    border: 1.5px solid rgba(120,120,120,0.35);
+    color: #888;
+    font-size: 1em;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.15s, color 0.15s;
+    z-index: 10;
+}
+.btn-aide:hover { background: rgba(120,120,120,0.32); color: #444; }
+body.dark-mode .btn-aide { color: #aaa; border-color: rgba(180,180,180,0.3); }
+body.dark-mode .btn-aide:hover { background: rgba(180,180,180,0.2); color: #eee; }
+
+/* Panneau parent en position relative pour ancrer le bouton ? */
+.panel-inner { position: relative; }
+#exe-tabata, #exe-amrap, #exe-emom, #exe-fortime, #exe-intervalles, #exe-muscu {
+    position: relative;
+}
+
+/* Modale aide */
+#aide-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+}
+#aide-overlay.open { display: flex; }
+#aide-box {
+    background: #fff;
+    border-radius: 16px;
+    max-width: 480px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 24px 20px 20px;
+    position: relative;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+}
+body.dark-mode #aide-box { background: #1e1e1e; color: #e0e0e0; }
+#aide-box h3 { margin: 0 0 10px; font-size: 1em; color: #222; }
+#aide-court { font-size: 0.88em; line-height: 1.6; color: #444; }
+body.dark-mode #aide-court { color: #ccc; }
+#aide-plus-toggle {
+    background: none;
+    border: none;
+    color: #1a6b3c;
+    font-size: 0.82em;
+    cursor: pointer;
+    padding: 8px 0 0;
+    font-weight: 700;
+    display: block;
+}
+#aide-plus { display: none; font-size: 0.83em; line-height: 1.6; color: #555; margin-top: 8px; }
+body.dark-mode #aide-plus { color: #bbb; }
+#aide-plus.open { display: block; }
+#aide-close {
+    position: absolute;
+    top: 10px; right: 12px;
+    background: none; border: none;
+    font-size: 1.3em; cursor: pointer; color: #888;
+}
+</style>
+
+<!-- Modale aide (unique, contenu injecté dynamiquement) -->
+<div id="aide-overlay">
+    <div id="aide-box">
+        <button id="aide-close" onclick="fermerAide()">✕</button>
+        <h3 id="aide-titre"></h3>
+        <div id="aide-court"></div>
+        <button id="aide-plus-toggle" onclick="toggleAidePlus()">▶ En savoir plus</button>
+        <div id="aide-plus"></div>
+    </div>
+</div>
+
+<script>
+/* ── Contenu des 12 aides (6 types × 2 modes) ── */
+var AIDES = {
+    tabata: {
+        config: {
+            titre: "⚙️ TABATA / HIIT — Préparer",
+            court: "Construisez votre séance, EN AJOUTANT DES PHASES (bouton '+ Ajouter une phase') :  <br>▪️Warm-up (échauffement) <br>▪️Travail <br>▪️Pause(récup entre deux bloc de travail) <br>▪️Récup (entre deux séries du WOD) <br>▪️Pour chaque bloc, saisir la durée et les exercices à réaliser. <br><br> Réglez le nombre de tours <br> Cliquez sur '▶LANCER LA SEANCE'",
+            plus: "• Chaque phase peut contenir un(e) ou plusieurs exercices/instructions: cliquer sur '+Ajouter un exo' <br>• Utilisez les boutons +/− pour ajuster la durée en seconde. <br>• Le champ <em>Répéter la séquence</em> permet de boucler toute la séquence plusieurs fois. <br>• En manque d'idée? Vous pouvez charger une séance prête à l'emploi depuis la page Entraînements.<br><br>TABATA : Entraînement par intervalles de temps de haute intensité (HIIT) extrêmement court et soutenu. La méthode a été mise au point en 1996 par le professeur japonais Izumi Tabata pour optimiser les performances des patineurs de vitesse."
+        },
+        exec: {
+            titre: "▶ TABATA / HIIT — En séance",
+            court: "Le chrono déroule vos phases automatiquement. Un signal sonore annonce chaque changement. <br>▪️Appuyez sur '▶START' pour commencer <br>▪️Sur '⏸PAUSE' pour souffler <br>▪️Sur '↺RESET' pour repartir du début <br>▪️Sur '✏️EDITER' pour revenir à la configuration de la séance  <br>▪️Sur '🔔SON' pour couper le signal sonore <br>▪️Sur '💾CARNET WOD-CARDIO' pour enregistrer votre séance dans le suivi (onglet INFOS&SUIVI)",
+            plus: "La barre de progression en haut indique l'avancement global. Le nom de l'exercice en cours s'affiche en grand. En cas d'erreur, '✏️ Éditer' vous ramène au panneau Préparer sans perdre votre configuration."
+        }
+    },
+    fortime: {
+        config: {
+            titre: "⚙️ FOR TIME — Préparer",
+            court: "<br>▪️Entrez la liste des exercices à réaliser. Bouton '+Ajouter un exo' <br>▪️Cliquez sur '▶LANCER LA SEANCE'",
+            plus: "• En manque d'idée? Vous pouvez charger une séance prête à l'emploi depuis la page Entraînements.<br><br>Le format 'For Time' est un WOD classique du CrossFit : réaliser le travail le plus vite possible. Notez vos reps et les poids utilisés dans le champ résultats pour suivre votre progression d'une séance à l'autre."
+        },
+        exec: {
+            titre: "▶ FOR TIME — En séance",
+            court: "Réalisez tous les exercices dans l'ordre <br><br>▪️Appuyez sur '▶START' pour commencer <br>▪️Ajouter le nombre de reps/rounds effectué(e)s (boutons +/-) <br>▪️Appuyez sur '⏸PAUSE' pour souffler <br>▪️Sur '↺RESET' pour repartir du début <br>▪️Sur '✏️EDITER' pour revenir à la configuration de la séance  <br>▪️Sur '🔔SON' pour couper le signal sonore <br>▪️Sur '💾CARNET WOD-CARDIO' pour enregistrer votre séance dans le suivi (onglet INFOS&SUIVI)",
+            plus: "Vous pouvez noter votre score (temps, reps, poids) avant de valider. Le résultat est sauvegardé dans votre Carnet WOD accessible depuis la page Infos & Suivi."
+        }
+    },
+    amrap: {
+        config: {
+            titre: "⚙️ AMRAP — Préparer",
+            court: "▪️Paramétrez la durée de la séance.<br>▪️Entrez la liste des exercices à réaliser. Bouton '+Ajouter un exo' <br>▪️Cliquez sur '▶LANCER LA SEANCE'",
+            plus: "AMRAP = As Many Rounds As Possible. Entrez chaque exercice avec son nombre de répétitions. Pendant la séance, comptez vos tours manuellement et notez votre score à la fin. Idéal pour mesurer sa progression sur une même séance."
+        },
+        exec: {
+            titre: "▶ AMRAP — En séance",
+            court: " Enchaînez les exercices en boucle pour en faire le maximum <br><br>▪️Appuyez sur '▶START' pour commencer <br>▪️Ajouter le nombre de reps/rounds effectué(e)s (boutons +/-) <br>▪️Appuyez sur '⏸PAUSE' pour souffler <br>▪️Sur '↺RESET' pour repartir du début <br>▪️Sur '✏️EDITER' pour revenir à la configuration de la séance  <br>▪️Sur '🔔SON' pour couper le signal sonore <br>▪️Sur '💾CARNET WOD-CARDIO' pour enregistrer votre séance dans le suivi (onglet INFOS&SUIVI).",
+            plus: " Utilisez les champs score rounds & reps en bas pour noter vos tours en temps réel. Le résultat sera enregistré dans votre Carnet WOD."
+        }
+    },
+    emom: {
+        config: {
+            titre: "⚙️ EMOM — Préparer",
+            court: "▪️Paramétrez la durée de la séance.<br>▪️Entrez la liste des exercices à réaliser. Bouton '+Ajouter un exo' <br>▪️Cliquez sur '▶LANCER LA SEANCE'",
+            plus: "EMOM = Every Minute On the Minute. Si vous terminez votre travail avant la fin de la minute, le reste est votre temps de récupération. Vous pouvez créer des EMOM classiques (1 exercice/min) ou alternés (plusieurs exercices en rotation)."
+        },
+        exec: {
+            titre: "▶ EMOM — En séance",
+            court: "<br>▪️Appuyez sur '▶START' pour commencer <br>▪️Appuyez sur '⏸PAUSE' pour souffler <br>▪️Sur '↺RESET' pour repartir du début <br>▪️Sur '✏️EDITER' pour revenir à la configuration de la séance  <br>▪️Sur '🔔SON' pour couper le signal sonore <br>▪️Sur '💾CARNET WOD-CARDIO' pour enregistrer votre séance dans le suivi (onglet INFOS&SUIVI).",
+            plus: "Chaque nouvelle minute est annoncée. Réalisez votre travail, récupérez le temps restant, recommencez."
+        }
+    },
+    intervalles: {
+        config: {
+            titre: "⚙️ TOTAL INTERVALLES — Préparer",
+            court: "Créez des blocs d'effort et de repos entièrement personnalisés, avec objectifs de reps ou de rounds par bloc. <br> Cliquez sur '▶LANCER LA SEANCE' lorsque vous êtes prêt.",
+            plus: "Le format Intervalles est le plus flexible : combinez des efforts longs, des récups courtes, des blocs par rounds ou par durée. Chaque bloc peut avoir son propre exercice, sa durée et ses objectifs. Utile pour les séances de fractionné sur cardio-machines ou les circuits complexes."
+        },
+        exec: {
+            titre: "▶ TOTAL INTERVALLES — En séance",
+            court: "Le chrono guide chaque bloc dans l'ordre. Effort, repos, effort... suivez les instructions affichées.",
+            plus: "Un signal sonore annonce chaque changement de bloc. Les objectifs de reps ou rounds s'affichent à l'écran. Utilisez le bouton ✏️ pour revenir modifier un bloc si besoin entre deux séries."
+        }
+    },
+    muscu: {
+        config: {
+            titre: "⚙️ MUSCU — Préparer",
+            court: "Construisez votre séance : <br>▪️Ajoutez des exercices en solo, biset, triset ou superset. <br>▪️Définissez séries, répétitions et charges pour chaque exercice.<br>▪️Cliquez sur '▶LANCER LA SEANCE' lorsque vous êtes prêt.<br><br>🟧 En bas de page, vous pouvez recharger une séance enregistrée afin de progresser dans vos charges",
+            plus: "Chaque bloc peut contenir 1 à 3 exercices enchaînés. Entrez vos charges habituelles ou utilisez l'estimateur de charges (accessible depuis la fiche séance). Les temps de récupération entre séries et entre blocs sont réglables globalement en bas du panneau."
+        },
+        exec: {
+            titre: "▶ MUSCU — En séance",
+            court: "<br>▪️Réalisez chaque série, <br>▪️Notez/ajustez vos reps et poids réels, <br>▪️Lancez la récupération. Le chrono de récup se déclenche automatiquement.",
+            plus: "Pour chaque série, vous pouvez modifier les reps et le poids réalisés (ils peuvent différer de ce qui était prévu). La récup se lance automatiquement après validation. En fin de séance, vos résultats sont enregistrés dans le Carnet Muscu pour suivre votre progression."
+        }
+    }
+};
+
+function ouvrirAide(type, mode) {
+    var aide = AIDES[type] && AIDES[type][mode];
+    if (!aide) return;
+    document.getElementById('aide-titre').textContent = aide.titre;
+    document.getElementById('aide-court').innerHTML = aide.court;
+    document.getElementById('aide-plus').innerHTML = aide.plus;
+    document.getElementById('aide-plus').classList.remove('open');
+    document.getElementById('aide-plus-toggle').textContent = '▶ En savoir plus';
+    document.getElementById('aide-overlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+
+function fermerAide() {
+    document.getElementById('aide-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+function toggleAidePlus() {
+    var plus = document.getElementById('aide-plus');
+    var toggle = document.getElementById('aide-plus-toggle');
+    var open = plus.classList.toggle('open');
+    toggle.textContent = open ? '▼ Réduire' : '▶ En savoir plus';
+}
+
+// Fermer sur clic overlay
+document.getElementById('aide-overlay').addEventListener('click', function(e) {
+    if (e.target === this) fermerAide();
+});
+
+/* ── Injection des boutons ? dans chaque panneau ── */
+(function() {
+    var panneaux = [
+        { id: 'cfg-tabata',      type: 'tabata',      mode: 'config' },
+        { id: 'exe-tabata',      type: 'tabata',      mode: 'exec'   },
+        { id: 'cfg-fortime',     type: 'fortime',     mode: 'config' },
+        { id: 'exe-fortime',     type: 'fortime',     mode: 'exec'   },
+        { id: 'cfg-amrap',       type: 'amrap',       mode: 'config' },
+        { id: 'exe-amrap',       type: 'amrap',       mode: 'exec'   },
+        { id: 'cfg-emom',        type: 'emom',        mode: 'config' },
+        { id: 'exe-emom',        type: 'emom',        mode: 'exec'   },
+        { id: 'cfg-intervalles', type: 'intervalles', mode: 'config' },
+        { id: 'exe-intervalles', type: 'intervalles', mode: 'exec'   },
+        { id: 'cfg-muscu',       type: 'muscu',       mode: 'config' },
+        { id: 'exe-muscu',       type: 'muscu',       mode: 'exec'   },
+    ];
+    panneaux.forEach(function(p) {
+        var el = document.getElementById(p.id);
+        if (!el) return;
+        var btn = document.createElement('button');
+        btn.className = 'btn-aide';
+        btn.title = 'Aide';
+        btn.textContent = '?';
+        btn.setAttribute('aria-label', 'Aide ' + p.type + ' ' + p.mode);
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            ouvrirAide(p.type, p.mode);
+        });
+        el.appendChild(btn);
+    });
+})();
 </script>
 
 </body>
