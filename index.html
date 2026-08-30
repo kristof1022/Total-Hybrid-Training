@@ -240,6 +240,12 @@
     font-weight: 700; font-size: 0.95em; color: #1a1a2e;
     white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
 }
+@media (max-width: 500px) {
+    .msp-item-header { flex-wrap: wrap; }
+    .msp-item-left { width: 100%; min-width: 0; }
+    .msp-item-nom { white-space: normal; overflow: visible; text-overflow: unset; word-break: break-word; }
+    .msp-btn-go, .msp-btn-toggle { flex: 1; text-align: center; }
+}
 .msp-item-meta {
     font-size: 0.75em; color: #777; margin-top: 2px;
     display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
