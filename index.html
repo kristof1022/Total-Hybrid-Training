@@ -429,6 +429,10 @@ function mspResumerDetail(seance) {
         });
     } else if (c.type === 'muscu' && c.blocs) {
         c.blocs.forEach(function(b) {
+            var typeLabel = {biset:'Biset', superset:'Superset', triset:'Triset'}[b.type] || null;
+            if (typeLabel && (b.exos || []).length > 1) {
+                html += '<div style="font-size:0.75em;color:#888;margin-top:4px;">— ' + typeLabel + ' —</div>';
+            }
             (b.exos || []).forEach(function(ex) {
                 var nbSeries = ex.series ? ex.series.length : 0;
                 html += '<div class="msp-detail-exo">▸ ' + escHtml(ex.nom) + (nbSeries ? ' — ' + nbSeries + ' séries' : '') + '</div>';

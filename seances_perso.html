@@ -3829,7 +3829,7 @@ function extraireChargement(type) {
             var sel = blocEl.querySelector('select');
             var typeBloc = sel ? sel.value : 'solo';
             var exos = [];
-            var nbExos = typeBloc === 'triset' ? 3 : typeBloc === 'biset' ? 2 : 1;
+            var nbExos = typeBloc === 'triset' ? 3 : (typeBloc === 'biset' || typeBloc === 'superset') ? 2 : 1;
             for (var ei = 0; ei < nbExos; ei++) {
                 var inp = document.getElementById(bid + '-exo' + ei);
                 var nomExo = inp ? inp.value.trim() : '';
