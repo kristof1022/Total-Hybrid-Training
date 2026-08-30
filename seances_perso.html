@@ -198,6 +198,28 @@
             transition: background 0.2s; margin-bottom: 10px;
         }
         .btn-lancer:hover { background: #a0c030; }
+        .btn-sauvegarder-perso {
+            display: block;
+            width: 100%;
+            margin: 8px 0 0;
+            padding: 12px;
+            background: #1565c0;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.92em;
+            font-weight: 700;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: background 0.15s, opacity 0.15s;
+        }
+        .btn-sauvegarder-perso:hover:not(:disabled) { background: #0d47a1; }
+        .btn-sauvegarder-perso:disabled {
+            background: #444;
+            color: #888;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
         .btn-reset-config {
             width: 100%; padding: 12px; background: none;
             border: 1px solid #c0392b; border-radius: 10px; color: #e74c3c;
@@ -509,6 +531,7 @@
 
         <button class="btn-lancer" onclick="tabLancer()">▶ Lancer la séance</button>
         <button class="btn-reset-config" onclick="tabResetConfig()">🗑 Tout effacer</button>
+        <button class="btn-sauvegarder-perso" id="btn-save-perso-tabata" onclick="sauvegarderSeancePerso('tabata')" disabled>💾 Sauvegarder dans mes séances perso</button>
     </div>
 
     <!-- Exec TABATA -->
@@ -581,6 +604,7 @@
 
         <button class="btn-lancer" onclick="amrapLancer()">▶ Lancer la séance</button>
         <button class="btn-reset-config" onclick="amrapResetConfig()">🗑 Tout effacer</button>
+        <button class="btn-sauvegarder-perso" id="btn-save-perso-amrap" onclick="sauvegarderSeancePerso('amrap')" disabled>💾 Sauvegarder dans mes séances perso</button>
     </div>
 
     <!-- Exec AMRAP -->
@@ -663,6 +687,7 @@
 
         <button class="btn-lancer" onclick="emomLancer()">▶ Lancer la séance</button>
         <button class="btn-reset-config" onclick="emomResetConfig()">🗑 Tout effacer</button>
+        <button class="btn-sauvegarder-perso" id="btn-save-perso-emom" onclick="sauvegarderSeancePerso('emom')" disabled>💾 Sauvegarder dans mes séances perso</button>
     </div>
 
     <!-- Exec EMOM -->
@@ -713,6 +738,7 @@
 
         <button class="btn-lancer" onclick="ftLancer()">▶ Lancer la séance</button>
         <button class="btn-reset-config" onclick="ftResetConfig()">🗑 Tout effacer</button>
+        <button class="btn-sauvegarder-perso" id="btn-save-perso-fortime" onclick="sauvegarderSeancePerso('fortime')" disabled>💾 Sauvegarder dans mes séances perso</button>
     </div>
 
     <!-- Exec FOR TIME -->
@@ -780,6 +806,7 @@
         <button class="btn-add-phase" onclick="itvAddBloc()">+ Ajouter un bloc</button>
         <button class="btn-lancer" onclick="itvLancer()">▶ Lancer la séance</button>
         <button class="btn-reset-config" onclick="itvResetConfig()">🗑 Tout effacer</button>
+        <button class="btn-sauvegarder-perso" id="btn-save-perso-intervalles" onclick="sauvegarderSeancePerso('intervalles')" disabled>💾 Sauvegarder dans mes séances perso</button>
     </div>
 
     <!-- Exec INTERVALLES -->
@@ -866,6 +893,7 @@
         <button class="btn-add-phase" id="muscu-btn-add">+ Ajouter un exercice</button>
         <button class="btn-lancer"    id="muscu-btn-lancer">▶ Lancer la séance</button>
         <button class="btn-reset-config" id="muscu-btn-reset">🗑 Tout effacer</button>
+        <button class="btn-sauvegarder-perso" id="btn-save-perso-muscu" onclick="sauvegarderSeancePerso('muscu')" disabled>💾 Sauvegarder dans mes séances perso</button>
 
         <!-- CARNET -->
         <div style="margin-top:20px;">
@@ -3707,6 +3735,271 @@ document.getElementById('aide-overlay').addEventListener('click', function(e) {
         el.appendChild(btn);
     });
 })();
+</script>
+
+<!-- ============================================================
+     MES SÉANCES PERSO — Sauvegarde depuis l'onglet Préparer
+     ============================================================ -->
+<script>
+var SEANCES_PERSO_KEY = 'tht_seances_perso';
+
+function seancesPersoLoad() {
+    try { return JSON.parse(localStorage.getItem(SEANCES_PERSO_KEY)) || []; } catch(e) { return []; }
+}
+function seancesPersoSave(data) {
+    try { localStorage.setItem(SEANCES_PERSO_KEY, JSON.stringify(data)); } catch(e) {
+        alert('Erreur : impossible de sauvegarder (espace localStorage insuffisant ?)');
+    }
+}
+
+/* ── Génère un ID unique ─────────────────────────────────────── */
+function genId() {
+    return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+}
+
+/* ── Extrait la config depuis le DOM selon le type ──────────── */
+function extraireChargement(type) {
+    if (type === 'tabata') {
+        var nom = (document.getElementById('tab-name').value.trim()) || 'Séance TABATA/HIIT';
+        var repeat = parseInt(document.getElementById('tab-repeat').value) || 1;
+        var phases = [];
+        document.querySelectorAll('#tab-phases-list .phase-item').forEach(function(li) {
+            var typeVal = li.querySelector('select') ? li.querySelector('select').value : 'travail';
+            var dur = parseInt(li.querySelector('.phase-dur-input') ? li.querySelector('.phase-dur-input').value : 0) || 0;
+            var textes = [];
+            li.querySelectorAll('textarea').forEach(function(ta) { if (ta.value.trim()) textes.push(ta.value.trim()); });
+            phases.push({ type: typeVal, sec: dur, text: textes.join(' / ') });
+        });
+        return { type: 'surmesure', nom: nom, repeat: repeat, phases: phases };
+    }
+    if (type === 'amrap') {
+        var nom = (document.getElementById('amrap-name').value.trim()) || 'Séance AMRAP';
+        var durMin = parseInt(document.getElementById('amrap-dur-min').value) || 20;
+        var exercices = [];
+        document.querySelectorAll('#amrap-groupe-list textarea').forEach(function(ta) {
+            if (ta.value.trim()) exercices.push({ text: ta.value.trim() });
+        });
+        return { type: 'amrap', nom: nom, duree_min: durMin, exercices: exercices };
+    }
+    if (type === 'emom') {
+        var nom = (document.getElementById('emom-name').value.trim()) || 'Séance EMOM';
+        var durMin = parseInt(document.getElementById('emom-dur').value) || 10;
+        var exercices = [];
+        document.querySelectorAll('#emom-groupe-list textarea').forEach(function(ta) {
+            if (ta.value.trim()) exercices.push({ text: ta.value.trim() });
+        });
+        return { type: 'emom', nom: nom, duree_min: durMin, exercices: exercices };
+    }
+    if (type === 'fortime') {
+        var nom = (document.getElementById('ft-name').value.trim()) || 'Séance FOR TIME';
+        var exercices = [];
+        document.querySelectorAll('#ft-groupe-list textarea').forEach(function(ta) {
+            if (ta.value.trim()) exercices.push({ text: ta.value.trim() });
+        });
+        return { type: 'fortime', nom: nom, exercices: exercices };
+    }
+    if (type === 'intervalles') {
+        var nom = (document.getElementById('itv-name').value.trim()) || 'Séance INTERVALLES';
+        var blocs = [];
+        document.querySelectorAll('#itv-blocs-list .phase-item').forEach(function(li) {
+            var liId = li.id;
+            var typeBloc = li.querySelector('select') ? li.querySelector('select').value : 'travail';
+            var instr = li.querySelector('input[type="text"]') ? li.querySelector('input[type="text"]').value.trim() : '';
+            var dur = 0;
+            var durInput = document.getElementById('itv-dur-' + liId);
+            if (durInput) dur = parseInt(durInput.value) || 0;
+            var chk = document.getElementById('itv-chk-' + liId);
+            var hasTimer = chk ? chk.checked : (typeBloc === 'repos');
+            var repsObj = 0, rndsObj = 0;
+            var repsObjInput = document.getElementById('itv-repsobj-' + liId);
+            var rndsObjInput = document.getElementById('itv-rndsobj-' + liId);
+            if (repsObjInput) repsObj = parseInt(repsObjInput.value) || 0;
+            if (rndsObjInput) rndsObj = parseInt(rndsObjInput.value) || 0;
+            blocs.push({ type: typeBloc, instr: instr, dur: dur, hasTimer: hasTimer, repsObj: repsObj, rndsObj: rndsObj });
+        });
+        return { type: 'intervalles', nom: nom, blocs: blocs };
+    }
+    if (type === 'muscu') {
+        var nom = (document.getElementById('muscu-name').value.trim()) || 'Séance MUSCU';
+        var rs = parseInt(document.getElementById('muscu-rs').value) || 90;
+        var rb = parseInt(document.getElementById('muscu-rb').value) || 120;
+        var blocs = [];
+        document.querySelectorAll('#muscu-blocs-list .muscu-bloc').forEach(function(blocEl) {
+            var bid = blocEl.id;
+            var sel = blocEl.querySelector('select');
+            var typeBloc = sel ? sel.value : 'solo';
+            var exos = [];
+            var nbExos = typeBloc === 'triset' ? 3 : typeBloc === 'biset' ? 2 : 1;
+            for (var ei = 0; ei < nbExos; ei++) {
+                var inp = document.getElementById(bid + '-exo' + ei);
+                var nomExo = inp ? inp.value.trim() : '';
+                var series = [];
+                var seriesDiv = document.getElementById(bid + '-series-' + ei);
+                if (seriesDiv) {
+                    seriesDiv.querySelectorAll('.muscu-serie-row').forEach(function(row) {
+                        var inputs = row.querySelectorAll('input[type="number"]');
+                        var reps = inputs[0] ? parseInt(inputs[0].value) || 0 : 0;
+                        var poids = inputs[1] ? parseFloat(inputs[1].value) || 0 : 0;
+                        series.push({ reps: reps, poids: poids });
+                    });
+                }
+                exos.push({ nom: nomExo, series: series });
+            }
+            blocs.push({ type: typeBloc, exos: exos });
+        });
+        return { type: 'muscu', nom: nom, recupSerie: rs, recupBloc: rb, blocs: blocs };
+    }
+    return null;
+}
+
+/* ── Validation : active/désactive le bouton selon remplissage ─ */
+function validerBoutonSauvegarder(type) {
+    var btnId = {
+        tabata: 'btn-save-perso-tabata',
+        amrap:  'btn-save-perso-amrap',
+        emom:   'btn-save-perso-emom',
+        fortime:'btn-save-perso-fortime',
+        intervalles: 'btn-save-perso-intervalles',
+        muscu:  'btn-save-perso-muscu'
+    }[type];
+    var btn = document.getElementById(btnId);
+    if (!btn) return;
+
+    var ok = false;
+    if (type === 'tabata') {
+        var nom = document.getElementById('tab-name').value.trim();
+        var nbPhases = document.querySelectorAll('#tab-phases-list .phase-item').length;
+        ok = nom.length > 0 && nbPhases > 0;
+    } else if (type === 'amrap') {
+        var nom = document.getElementById('amrap-name').value.trim();
+        var nbExos = document.querySelectorAll('#amrap-groupe-list textarea').length;
+        ok = nom.length > 0 && nbExos > 0;
+    } else if (type === 'emom') {
+        var nom = document.getElementById('emom-name').value.trim();
+        var nbExos = document.querySelectorAll('#emom-groupe-list textarea').length;
+        ok = nom.length > 0 && nbExos > 0;
+    } else if (type === 'fortime') {
+        var nom = document.getElementById('ft-name').value.trim();
+        var nbExos = document.querySelectorAll('#ft-groupe-list textarea').length;
+        ok = nom.length > 0 && nbExos > 0;
+    } else if (type === 'intervalles') {
+        var nom = document.getElementById('itv-name').value.trim();
+        var nbBlocs = document.querySelectorAll('#itv-blocs-list .phase-item').length;
+        ok = nom.length > 0 && nbBlocs > 0;
+    } else if (type === 'muscu') {
+        var nom = document.getElementById('muscu-name').value.trim();
+        var nbBlocs = document.querySelectorAll('#muscu-blocs-list .muscu-bloc').length;
+        ok = nom.length > 0 && nbBlocs > 0;
+    }
+    btn.disabled = !ok;
+}
+
+/* ── Sauvegarde effective ──────────────────────────────────────── */
+function sauvegarderSeancePerso(type) {
+    var chargement = extraireChargement(type);
+    if (!chargement) return;
+    var nom = chargement.nom;
+    var data = seancesPersoLoad();
+
+    // Vérifier si même nom existe déjà
+    var existingIdx = data.findIndex(function(s) { return s.nom === nom && s.type === type; });
+    if (existingIdx >= 0) {
+        if (!confirm('Une séance "' + nom + '" existe déjà. Voulez-vous la remplacer ?')) return;
+        data.splice(existingIdx, 1);
+    }
+
+    var typeLabel = {
+        tabata: 'TABATA/HIIT', amrap: 'AMRAP', emom: 'EMOM',
+        fortime: 'FOR TIME', intervalles: 'INTERVALLES', muscu: 'MUSCU'
+    }[type] || type.toUpperCase();
+
+    var entry = {
+        id: genId(),
+        nom: nom,
+        type: type,
+        typeLabel: typeLabel,
+        dateCreation: new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }),
+        chargement: chargement
+    };
+
+    data.unshift(entry); // Plus récente en premier
+    seancesPersoSave(data);
+
+    // Feedback visuel
+    var btnId = {
+        tabata: 'btn-save-perso-tabata', amrap: 'btn-save-perso-amrap',
+        emom: 'btn-save-perso-emom', fortime: 'btn-save-perso-fortime',
+        intervalles: 'btn-save-perso-intervalles', muscu: 'btn-save-perso-muscu'
+    }[type];
+    var btn = document.getElementById(btnId);
+    if (btn) {
+        var orig = btn.textContent;
+        btn.textContent = '✅ Séance sauvegardée !';
+        btn.style.background = '#1a6b3c';
+        btn.disabled = true;
+        setTimeout(function() {
+            btn.textContent = orig;
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 2500);
+    }
+}
+
+/* ── Listeners pour activer/désactiver le bouton en temps réel ── */
+function initListenersSauvegarder() {
+    // TABATA
+    var tabName = document.getElementById('tab-name');
+    if (tabName) tabName.addEventListener('input', function() { validerBoutonSauvegarder('tabata'); });
+    var tabList = document.getElementById('tab-phases-list');
+    if (tabList) {
+        var obs = new MutationObserver(function() { validerBoutonSauvegarder('tabata'); });
+        obs.observe(tabList, { childList: true });
+    }
+    // AMRAP
+    var amrapName = document.getElementById('amrap-name');
+    if (amrapName) amrapName.addEventListener('input', function() { validerBoutonSauvegarder('amrap'); });
+    var amrapList = document.getElementById('amrap-groupe-list');
+    if (amrapList) {
+        var obs2 = new MutationObserver(function() { validerBoutonSauvegarder('amrap'); });
+        obs2.observe(amrapList, { childList: true, subtree: true });
+    }
+    // EMOM
+    var emomName = document.getElementById('emom-name');
+    if (emomName) emomName.addEventListener('input', function() { validerBoutonSauvegarder('emom'); });
+    var emomList = document.getElementById('emom-groupe-list');
+    if (emomList) {
+        var obs3 = new MutationObserver(function() { validerBoutonSauvegarder('emom'); });
+        obs3.observe(emomList, { childList: true, subtree: true });
+    }
+    // FOR TIME
+    var ftName = document.getElementById('ft-name');
+    if (ftName) ftName.addEventListener('input', function() { validerBoutonSauvegarder('fortime'); });
+    var ftList = document.getElementById('ft-groupe-list');
+    if (ftList) {
+        var obs4 = new MutationObserver(function() { validerBoutonSauvegarder('fortime'); });
+        obs4.observe(ftList, { childList: true, subtree: true });
+    }
+    // INTERVALLES
+    var itvName = document.getElementById('itv-name');
+    if (itvName) itvName.addEventListener('input', function() { validerBoutonSauvegarder('intervalles'); });
+    var itvList = document.getElementById('itv-blocs-list');
+    if (itvList) {
+        var obs5 = new MutationObserver(function() { validerBoutonSauvegarder('intervalles'); });
+        obs5.observe(itvList, { childList: true });
+    }
+    // MUSCU
+    var muscuName = document.getElementById('muscu-name');
+    if (muscuName) muscuName.addEventListener('input', function() { validerBoutonSauvegarder('muscu'); });
+    var muscuList = document.getElementById('muscu-blocs-list');
+    if (muscuList) {
+        var obs6 = new MutationObserver(function() { validerBoutonSauvegarder('muscu'); });
+        obs6.observe(muscuList, { childList: true });
+    }
+}
+
+window.addEventListener('load', function() {
+    initListenersSauvegarder();
+});
 </script>
 
 </body>

@@ -23,7 +23,6 @@
             <li><a href="seances_perso.html">MA SÉANCE</a></li>
         </ul>
         <div class="nav-spacer"></div>
-        <button id="btn-darkmode" onclick="toggleDarkMode()" title="Mode sombre / clair" style="background:none;border:1px solid #555;border-radius:6px;font-size:0.8em;font-weight:700;cursor:pointer;padding:4px 10px;color:#fff;width:70px;letter-spacing:0.05em;">DARK</button>
     </div>
 </nav>
 
@@ -143,19 +142,5 @@ function filterInfos(val) {
 }
 </script>
 
-<script>
-function toggleDarkMode() {
-    var isDark = document.body.classList.toggle('dark-mode');
-    localStorage.setItem('tht_darkmode', isDark ? '1' : '0');
-    document.getElementById('btn-darkmode').textContent = isDark ? 'LIGHT' : 'DARK';
-}
-(function() {
-    if (localStorage.getItem('tht_darkmode') === '1') {
-        document.body.classList.add('dark-mode');
-        var btn = document.getElementById('btn-darkmode');
-        if (btn) btn.textContent = 'LIGHT';
-    }
-})();
-</script>
 </body>
 </html>

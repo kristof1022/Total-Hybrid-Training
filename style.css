@@ -3,7 +3,7 @@ body {
     font-family: sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #a9a9aa;
+    background-color: #e8e8e8;
     color: #333;
 }
 
@@ -128,7 +128,6 @@ main h1, main h2 {
     gap: 10px;
     margin-bottom: 30px;
     flex-wrap: wrap;
-    
 }
 
 .filter-bar select {
@@ -136,6 +135,141 @@ main h1, main h2 {
     border-radius: 5px;
     border: 1px solid #ccc;
     background: white;
+}
+
+/* ── Barre recherche + boutons ───────────────────────────────── */
+.search-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.search-toolbar-input {
+    flex: 1;
+    padding: 11px 14px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.btn-toggle-filtres {
+    white-space: nowrap;
+    background: #444;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 0.85em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+.btn-toggle-filtres:hover,
+.btn-toggle-filtres.active { background: #222; }
+
+.filtres-fleche {
+    display: inline-block;
+    transition: transform 0.25s ease;
+    font-size: 0.8em;
+    margin-left: 2px;
+}
+.btn-toggle-filtres.active .filtres-fleche {
+    transform: rotate(180deg);
+}
+
+.btn-mes-seances {
+    white-space: nowrap;
+    background: #1565c0;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 0.85em;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background 0.15s;
+    flex-shrink: 0;
+}
+.btn-mes-seances:hover { background: #0d47a1; }
+
+.filtres-badge {
+    color: #b6d73c;
+    font-size: 1em;
+    margin-left: 2px;
+}
+
+/* ── Panneau filtres rétractable ─────────────────────────────── */
+.filtres-panel {
+    display: none;
+    margin-bottom: 20px;
+    background: #f0f0f0;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+.filtres-panel.open { display: block; }
+
+.filtres-panel-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 12px;
+}
+
+.filtres-panel-inner select {
+    padding: 9px 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    background: white;
+    font-size: 0.85em;
+    flex: 1 1 200px;
+}
+
+.filtres-actions {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.btn-reset-filtres {
+    background: #444;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background 0.15s;
+}
+.btn-reset-filtres:hover { background: #222; }
+
+.btn-fun {
+    background: #555;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 9px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background 0.15s;
+}
+.btn-fun:hover { background: #333; }
+
+/* Mobile : filtres prennent toute la largeur */
+@media (max-width: 767px) {
+    .search-toolbar { gap: 6px; }
+    .search-toolbar-input { font-size: 12px; padding: 10px 10px; }
+    .btn-toggle-filtres, .btn-mes-seances { padding: 10px 10px; font-size: 0.8em; }
+    .filtres-panel-inner select { flex: 1 1 100%; }
 }
 
 /* --- Grille et Cartes --- */
