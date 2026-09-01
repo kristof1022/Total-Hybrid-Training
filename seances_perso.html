@@ -2534,8 +2534,17 @@ function chargerDepuisLocalStorage() {
             var attendre = setInterval(function() {
                 tentatives++;
                 var muscuList = document.getElementById('muscu-blocs-list');
-                var nbBlocsDOM = muscuList ? muscuList.querySelectorAll('.muscu-bloc').length : 0;
-                var pret = (typeof window.lancer === 'function' && nbBlocsDOM >= nbBlocsAttendus);
+                var blocsDOM = muscuList ? muscuList.querySelectorAll('.muscu-bloc') : [];
+                var nbBlocsDOM = blocsDOM.length;
+                // Vérifier aussi que les inputs de noms sont remplis
+                // (le setTimeout interne de reconstruction prend ~100ms)
+                var nomsRemplis = false;
+                if (nbBlocsDOM >= nbBlocsAttendus && nbBlocsDOM > 0) {
+                    var premierBloc = blocsDOM[0];
+                    var premierInput = premierBloc ? document.getElementById(premierBloc.id + '-exo0') : null;
+                    nomsRemplis = premierInput && premierInput.value.trim().length > 0;
+                }
+                var pret = (typeof window.lancer === 'function' && nomsRemplis);
                 if (pret || tentatives >= 80) { // 4 sec max
                     clearInterval(attendre);
                     if (typeof window.lancer === 'function') window.lancer();
