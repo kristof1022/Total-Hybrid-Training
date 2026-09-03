@@ -18,7 +18,7 @@
             --recup-bg2:     #2760ae;
             --card-bg:       #0f3460;
             --neutral-bg:    #1a1a2e;
-            --accent:        #b6d73c;
+            --accent:        #80cbc4;
             --text-light:    #f0f0f0;
             --text-dim:      #aaa;
             --shadow:        0 4px 20px rgba(0,0,0,0.4);
@@ -197,7 +197,7 @@
             text-transform: uppercase; cursor: pointer;
             transition: background 0.2s; margin-bottom: 10px;
         }
-        .btn-lancer:hover { background: #a0c030; }
+        .btn-lancer:hover { background: #4db6ac; }
         .btn-sauvegarder-perso {
             display: block;
             width: 100%;
@@ -307,7 +307,7 @@
         .btn-ctrl:active   { transform: scale(0.96); }
         .btn-ctrl:disabled { opacity: 0.4; cursor: not-allowed; transform: none; }
         .btn-start  { background: var(--accent); color: #000; }
-        .btn-start:hover:not(:disabled)  { background: #a0c030; }
+        .btn-start:hover:not(:disabled)  { background: #4db6ac; }
         .btn-pause  { background: #e67e22; color: #fff; }
         .btn-pause:hover:not(:disabled)  { background: #d35400; }
         .btn-pause.btn-active { background: #c0392b; }
@@ -425,45 +425,45 @@
         .muscu-serie-row { display:grid; grid-template-columns:30px 1fr 1fr 30px; gap:8px; align-items:center; padding:6px 14px; border-bottom:1px solid #232340; }
         .muscu-serie-row:last-child { border-bottom:none; }
         .muscu-input { background:#0f0f1a; border:1px solid #333; border-radius:6px; color:#fff; text-align:center; padding:6px 2px; font-size:0.9em; width:100%; box-sizing:border-box; }
-        .muscu-input:focus { outline:none; border-color:#cddc39; }
+        .muscu-input:focus { outline:none; border-color:#80cbc4; }
         /* ── CARNET ── */
         .carnet-section { margin-bottom:18px; }
         .carnet-seance-item { background:#0f1b35; border:1px solid #1e3050; border-radius:10px; padding:12px 14px; margin-bottom:8px; }
         .carnet-seance-date { font-size:0.72em; color:var(--text-dim); margin-bottom:3px; }
-        .carnet-seance-name { font-size:0.92em; font-weight:700; color:#cddc39; }
+        .carnet-seance-name { font-size:0.92em; font-weight:700; color:#80cbc4; }
         .carnet-seance-info { font-size:0.75em; color:var(--text-dim); margin-top:2px; }
         .carnet-empty { text-align:center; color:var(--text-dim); font-size:0.85em; padding:20px; }
         .prev-result { font-size:0.7em; color:#555; margin-left:4px; font-style:italic; }
         .btn-carnet-export { background:none; border:1px solid #2a3a5a; border-radius:8px; color:var(--text-dim); padding:8px 14px; font-size:0.8em; cursor:pointer; width:100%; margin-bottom:6px; }
-        .btn-carnet-export:hover { border-color:#cddc39; color:#cddc39; }
+        .btn-carnet-export:hover { border-color:#80cbc4; color:#80cbc4; }
         .muscu-exo-name { width:100%; background:#0f0f1a; border:1px solid #333; border-radius:6px; color:#fff; padding:8px 10px; font-size:0.9em; box-sizing:border-box; }
-        .muscu-exo-name:focus { outline:none; border-color:#cddc39; }
+        .muscu-exo-name:focus { outline:none; border-color:#80cbc4; }
         .muscu-timer-big { font-size:3em; font-weight:900; letter-spacing:3px; color:#fff; text-align:center; padding:8px 0; }
         .muscu-current-serie { background:#1a2a0a; border-radius:8px; padding:14px; margin:10px 14px; }
         .muscu-next-info { font-size:0.82em; color:var(--text-dim); padding:8px 14px; border-top:1px solid #2a2a4a; text-align:center; }
         .btn-muscu { border:none; border-radius:8px; font-weight:700; cursor:pointer; padding:12px; font-size:0.95em; width:100%; transition:background 0.15s; }
-        .btn-muscu-valider { background:#cddc39; color:#000; }
-        .btn-muscu-valider:hover { background:#b5c400; }
+        .btn-muscu-valider { background:#80cbc4; color:#000; }
+        .btn-muscu-valider:hover { background:#4db6ac; }
         .btn-muscu-recup { background:#1a237e; color:#fff; }
         .btn-muscu-skip { background:#444; color:#fff; }
         .muscu-chrono-bar { text-align:center; font-size:0.8em; color:var(--text-dim); padding:6px; letter-spacing:0.08em; }
         .muscu-serie-exec { display:grid; grid-template-columns:28px 1fr 1fr 1fr auto; gap:8px; align-items:center; padding:10px 14px; border-bottom:1px solid #232340; transition:opacity 0.2s; }
         .muscu-serie-exec.done { opacity:0.4; }
         .muscu-serie-exec.active { background:#1a2a0a; }
-        .muscu-val-btn { background:#cddc39; color:#000; border:none; border-radius:6px; padding:6px 10px; font-weight:700; cursor:pointer; font-size:0.85em; white-space:nowrap; }
+        .muscu-val-btn { background:#80cbc4; color:#000; border:none; border-radius:6px; padding:6px 10px; font-weight:700; cursor:pointer; font-size:0.85em; white-space:nowrap; }
         .muscu-val-btn:disabled { background:#555; color:#888; cursor:not-allowed; }
         .muscu-exo-panel { display:none; }
         .muscu-exo-panel.active { display:block; }
-        .muscu-exo-header { background:#12122a; padding:10px 14px; font-weight:700; font-size:0.95em; color:#cddc39; border-radius:8px 8px 0 0; }
-        .muscu-recup-bloc-row { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#0f0f1a; border-top:2px solid #cddc39; }
+        .muscu-exo-header { background:#12122a; padding:10px 14px; font-weight:700; font-size:0.95em; color:#80cbc4; border-radius:8px 8px 0 0; }
+        .muscu-recup-bloc-row { display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:#0f0f1a; border-top:2px solid #80cbc4; }
         .muscu-set-block { border:1px solid #2a2a4a; border-radius:8px; margin:10px 14px; overflow:hidden; }
-        .muscu-set-block-header { background:#12122a; padding:6px 12px; font-size:0.78em; color:#cddc39; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
+        .muscu-set-block-header { background:#12122a; padding:6px 12px; font-size:0.78em; color:#80cbc4; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; }
         .muscu-set-exo-row { display:grid; grid-template-columns:28px 1fr 1fr 1fr; gap:8px; align-items:center; padding:8px 12px; border-bottom:1px solid #1a1a2e; }
         .muscu-set-exo-row:last-of-type { border-bottom:none; }
         .muscu-timer-inline { display:none; background:#0a0a1a; padding:10px 12px; border-top:1px solid #2a2a4a; }
         .muscu-timer-inline.visible { display:block; }
         .muscu-timer-val { font-size:2em; font-weight:900; color:#fff; text-align:center; letter-spacing:3px; margin:4px 0; }
-        .muscu-timer-running { color:#cddc39; }
+        .muscu-timer-running { color:#80cbc4; }
 
     </style>
 </head>
@@ -903,7 +903,7 @@
                 <!-- Navigation mois -->
                 <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
                     <button onclick="calNavMois(-1)" style="background:none;border:1px solid #2a3a5a;border-radius:8px;color:#8899bb;padding:5px 14px;cursor:pointer;font-size:1.1em;">&#8249;</button>
-                    <span id="cal-mois-label" style="font-size:0.85em;font-weight:700;color:#cddc39;letter-spacing:0.06em;"></span>
+                    <span id="cal-mois-label" style="font-size:0.85em;font-weight:700;color:#80cbc4;letter-spacing:0.06em;"></span>
                     <button onclick="calNavMois(+1)" style="background:none;border:1px solid #2a3a5a;border-radius:8px;color:#8899bb;padding:5px 14px;cursor:pointer;font-size:1.1em;">&#8250;</button>
                 </div>
                 <!-- Jours semaine -->
@@ -2850,7 +2850,7 @@ window.addEventListener('DOMContentLoaded', function() {
 (function() {
 
 var TYPES = {
-    solo:     { label:'Solo',     color:'#cddc39' },
+    solo:     { label:'Solo',     color:'#80cbc4' },
     biset:    { label:'Biset',    color:'#29b6f6' },
     triset:   { label:'Triset',   color:'#ab47bc' },
     superset: { label:'Superset', color:'#ff7043' }
@@ -2875,7 +2875,7 @@ function addBloc() {
     bloc.className = 'muscu-bloc'; bloc.id = bid;
     var hd = document.createElement('div'); hd.className = 'muscu-bloc-header';
     var leftDiv = document.createElement('div'); leftDiv.style.cssText = 'display:flex;align-items:center;gap:8px;';
-    var typeLabel = document.createElement('span'); typeLabel.style.cssText = 'font-weight:700;color:#cddc39;font-size:0.9em;'; typeLabel.textContent = 'Solo';
+    var typeLabel = document.createElement('span'); typeLabel.style.cssText = 'font-weight:700;color:#80cbc4;font-size:0.9em;'; typeLabel.textContent = 'Solo';
     var typeSel = document.createElement('select'); typeSel.style.cssText = 'background:#0f0f1a;color:#aaa;border:1px solid #333;border-radius:4px;padding:3px 6px;font-size:0.82em;cursor:pointer;';
     Object.keys(TYPES).forEach(function(k) { var o = document.createElement('option'); o.value = k; o.textContent = TYPES[k].label; typeSel.appendChild(o); });
     var delBtn = document.createElement('button'); delBtn.textContent = '\u2715'; delBtn.style.cssText = 'background:none;border:none;color:#e74c3c;cursor:pointer;font-size:1.1em;margin-left:auto;';
@@ -2884,7 +2884,7 @@ function addBloc() {
     var exosDiv = document.createElement('div'); exosDiv.id = bid + '-exos'; exosDiv.style.cssText = 'padding:10px 14px 4px;'; bloc.appendChild(exosDiv);
     var seriesWrap = document.createElement('div'); seriesWrap.id = bid + '-series-wrap'; bloc.appendChild(seriesWrap);
     var ft = document.createElement('div'); ft.style.cssText = 'padding:6px 14px 12px;display:flex;gap:8px;';
-    var addSerieBtn = document.createElement('button'); addSerieBtn.textContent = '+ S\u00e9rie'; addSerieBtn.style.cssText = 'background:none;border:1px solid #cddc39;color:#cddc39;border-radius:6px;padding:5px 14px;cursor:pointer;font-size:0.82em;';
+    var addSerieBtn = document.createElement('button'); addSerieBtn.textContent = '+ S\u00e9rie'; addSerieBtn.style.cssText = 'background:none;border:1px solid #80cbc4;color:#80cbc4;border-radius:6px;padding:5px 14px;cursor:pointer;font-size:0.82em;';
     addSerieBtn.addEventListener('click', function() { addSerieToBloc(bid); });
     ft.appendChild(addSerieBtn); bloc.appendChild(ft);
     document.getElementById('muscu-blocs-list').appendChild(bloc);
@@ -3006,7 +3006,7 @@ function buildExecPanels() {
         panel.id = 'muscu-panel-' + bi;
 
         var blocTitle = document.createElement('div');
-        blocTitle.style.cssText = 'padding:8px 14px 4px;font-size:0.82em;color:' + (TYPES[bloc.type]?TYPES[bloc.type].color:'#cddc39') + ';font-weight:700;text-transform:uppercase;letter-spacing:0.06em;';
+        blocTitle.style.cssText = 'padding:8px 14px 4px;font-size:0.82em;color:' + (TYPES[bloc.type]?TYPES[bloc.type].color:'#80cbc4') + ';font-weight:700;text-transform:uppercase;letter-spacing:0.06em;';
         blocTitle.textContent = (TYPES[bloc.type]?TYPES[bloc.type].label:'Solo') + ' \u2014 ' + bloc.exos.map(function(e){return e.nom;}).join(' / ');
         panel.appendChild(blocTitle);
 
@@ -3021,7 +3021,7 @@ function buildExecPanels() {
         // Bouton + Série en live
         var addSerieBtn = document.createElement('button');
         addSerieBtn.textContent = '+ Ajouter une série';
-        addSerieBtn.style.cssText = 'margin:6px 14px;width:calc(100% - 28px);background:none;border:1px dashed #3a3a5a;border-radius:8px;color:#cddc39;font-size:0.85em;font-weight:700;padding:10px;cursor:pointer;transition:background 0.15s;';
+        addSerieBtn.style.cssText = 'margin:6px 14px;width:calc(100% - 28px);background:none;border:1px dashed #3a3a5a;border-radius:8px;color:#80cbc4;font-size:0.85em;font-weight:700;padding:10px;cursor:pointer;transition:background 0.15s;';
         addSerieBtn.addEventListener('mouseenter', function(){ this.style.background='#1a1a3a'; });
         addSerieBtn.addEventListener('mouseleave', function(){ this.style.background='none'; });
         (function(blocRef, biRef, panelRef, btnRef) {
@@ -3189,7 +3189,7 @@ function buildSetBlock(bi, si, bloc) {
     var valZone = document.createElement('div');
     valZone.style.cssText = 'padding:8px 12px;border-top:1px solid #2a2a4a;background:#0f0f1a;';
     var valBtn = document.createElement('button'); valBtn.className = 'muscu-val-btn';
-    valBtn.style.cssText = 'background:#1a2a0a;color:#cddc39;border:2px solid #cddc39;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:0.88em;width:100%;';
+    valBtn.style.cssText = 'background:#1a2a0a;color:#80cbc4;border:2px solid #80cbc4;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:0.88em;width:100%;';
     valBtn.textContent = 'Valider';
     valZone.appendChild(valBtn); wrap.appendChild(valZone);
 
@@ -3670,8 +3670,8 @@ function calRendreMois() {
 
         var cell = document.createElement('div');
         cell.style.cssText = 'height:48px;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:0.78em;font-weight:600;padding:2px 1px;' +
-            (aSeance ? 'background:#1a3a1a;color:#cddc39;cursor:pointer;border:1px solid #2a5a2a;' : 'color:#334;') +
-            (isToday ? 'outline:2px solid #cddc39;outline-offset:-2px;' : '');
+            (aSeance ? 'background:#1a3a1a;color:#80cbc4;cursor:pointer;border:1px solid #2a5a2a;' : 'color:#334;') +
+            (isToday ? 'outline:2px solid #80cbc4;outline-offset:-2px;' : '');
 
         // Numéro du jour
         var numEl = document.createElement('div');
@@ -3716,7 +3716,7 @@ function calAfficherFiche(entries) {
         var info = document.createElement('div');
         info.innerHTML =
             '<div style="font-size:0.72em;color:#8899bb;margin-bottom:2px;">' + s.date + ' — ' + s.duree + '</div>' +
-            '<div style="font-size:0.92em;font-weight:700;color:#cddc39;margin-bottom:4px;">' + s.nom + '</div>' +
+            '<div style="font-size:0.92em;font-weight:700;color:#80cbc4;margin-bottom:4px;">' + s.nom + '</div>' +
             '<div style="font-size:0.75em;color:#8899bb;">' + s.resultats.map(function(r){return r.nom;}).join(' · ') + '</div>';
 
         var loadBtn = document.createElement('button');
