@@ -465,6 +465,62 @@
         .muscu-timer-val { font-size:2em; font-weight:900; color:#fff; text-align:center; letter-spacing:3px; margin:4px 0; }
         .muscu-timer-running { color:#80cbc4; }
 
+        /* Séries dégressives */
+        .muscu-drop-row {
+            display: grid;
+            grid-template-columns: 1fr 70px 70px 24px;
+            gap: 8px;
+            padding: 6px 12px;
+            border-top: 1px dashed #3a2a1a;
+            background: #1a0f00;
+            align-items: center;
+        }
+        .btn-del-drop {
+            background: none;
+            border: none;
+            color: #555;
+            cursor: pointer;
+            font-size: 1em;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.15s;
+        }
+        .btn-del-drop:hover { color: #e74c3c; }
+        .muscu-drop-label {
+            font-size: 0.75em;
+            color: #ff9800;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .muscu-drop-input {
+            background: #1a1000;
+            border: 1px solid #5a3a00;
+            border-radius: 6px;
+            color: #ffb74d;
+            text-align: center;
+            padding: 6px 2px;
+            font-size: 0.9em;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .muscu-drop-input:focus { outline: none; border-color: #ff9800; }
+        .btn-add-drop {
+            background: none;
+            border: 1px dashed #5a3a00;
+            border-radius: 6px;
+            color: #ff9800;
+            font-size: 0.78em;
+            font-weight: 700;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background 0.15s;
+            white-space: nowrap;
+        }
+        .btn-add-drop:hover { background: #1a1000; }
+
     </style>
 </head>
 <body>
@@ -3142,6 +3198,97 @@ function refreshIgnoreBtn(panel, bloc) {
     hd.appendChild(btn);
 }
 
+/* ── Dégressives (Drop Sets) ────────────────────────────────── */
+function addDropSet(bloc, si, dropZone, wrap) {
+    // Compter les dégressives déjà présentes pour cet ensemble
+    var dropCount = dropZone.querySelectorAll('.muscu-drop-row').length + 1;
+
+    // Pour chaque exo du bloc, calculer les valeurs suggérées
+    // On se base sur la dernière valeur réelle ou la valeur prévue
+    bloc.exos.forEach(function(exo, ei) {
+        var serie = exo.series[si] || { reps: 10, poids: 0 };
+        // Chercher la dernière dégressive de cet exo pour cet ensemble
+        var lastDropReps  = serie.reps;
+        var lastDropPoids = serie.poids;
+        if (exo.dropSets && exo.dropSets[si] && exo.dropSets[si].length > 0) {
+            var lastDrop = exo.dropSets[si][exo.dropSets[si].length - 1];
+            lastDropReps  = lastDrop.repsReel !== null ? lastDrop.repsReel : lastDrop.reps;
+            lastDropPoids = lastDrop.poidsReel !== null ? lastDrop.poidsReel : lastDrop.poids;
+        } else {
+            // Baser sur la valeur saisie dans les inputs de la série
+            var setBlock = wrap;
+            var rows = setBlock.querySelectorAll('.muscu-set-exo-row');
+            if (rows[ei]) {
+                var inputs = rows[ei].querySelectorAll('input');
+                if (inputs[0]) lastDropReps  = parseInt(inputs[0].value)  || serie.reps;
+                if (inputs[1]) lastDropPoids = parseFloat(inputs[1].value) || serie.poids;
+            }
+        }
+        // -20% poids arrondi au 0.5 près, +2 reps
+        var suggestedPoids = lastDropPoids > 0
+            ? Math.round((lastDropPoids * 0.8) / 0.5) * 0.5
+            : 0;
+        var suggestedReps = lastDropReps + 2;
+
+        // Créer l'entrée dans seanceData
+        if (!exo.dropSets) exo.dropSets = {};
+        if (!exo.dropSets[si]) exo.dropSets[si] = [];
+        var dropEntry = { reps: suggestedReps, poids: suggestedPoids, repsReel: null, poidsReel: null };
+        var dropIdx = exo.dropSets[si].push(dropEntry) - 1;
+
+        // Construire la ligne visuelle
+        var row = document.createElement('div');
+        row.className = 'muscu-drop-row';
+
+        var label = document.createElement('div');
+        label.className = 'muscu-drop-label';
+        label.innerHTML = '&#x21D3; Drop ' + dropCount + (bloc.exos.length > 1 ? ' — ' + exo.nom : '');
+
+        var repsInp = document.createElement('input');
+        repsInp.type = 'number'; repsInp.className = 'muscu-drop-input';
+        repsInp.value = suggestedReps; repsInp.min = 0; repsInp.max = 99;
+        repsInp.addEventListener('change', function() {
+            dropEntry.repsReel = parseInt(repsInp.value) || 0;
+        });
+
+        var poidsInp = document.createElement('input');
+        poidsInp.type = 'number'; poidsInp.className = 'muscu-drop-input';
+        poidsInp.value = suggestedPoids; poidsInp.min = 0; poidsInp.max = 500; poidsInp.step = 0.5;
+        poidsInp.addEventListener('change', function() {
+            dropEntry.poidsReel = parseFloat(poidsInp.value) || 0;
+        });
+
+        var delBtn = document.createElement('button');
+        delBtn.className = 'btn-del-drop';
+        delBtn.textContent = '✕';
+        delBtn.title = 'Supprimer cette dégressive';
+        (function(rowRef, exoRef, siRef, dropEntryRef) {
+            delBtn.addEventListener('click', function() {
+                // Supprimer l'entrée dans seanceData
+                var idx = exoRef.dropSets[siRef].indexOf(dropEntryRef);
+                if (idx > -1) exoRef.dropSets[siRef].splice(idx, 1);
+                // Supprimer la ligne visuelle
+                rowRef.remove();
+                // Renuméroter les labels Drop restants
+                var rows = dropZone.querySelectorAll('.muscu-drop-row');
+                rows.forEach(function(r, i) {
+                    var lbl = r.querySelector('.muscu-drop-label');
+                    if (lbl) {
+                        var txt = lbl.innerHTML;
+                        lbl.innerHTML = txt.replace(/Drop \d+/, 'Drop ' + (i + 1));
+                    }
+                });
+            });
+        })(row, exo, si, dropEntry);
+
+        row.appendChild(label);
+        row.appendChild(repsInp);
+        row.appendChild(poidsInp);
+        row.appendChild(delBtn);
+        dropZone.appendChild(row);
+    });
+}
+
 function buildSetBlock(bi, si, bloc) {
     var key = 'set-' + bi + '-' + si;
     var wrap = document.createElement('div');
@@ -3188,10 +3335,36 @@ function buildSetBlock(bi, si, bloc) {
     // Zone validation + timer inline
     var valZone = document.createElement('div');
     valZone.style.cssText = 'padding:8px 12px;border-top:1px solid #2a2a4a;background:#0f0f1a;';
+
+    // Rangée : Valider + bouton Dégressive côte à côte
+    var valRow = document.createElement('div');
+    valRow.style.cssText = 'display:flex;gap:8px;align-items:center;';
+
     var valBtn = document.createElement('button'); valBtn.className = 'muscu-val-btn';
-    valBtn.style.cssText = 'background:#1a2a0a;color:#80cbc4;border:2px solid #80cbc4;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:0.88em;width:100%;';
+    valBtn.style.cssText = 'background:#1a2a0a;color:#80cbc4;border:2px solid #80cbc4;border-radius:6px;padding:8px 16px;font-weight:700;cursor:pointer;font-size:0.88em;flex:1;';
     valBtn.textContent = 'Valider';
-    valZone.appendChild(valBtn); wrap.appendChild(valZone);
+
+    var dropBtn = document.createElement('button');
+    dropBtn.className = 'btn-add-drop';
+    dropBtn.textContent = '+ Dégressive';
+    dropBtn.title = 'Ajouter une série dégressive (-20% charge, +2 reps)';
+
+    // Zone qui contiendra les lignes dégressives
+    var dropZone = document.createElement('div');
+    dropZone.className = 'muscu-drop-zone';
+    dropZone.style.cssText = 'margin-top:4px;';
+
+    (function(blocRef, siRef, dropZoneRef, dropBtnRef, wrapRef) {
+        dropBtnRef.addEventListener('click', function() {
+            addDropSet(blocRef, siRef, dropZoneRef, wrapRef);
+        });
+    })(bloc, si, dropZone, dropBtn, wrap);
+
+    valRow.appendChild(valBtn);
+    valRow.appendChild(dropBtn);
+    valZone.appendChild(dropZone);  // drops D'ABORD, au-dessus de Valider
+    valZone.appendChild(valRow);    // Valider EN DESSOUS des drops
+    wrap.appendChild(valZone);
 
     // Timer inline
     var timerZone = document.createElement('div');
@@ -3297,10 +3470,24 @@ function carnetSauvegarder(duree) {
     var resultats = []; // liste plate conservée pour l'affichage calendrier
     seanceData.forEach(function(bloc) {
         var blocRes = { type: bloc.type || 'solo', exos: [] };
-        bloc.exos.forEach(function(exo) {
+        bloc.exos.forEach(function(exo, ei) {
             var exoRes = { nom: exo.nom, series: [] };
-            exo.series.forEach(function(s) {
-                exoRes.series.push({ reps:(s.repsReel!=null)?s.repsReel:s.reps, poids:(s.poidsReel!=null)?s.poidsReel:s.poids });
+            exo.series.forEach(function(s, si) {
+                // Série normale
+                exoRes.series.push({
+                    reps:  (s.repsReel  != null) ? s.repsReel  : s.reps,
+                    poids: (s.poidsReel != null) ? s.poidsReel : s.poids
+                });
+                // Dégressives associées à cette série
+                if (exo.dropSets && exo.dropSets[si]) {
+                    exo.dropSets[si].forEach(function(d) {
+                        exoRes.series.push({
+                            reps:   (d.repsReel  != null) ? d.repsReel  : d.reps,
+                            poids:  (d.poidsReel != null) ? d.poidsReel : d.poids,
+                            isDrop: true
+                        });
+                    });
+                }
             });
             blocRes.exos.push(exoRes);
             resultats.push(exoRes); // liste plate pour le calendrier
