@@ -5345,10 +5345,10 @@ function closeModal() {
 // LISTENERS FILTRES & INIT
 // =============================================
 
-document.querySelectorAll('.filter-bar select').forEach(function(select) {
-    select.addEventListener('change', displayWorkouts);
-    const favorisSelect = document.getElementById('filter-favoris');
-    if (favorisSelect) favorisSelect.addEventListener('change', displayWorkouts);
+// Listeners filtres — IDs directs (le panneau filtres n'a plus la classe .filter-bar)
+['filter-type','levelFilter','filter-material','filter-body','filter-time','filter-favoris'].forEach(function(id) {
+    var sel = document.getElementById(id);
+    if (sel) sel.addEventListener('change', displayWorkouts);
 });
 
 const searchField = document.getElementById('search-input');
