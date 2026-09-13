@@ -3029,7 +3029,25 @@ function lancer() {
     document.getElementById('muscu-exec-title').textContent = document.getElementById('muscu-name').value.trim() || 'S\u00e9ance Muscu';
     showMode('muscu', 'exec');
     buildExecPanels();
+    setTimeout(function() {
+        var firstHd = document.querySelector('#muscu-exec-list .muscu-set-block-header');
+        if (firstHd) setHdState(firstHd, 'en-cours');
+    }, 150);
     startChrono();
+}
+
+function setHdState(hd, state) {
+    hd.dataset.state = state; // attribut data-state pour tracking fiable
+    if (state === 'en-cours') {
+        hd.style.background = '#80cbc4';
+        hd.style.color      = '#0a1a2a';
+    } else if (state === 'fait') {
+        hd.style.background = '#1a3a0a';
+        hd.style.color      = '#80cbc4';
+    } else {
+        hd.style.background = '';
+        hd.style.color      = '';
+    }
 }
 window.lancer = lancer; // exposé pour permettre le démarrage direct depuis chargerDepuisLocalStorage()
 
@@ -3383,7 +3401,21 @@ function buildSetBlock(bi, si, bloc) {
     valBtn.addEventListener('click', function() {
         if (valBtn.disabled) return;
         valBtn.disabled = true; valBtn.textContent = '\u2713 Fait'; valBtn.style.background = '#555';
-        wrap.querySelector('.muscu-set-block-header').style.background = '#1a3a0a';
+        // Marquer ce bloc comme "fait"
+        setHdState(wrap.querySelector('.muscu-set-block-header'), 'fait');
+        // Marquer le bloc suivant comme "en cours"
+        var allExecBlocks = document.querySelectorAll('#muscu-exec-list .muscu-set-block');
+        var foundCurrent = false;
+        for (var bi = 0; bi < allExecBlocks.length; bi++) {
+            if (allExecBlocks[bi] === wrap) { foundCurrent = true; continue; }
+            if (foundCurrent) {
+                var nextHd = allExecBlocks[bi].querySelector('.muscu-set-block-header');
+                if (nextHd && nextHd.dataset.state !== 'fait' && nextHd.dataset.state !== 'en-cours') {
+                    setHdState(nextHd, 'en-cours');
+                }
+                break; // un seul bloc suivant
+            }
+        }
         timerZone.classList.add('visible');
         var tvEl = document.getElementById(key + '-tv');
         timerSec = bloc.rs;
