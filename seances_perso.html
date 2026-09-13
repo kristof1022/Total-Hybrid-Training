@@ -3030,7 +3030,7 @@ function lancer() {
     showMode('muscu', 'exec');
     buildExecPanels();
     setTimeout(function() {
-        var firstHd = document.querySelector('#muscu-exec-list .muscu-set-block-header');
+        var firstHd = document.querySelector('#muscu-exo-panels .muscu-set-block-header');
         if (firstHd) setHdState(firstHd, 'en-cours');
     }, 150);
     startChrono();
@@ -3404,7 +3404,7 @@ function buildSetBlock(bi, si, bloc) {
         // Marquer ce bloc comme "fait"
         setHdState(wrap.querySelector('.muscu-set-block-header'), 'fait');
         // Marquer le bloc suivant comme "en cours"
-        var allExecBlocks = document.querySelectorAll('#muscu-exec-list .muscu-set-block');
+        var allExecBlocks = document.querySelectorAll('#muscu-exo-panels .muscu-set-block');
         var foundCurrent = false;
         for (var bi = 0; bi < allExecBlocks.length; bi++) {
             if (allExecBlocks[bi] === wrap) { foundCurrent = true; continue; }
