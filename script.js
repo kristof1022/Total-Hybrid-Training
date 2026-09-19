@@ -1437,7 +1437,26 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         ]
         }        
         }},
-
+    
+    { title: "WOD HYBRID ROW | SKI | RUN", material: ["ski-erg", "rameur", "tapis-incurve"], body: "complet", duration: 48, type: "HYBRID", level: "Facile", boutons: "direct", desc: "<strong> 15 mins 🚣 / 15 mins ⛷️ / 15 mins 🏃 </strong>",
+      details: { format_label: "HYBRID — FOR TIME", exercises: [
+          { text: "15 MINUTES RAMEUR" }, { text: "15 MINUTES SKIERG" }, { text: "15 MINUTES RUN" } ], 
+        conseil: "faites la séance à votre rythme (damper/levier de difficulté pas trop haut) - 1 minute de repos pour changer de station - lancez le timer quand vous êtes prêt à ramer",
+        chargeable: true,
+        chargement: {
+        type: "intervalles",
+        nom: "WOD ROW | SKI | RUN",
+        blocs: [
+            { type: "travail", reps: 1, hasTimer: true,  dur: 900, instr: "<strong><u>1/3:</u></strong><br>🚣RAMEUR🚣" },
+            { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération - on passe au ski-erg" },
+            { type: "travail", reps: 1, hasTimer: true,  dur: 900, instr: "<strong><u>2/3:</u></strong><br>⛷️SKIERG⛷️" },
+            { type: "repos",   reps: 1,  dur: 60,                   instr: "Récupération - on passe à la course à pied" },
+            { type: "travail", reps: 1, hasTimer: true,  dur: 900, instr: "<strong><u>3/3:</u></strong><br>🏃RUN🏃" },
+            { type: "recup",   reps: 1,  hasTimer: true,  dur: 60 , instr: "😮‍💨Retour au calme😮‍💨 courez lentement ou marchez" }
+        ]
+        }       
+        }},
+  
     { title: "WOD HYBRID ANDRE", material: ["rameur"], body: "complet", duration: 0, type: "HYBRID", level: "Intense", boutons: "direct", desc: "<strong>FOR TIME:</strong> alternance Rameur(row), Burpees.",
       details: { format_label: "HYBRID — FOR TIME", exercises: [
           { text: "1000m Rameur" }, { text: "50 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "800m Rameur" }, { text: "40 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "600m Rameur" }, { text: "30 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "400m Rameur" }, { text: "20 Burpees", image: "images/infosbulles/BURPEES1.png" }, { text: "200m Rameur" }, { text: "10 Burpees", image: "images/infosbulles/BURPEES1.png" }
@@ -1448,6 +1467,20 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
         nom: "WOD HYBRID ANDRE",
         exercices: [
             { text: "1000m Rameur" }, { text: "50 Burpees" }, { text: "800m Rameur" }, { text: "40 Burpees" }, { text: "600m Rameur" }, { text: "30 Burpees" }, { text: "400m Rameur" }, { text: "20 Burpees" }, { text: "200m Rameur" }, { text: "10 Burpees" }
+        ]
+        }       
+        }},
+  
+    { title: "WOD HYBRID RUN | WALL BALL | ROW", material: ["ballon-leste", "rameur", "tapis-incurve"], body: "complet", duration: 0, type: "HYBRID", level: "Moyen", boutons: "direct", desc: "<strong>FOR TIME:</strong> alternance Course à pied, Wall Ball, Rameur - 4 TOURS",
+      details: { format_label: "HYBRID — FOR TIME", exercises: [
+          { text: "400m Run" }, { text: "10 Wall-Ball" }, { text: "200m Rameur" }, { text: "2 minutes de repos" }], 
+        conseil: "Adaptez le poids du ballon lestés à votre niveau",
+        chargeable: true,
+        chargement: {
+        type: "fortime",
+        nom: "WOD RUN | WALL BALL | ROW",
+        exercices: [
+            { text: "<u>4 ROUNDS :</u>" }, { text: "400m Run" }, { text: "10 Wall-Ball" }, { text: "200m Rameur" }, { text: "<em>2 minutes de repos</em>" }
         ]
         }       
         }},
