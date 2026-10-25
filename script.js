@@ -837,6 +837,27 @@ boutons: "edit"      // uniquement "🚀 Charger et modifier" (= comportement ac
                   ]
                   }       
         }},
+  
+      { title: "🪢-I : Full-Body Density (EMOM)", material: ["poids-corps","trx","station-dips","elastique"], body: "complet", duration: 45, type: "EMOM", level: "Intense", boutons: "both", desc: "<strong>Séance de 45 minutes avec échauffement / EMOM / retour au calme :</strong> enchainer Pompes, Dips, Squats sautés, Rowing TRX, Gainage dynamique",      
+       details: { format_label: "EMOM 30 MINUTE", intro: "Monter puis descendre la pyramide :",
+                exercises: [
+          { text: "Min 1 : 15 à 20 Pompes → Min 2 : 15 Dips → Min 3 : 15 à 20 Squats Sautés → Min 4 : 12 à 15 Rowing TRX (tirage dos) → Min 5 : 45 sec gainage dynamique (toucher main-épaule ou main-pied) → répéter 6 fois" }, 
+        ], conseil: "echauffement de 10 minutes puis enchainer sur l'EMOM . En fin de séances 5 minutes d'étirement léger ",
+        chargeable: true,
+                  chargement: {
+                  type: "surmesure",
+                  nom: "🪢-I : Full-Body Density",
+                  repeat: 6,
+                  phases: [
+                    { type: "travail", sec: 60, text: "15 à 20 Pompes" },
+                    { type: "travail", sec: 60, text: "15 Dips" },
+                    { type: "travail", sec: 60, text: "15 à 20 Air Squats sautés" },
+                    { type: "travail", sec: 60, text: "12 à 15 Tirages TRX" },
+                    { type: "travail", sec: 60, text: "45 secondes de Gainage abdos dynamique (main-épaule ou main-pied)" },
+                    
+                  ]
+                  }       
+        }},
 
 /* SEANCES FOR TIME */    
   
